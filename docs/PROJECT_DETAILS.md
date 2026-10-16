@@ -5,7 +5,7 @@
 The separate `moodle_remote_extension` connects to an authenticated per-user
 workspace on this computer, while Moodle reads/saves run in the requesting user's
 own Chrome/account. It does not route remote tasks through the owner's browser.
-Invite registration, login, file uploads, task history, device-bound approval and
+Direct browser connection, isolated file uploads, task history, device-bound approval and
 durable no-replay receipts are implemented. Build the credential-free package with
 `prepare_remote_workspace.ps1`. The service listens on loopback port 18791 and the
 explicitly configured trusted LAN endpoint `http://192.168.0.124:18791` (subnet
@@ -840,4 +840,3 @@ name becomes available. `named_mention_identity_ready` in runtime status exposes
 condition. Operator-verified missed messages can be recovered with
 `deploy_v2.ps1 -Execute -RecoverMentioned` after recording the exact candidate; startup
 revalidates its original sender, text, timestamp and actual mention before queueing it.
-

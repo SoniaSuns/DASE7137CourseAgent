@@ -1,7 +1,9 @@
 'use strict';
 chrome.sidePanel.setPanelBehavior({openPanelOnActionClick:true}).catch(()=>{});
 chrome.storage.session.setAccessLevel({accessLevel:'TRUSTED_CONTEXTS'}).catch(()=>{});
+chrome.storage.local.setAccessLevel({accessLevel:'TRUSTED_CONTEXTS'}).catch(()=>{});
 const active=new Set();
+let connecting=null;
 const canonical=x=>JSON.stringify(x,(_,v)=>v&&!Array.isArray(v)&&typeof v==='object'?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
 async function config(){return (await chrome.storage.session.get('login')).login;}
 function serverOrigin(value){
@@ -14,8 +16,14 @@ function serverOrigin(value){
   return u.origin;
 }
 async function api(path,body,login){
-  const c=login||await config();if(!c)throw Error('请先登录共享服务。');
-  const response=await fetch(c.server+path,{method:body===undefined?'GET':'POST',headers:{'Authorization':'Bearer '+(c.token||''),...(body===undefined?{}:{'Content-Type':'application/json'})},body:body===undefined?undefined:JSON.stringify(body),cache:'no-store',signal:AbortSignal.timeout(60000)});
+  const c=login||await config();if(!c)throw Error('请先连接共享服务。');
+  const response=await fetch(c.server+path,{method:body===undefined?'GET':'POST',headers:{...(c.token?{'Authorization':'Bearer '+c.token}:{}),...(body===undefined?{}:{'Content-Type':'application/json'})},body:body===undefined?undefined:JSON.stringify(body),cache:'no-store',signal:AbortSignal.timeout(60000)});
+  // Renew only an idle workspace read. Never automatically retry a write or save receipt.
+  if(response.status===401&&path==='/v1/workspace'&&body===undefined&&!login&&!active.size&&
+     (await chrome.storage.local.get('auto_connect')).auto_connect){
+    await handle({type:'connect',body:{server:c.server}});
+    return api(path,body,await config());
+  }
   const result=await response.json();if(!response.ok)throw Error(result.error||'服务连接失败。');return result;
 }
 async function call(tabId,method,args=[]){
@@ -144,9 +152,29 @@ async function processTask(task){
 async function handle(message){
   const body=message.body||{};
   if(message.type==='settings'){
-    const prefs=await chrome.storage.local.get(['server','device_id']);
+    const prefs=await chrome.storage.local.get(['server','device_id','auto_connect']);
     if(!prefs.device_id){prefs.device_id=crypto.randomUUID();await chrome.storage.local.set({device_id:prefs.device_id});}
     return {...prefs,login:await config()};
+  }
+  if(message.type==='connect'){
+    if(active.size)throw Error('请等待当前浏览器操作结束后连接。');
+    if(connecting)return connecting;
+    connecting=(async()=>{
+      const server=serverOrigin(body.server);
+      const previous=await config();
+      const keyName='workspace-access:'+server;
+      let access=(await chrome.storage.local.get(keyName))[keyName];
+      if(!access){
+        access={device_id:previous?.server===server?previous.device_id:crypto.randomUUID(),
+          key:Array.from(crypto.getRandomValues(new Uint8Array(32)),x=>x.toString(16).padStart(2,'0')).join('')};
+        await chrome.storage.local.set({[keyName]:access});
+      }
+      const login=await api('/v1/connect',{device_id:access.device_id,browser_key:access.key},
+        previous?.server===server?previous:{server});
+      await chrome.storage.session.clear();await chrome.storage.session.set({login:{server,...login}});
+      await chrome.storage.local.set({server,auto_connect:true});return {name:login.name};
+    })();
+    try{return await connecting;}finally{connecting=null;}
   }
   if(message.type==='login'){
     if(active.size)throw Error('请等待当前浏览器操作结束后切换账号。');
@@ -155,8 +183,11 @@ async function handle(message){
     await chrome.storage.session.clear();await chrome.storage.session.set({login:{server,...login}});await chrome.storage.local.set({server});return {name:login.name};
   }
   if(message.type==='logout'){
+    if(connecting)throw Error('正在连接，请稍后再断开。');
     if(active.size)throw Error('请等待当前浏览器操作结束；保存结果尚未确认时不要切换账号。');
-    await api('/v1/logout',{});await chrome.storage.session.clear();return {ok:true};
+    try{await api('/v1/logout',{});}finally{
+      await chrome.storage.session.clear();await chrome.storage.local.set({auto_connect:false});
+    }return {ok:true};
   }
   if(message.type==='bind'){
     if(active.size)throw Error('请等待当前浏览器操作结束后切换课程。');

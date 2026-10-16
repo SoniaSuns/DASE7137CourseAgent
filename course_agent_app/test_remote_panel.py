@@ -1,4 +1,4 @@
-"""Exercise the shipped panel's login, upload and logout with real Chromium."""
+"""Exercise the shipped panel's direct connection and private file persistence."""
 import json
 from pathlib import Path
 import shutil
@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class RemotePanelTests(unittest.TestCase):
-    def test_panel_registers_uploads_private_file_and_logs_out(self):
+    def test_panel_connects_without_account_uploads_and_reconnects_same_workspace(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             extension = root/'extension'
@@ -34,16 +34,13 @@ class RemotePanelTests(unittest.TestCase):
                         page.on('pageerror', lambda error: errors.append(str(error)))
                         page.goto(worker.url.rsplit('/', 1)[0]+'/panel.html')
                         page.locator('#server').fill(f'http://127.0.0.1:{gateway.server.server_port}')
-                        page.locator('#name').fill('panel-user')
-                        page.locator('#password').fill('fictional-panel-password')
-                        page.locator('#invite').fill(gateway.store.invite())
+                        self.assertEqual(page.locator('#name, #password, #invite').count(), 0)
                         page.locator('#signin').click()
                         try:
                             expect(page.locator('#workspace')).to_be_visible(timeout=15000)
                         except AssertionError:
-                            self.fail('Panel login error: '+page.locator('#error').inner_text()+'; JS: '+repr(errors))
-                        expect(page.locator('#connection')).to_contain_text('panel-user')
-                        expect(page.locator('#password')).to_have_value('')
+                            self.fail('Panel connection error: '+page.locator('#error').inner_text()+'; JS: '+repr(errors))
+                        expect(page.locator('#connection')).to_contain_text('已连接')
                         page.locator('#files').set_input_files({'name': 'personal-notes.csv',
                             'mimeType': 'text/csv', 'buffer': b'group,grade\n1,80\n'})
                         expect(page.locator('#library')).to_contain_text('personal-notes.csv')
@@ -52,6 +49,9 @@ class RemotePanelTests(unittest.TestCase):
                         page.locator('#logout').click()
                         expect(page.locator('#login')).to_be_visible()
                         expect(page.locator('#workspace')).to_be_hidden()
+                        page.locator('#signin').click()
+                        expect(page.locator('#workspace')).to_be_visible()
+                        expect(page.locator('#library')).to_contain_text('personal-notes.csv')
                         self.assertEqual(errors, [])
                         # Another extension document cannot impersonate the exact panel.
                         page.goto(worker.url.rsplit('/', 1)[0]+'/panel.html?untrusted=1')

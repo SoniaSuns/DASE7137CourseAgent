@@ -130,6 +130,8 @@ class Gateway:
                 self.schedule(self.store.get(actor, tid))
 
     def dispatch(self, method, path, body, token):
+        if method == 'POST' and path == '/v1/connect':
+            return self.store.connect_browser(body.get('device_id'), body.get('browser_key'), token)
         if method == 'POST' and path in {'/v1/login', '/v1/register'}:
             return self.store.login(body.get('name'), body.get('password'), body.get('device_id'),
                                     body.get('invite', '') if path.endswith('register') else None)
@@ -183,6 +185,10 @@ class Gateway:
             def log_message(self, *args):
                 pass
 
+            def auth_token(self):
+                parts = self.headers.get('Authorization', '').split()
+                return parts[1] if len(parts) == 2 and parts[0].lower() == 'bearer' else ''
+
             def respond(self, status, data):
                 raw = json.dumps(data, ensure_ascii=False).encode()
                 self.send_response(status)
@@ -227,22 +233,22 @@ class Gateway:
                         limit = 46*1024*1024 if self.path == '/v1/files' or self.path.endswith('/download') else 1000000
                         if not 0 < size <= limit:
                             raise ValueError('Request is empty or too large.')
-                        if self.path not in {'/v1/login', '/v1/register'}:
-                            gateway.store.auth(self.headers.get('Authorization', '').removeprefix('Bearer '))
+                        if self.path not in {'/v1/login', '/v1/register', '/v1/connect'}:
+                            gateway.store.auth(self.auth_token())
                         self.connection.settimeout(30)
                         body = json.loads(self.rfile.read(size).decode('utf-8'))
                         if not isinstance(body, dict):
                             raise ValueError('Expected a JSON object.')
-                    if self.path in {'/v1/login', '/v1/register'}:
+                    if self.path in {'/v1/login', '/v1/register', '/v1/connect'}:
                         with gateway.store.lock:
                             gateway.auth_attempts = [t for t in gateway.auth_attempts if t > time.time()-60]
                             if len(gateway.auth_attempts) >= 30:
-                                return self.respond(429, {'error': 'Too many login attempts; try later.'})
+                                return self.respond(429, {'error': 'Too many connection attempts; try later.'})
                             gateway.auth_attempts.append(time.time())
-                    result = gateway.dispatch(method, self.path, body, self.headers.get('Authorization', '').removeprefix('Bearer '))
+                    result = gateway.dispatch(method, self.path, body, self.auth_token())
                     self.respond(200, result)
                 except PermissionError:
-                    self.respond(401, {'error': 'Please sign in again.'})
+                    self.respond(401, {'error': 'Please reconnect your browser workspace.'})
                 except (ValueError, KeyError, TypeError, UnicodeError) as exc:
                     self.respond(400, {'error': str(exc)[:1000] if isinstance(exc, ValueError) else 'Invalid request.'})
                 except Exception:

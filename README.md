@@ -1,5 +1,7 @@
 # DASE7137 Course Agent
 
+[中文](README.md) | [English](README.en.md)
+
 **[下载 Chrome 插件 ZIP](00_Download/Moodle-Workspace-Chrome.zip?raw=true)** · [详细安装说明](docs/REMOTE_WORKSPACE.md)
 
 Agent 已运行在管理员电脑上。普通用户只需连接现有服务，不需要安装 Python 或 Codex。
@@ -16,22 +18,14 @@ WhatsApp 使用管理员配置的课程和浏览器。需要操作自己的 Mood
 
 1. 下载上方 ZIP 并解压；打开 `chrome://extensions`，开启“开发者模式”，点击“加载已解压的扩展程序”，选择解压目录。
 2. 打开 **Moodle Workspace — My Browser** 侧栏。与管理员电脑连接同一局域网，服务地址填写 **`http://192.168.0.124:18791`**。
-3. 向管理员领取个人邀请码，填写账号、至少 12 位密码和邀请码注册；以后只需账号密码登录。
+3. 点击“连接 agent”，即可进入此浏览器的工作区。
 4. 在自己的 Chrome 登录 Moodle，打开课程主页，再点“连接当前 Moodle 课程”。可选择上传本地资料，然后在聊天框输入要求。
 5. 检查 Plan，点击“确认执行”。执行期间保持 Chrome、侧栏和课程标签页打开。
 
-每个账号拥有独立的任务和资料空间；Moodle 读取和修改发生在该用户自己的浏览器。管理员本机也可使用 `http://127.0.0.1:18791`。局域网 HTTP 不加密，请仅在可信网络使用；公网连接需要另外配置 HTTPS。
+每个浏览器拥有独立的任务和资料空间；Moodle 读取和修改发生在该用户自己的浏览器。重新打开插件会连接原工作区；清除插件数据或换浏览器会创建新工作区。管理员本机也可使用 `http://127.0.0.1:18791`。局域网 HTTP 不加密，请仅在可信网络使用；公网连接需要另外配置 HTTPS。
 
 当前支持资料读取、分析和普通 Moodle 表单修改；远程排序移动、分组管理及 Moodle 资源上传尚未适配。
 
-## 管理员
-
-生成个人邀请码：
-
-```powershell
-.\.venv\Scripts\python.exe course_agent_app\remote_workspace_admin.py invite --output course_agent_app\reports\remote_workspace\invitations\teacher-1.json
-```
-
-[部署、网络及账号说明](docs/REMOTE_WORKSPACE.md) · [项目技术说明](docs/PROJECT_DETAILS.md)
+[部署及网络说明](docs/REMOTE_WORKSPACE.md) · [项目技术说明](docs/PROJECT_DETAILS.md)
 
 仓库包含程序、配置、测试和插件安装包，不包含密钥、浏览器登录数据、用户上传资料和运行日志。

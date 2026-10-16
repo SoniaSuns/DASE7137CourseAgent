@@ -4,9 +4,9 @@
 
 ## 当前功能与边界
 
-- 邀请注册、账号密码登录、退出；邀请码单次使用、24 小时有效，服务会话最长 7 天，浏览器重启后需要重新登录。密码使用独立 salt 的 scrypt，服务端仅保存会话令牌的哈希。
-- 每个账号独立的文件列表、任务列表、分析记录和状态。每个任务绑定创建它的浏览器设备、Moodle 域名、课程、登录用户及标签页。同账号其他设备可查看历史，不能确认或执行原设备的任务。
-- 手动选择并上传本地文件，32 MiB/文件、64 MiB/任务、256 MiB/账号。用户可删除未被活动任务引用的文件。自动目录监控和 Teams 同步不在本版本中。
+- 填写服务地址后直接连接，不需要注册、邀请码或 agent 密码。插件自动保存当前浏览器的随机访问凭据，服务端仅保存其哈希；用户无需管理这些凭据。
+- 每个浏览器工作区独立保存文件、任务、分析记录和状态。每个任务绑定创建它的浏览器设备、Moodle 域名、课程、Moodle 登录用户及标签页；其他浏览器不能查看或执行这些任务。
+- 手动选择并上传本地文件，32 MiB/文件、64 MiB/任务、256 MiB/工作区。用户可删除未被活动任务引用的文件。自动目录监控和 Teams 同步不在本版本中。
 - 读取当前课程、Participants、Grades、活动内容及页面中已发现的链接。Moodle 文件由用户浏览器下载后上传到该用户的任务，不使用部署者的登录态。
 - 中央 Codex 分析所选资料；普通文件读取失败时可以使用现有隔离 Python 分析能力。分析目录按用户和任务分开，不读取部署者的 `files` 资料库。
 - 写入支持已读取的普通 Moodle 编辑表单中可编辑的单值输入框、文本框、复选框、下拉框。具体可用字段取决于当前页面和该 Moodle 用户权限。Plan 显示字段的修改前后值；用户在本机插件中确认后执行。
@@ -25,21 +25,15 @@
 
 可分发包：`course_agent_app/reports/remote_extension.zip`。
 解压目录：`course_agent_app/reports/remote_extension`。
-包内没有邀请码、服务会话令牌、部署者的浏览器资料或 Codex 凭据。
+包内没有浏览器访问凭据、服务会话令牌、部署者的浏览器资料或 Codex 凭据。
 
 测试用户在 `chrome://extensions` 开启开发者模式，选择“加载已解压的扩展程序”。插件名为 **Moodle Workspace — My Browser**，与旧的本机插件 **Moodle Course Chat** 不同。当前尚未发布 Chrome Web Store。
 
-## 账户与邀请码
+## 直接连接与工作区
 
-由部署电脑维护者为每个用户分别生成邀请码，不要共享同一个账号：
+填写服务地址并点击“连接 agent”，随后在自己的 Chrome 中打开并登录 Moodle 课程主页，点击“连接当前 Moodle 课程”，选择本地资料并发送任务。Plan 的“确认执行”始终属于该浏览器、该课程和该任务。
 
-```powershell
-.\.venv\Scripts\python.exe course_agent_app\remote_workspace_admin.py invite --output course_agent_app\reports\remote_workspace\invitations\teacher-1.json
-```
-
-命令只打印文件路径，不打印邀请码；已存在的输出文件不会被覆盖。将该文件中的邀请码私下提供给对应用户。用户在自己的插件中填写服务地址、账号、至少 12 字符的密码及邀请码注册。以后登录不需要邀请码。插件仅在用户操作时请求连接指定服务和指定 Moodle 网站的权限。
-
-用户登录后，在自己的 Chrome 中打开并登录 Moodle 课程主页，点击“连接当前 Moodle 课程”，选择本地资料并发送任务。Plan 的“确认执行”始终属于该账号、该设备和该任务。
+插件重开后会自动连接原服务和工作区。“断开连接”保留工作区，下次点击连接即可继续。清除插件数据、卸载插件或换浏览器会丢失本机访问凭据，不能自动找回原工作区；同一 Chrome 配置的使用者共享该工作区。不同服务地址各自保存工作区身份。Moodle 自身仍需正常登录，agent 不要求额外注册。
 
 ## 服务器及 HTTPS 接入
 
@@ -51,7 +45,7 @@
 
 它由现有 agent 进程启动，监听 `127.0.0.1:18791`，并按上面的显式配置监听 `192.168.0.124:18791`；与旧的本机 `18790` 桥分离。仅接受本机及配置的局域网网段客户端，不监听 VPN 或全部网卡。现有启动流程仍要求部署电脑的 WhatsApp/Chrome 连接准备好，远程服务随后可用。中央电脑需要保持开机和联网。
 
-同一局域网用户在插件填写 **`http://192.168.0.124:18791`**。部署电脑本机也可使用 `http://127.0.0.1:18791`；其他用户电脑上的 `127.0.0.1` 不会连接到部署电脑。用户确认使用受信任局域网 HTTP：登录、令牌和资料在此链路上没有 TLS 加密，不应将该端口转发到公网。
+同一局域网用户在插件填写 **`http://192.168.0.124:18791`**。部署电脑本机也可使用 `http://127.0.0.1:18791`；其他用户电脑上的 `127.0.0.1` 不会连接到部署电脑。用户确认使用受信任局域网 HTTP：访问凭据、令牌和资料在此链路上没有 TLS 加密，不应将该端口转发到公网。
 
 管理员在部署电脑运行 `.\enable_remote_lan.ps1`，创建仅针对 Private 网络、指定 Wi-Fi 网卡、指定本地 IP/端口和远端 `192.168.0.0/24` 的入站规则。脚本不会关闭防火墙。插件需要重新加载新版安装包，才能请求该 HTTP 主机权限。
 
@@ -73,7 +67,7 @@ $env:COURSE_AGENT_REMOTE_PUBLIC_ORIGIN = 'https://agent.example.edu'
 
 该环境变量需要由以后启动 agent 的同一启动环境提供；也可以将实际地址写入受版本管理的配置、提交后按标准流程部署。代理应保留公开 Host 并转发 Authorization。只映射 `18791`，不要公开 Chrome 调试端口或旧的 `18790` 本机桥。公网客户端使用 HTTPS；HTTP 仅允许本机或明确配置的可信私有 IPv4 局域网。
 
-这是受邀团队使用的单机部署：不是高可用服务，也未提供企业 SSO、管理员网页、密码找回、自动过期删除或容灾复制。扩大公开用户范围前应补上这些运维能力。它已有应用登录、令牌撤销、登录限流、文件配额及按用户访问控制。
+这是可信局域网使用的单机部署：可连接到服务的浏览器能直接创建自己的工作区，没有管理员邀请审批。服务保留浏览器凭据校验、会话撤销、连接限流、文件配额及工作区隔离；未提供跨设备找回、管理员网页、自动过期删除或容灾复制。公网部署应另行配置访问策略。
 
 ## 保存、断线与恢复
 
@@ -87,7 +81,7 @@ $env:COURSE_AGENT_REMOTE_PUBLIC_ORIGIN = 'https://agent.example.edu'
 
 ```powershell
 cd course_agent_app
-..\.venv\Scripts\python.exe -m unittest test_remote_workspace test_remote_browser test_remote_journal test_remote_panel test_remote_lan -q
+..\.venv\Scripts\python.exe -m unittest test_remote_workspace test_remote_browser test_remote_journal test_remote_panel test_remote_lan test_remote_direct_connect test_remote_browser_identity -q
 ..\.venv\Scripts\python.exe verify_remote_planner.py
 ```
 

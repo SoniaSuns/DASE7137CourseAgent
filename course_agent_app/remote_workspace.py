@@ -79,6 +79,7 @@ class Workspace:
         CREATE TABLE IF NOT EXISTS invites(hash TEXT PRIMARY KEY, expires REAL);
         CREATE TABLE IF NOT EXISTS users(id TEXT PRIMARY KEY, name TEXT UNIQUE, salt TEXT, password TEXT);
         CREATE TABLE IF NOT EXISTS sessions(hash TEXT PRIMARY KEY,user TEXT,device TEXT,expires REAL);
+        CREATE TABLE IF NOT EXISTS browser_access(device TEXT PRIMARY KEY,secret TEXT,user TEXT);
         CREATE TABLE IF NOT EXISTS files(id TEXT PRIMARY KEY,user TEXT,name TEXT,bytes INTEGER,sha TEXT,path TEXT);
         CREATE TABLE IF NOT EXISTS tasks(id TEXT PRIMARY KEY,user TEXT,device TEXT,state TEXT);
         ''')
@@ -147,6 +148,37 @@ class Workspace:
             if not row or row['expires'] < time.time():
                 raise PermissionError('Please sign in again.')
             return {'user': row['user'], 'device': row['device']}
+
+    def connect_browser(self, device, secret, previous_token=''):
+        """Automatic browser identity: a device ID alone never grants access."""
+        if not isinstance(device, str) or not re.fullmatch(r'[a-f0-9-]{32,40}', device):
+            raise ValueError('Invalid browser device identity.')
+        if not isinstance(secret, str) or not re.fullmatch(r'[a-f0-9]{64}', secret):
+            raise ValueError('Invalid browser access key.')
+        hashed = digest(secret.encode())
+        with self.lock, self.db:
+            row = self.db.execute('SELECT * FROM browser_access WHERE device=?', (device,)).fetchone()
+            if row:
+                if not secrets.compare_digest(hashed, row['secret']):
+                    raise PermissionError('Browser access key does not match.')
+                user = row['user']
+            else:
+                # Preserve a currently connected legacy workspace on upgrade.
+                if previous_token:
+                    actor = self.auth(previous_token)
+                    if actor['device'] != device:
+                        raise PermissionError('Browser device changed.')
+                    user = actor['user']
+                else:
+                    user = uid()
+                    self.db.execute('INSERT INTO users VALUES (?,?,?,?)',
+                                    (user, 'browser-'+user, secrets.token_hex(16), secrets.token_hex(64)))
+                self.db.execute('INSERT INTO browser_access VALUES (?,?,?)', (device, hashed, user))
+            self.db.execute('DELETE FROM sessions WHERE user=? AND device=?', (user, device))
+            token = secrets.token_urlsafe(48)
+            self.db.execute('INSERT INTO sessions VALUES (?,?,?,?)',
+                            (digest(token.encode()), user, device, time.time()+7*86400))
+            return {'token': token, 'user_id': user, 'name': 'My browser', 'device_id': device}
 
     def logout(self, token):
         with self.lock, self.db:

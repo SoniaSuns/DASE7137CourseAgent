@@ -51,7 +51,7 @@ class RemoteLANTests(unittest.TestCase):
         self.assertIsNotNone(node)
         script = Path(__file__).resolve().parents[1]/'moodle_remote_extension/background.js'
         code = r'''const vm=require('node:vm'),fs=require('node:fs'),assert=require('node:assert/strict');
-const c={URL,chrome:{sidePanel:{setPanelBehavior:async()=>{}},storage:{session:{setAccessLevel:async()=>{}}},runtime:{onMessage:{addListener(){}}}}};
+const c={URL,chrome:{sidePanel:{setPanelBehavior:async()=>{}},storage:{local:{setAccessLevel:async()=>{}},session:{setAccessLevel:async()=>{}}},runtime:{onMessage:{addListener(){}}}}};
 vm.createContext(c);vm.runInContext(fs.readFileSync(process.argv[1],'utf8'),c);
 for(const value of ['http://192.168.0.124:18791','http://10.1.2.3:18791','http://172.16.0.1:18791','http://127.0.0.1:18791','https://agent.example.edu']){c.value=value;assert.equal(vm.runInContext('serverOrigin(value)',c),value);}
 for(const value of ['http://198.51.100.1:18791','http://172.32.0.1:18791','http://agent.example.edu','http://192.168.0.124:18791/evil','http://user:pass@192.168.0.124:18791']){c.value=value;assert.throws(()=>vm.runInContext('serverOrigin(value)',c));}'''

@@ -30,14 +30,14 @@ function render(){
 async function refresh(){
   if(refreshing)return;refreshing=true;
   try{const settings=await send('settings');$('login').hidden=!!settings.login;$('workspace').hidden=!settings.login;
-    if(!settings.login){$('connection').textContent='未登录';return;}
-    view=await send('workspace');$('connection').textContent=settings.login.name+' · 已连接';render();
+    if(!settings.login){$('connection').textContent='未连接';return;}
+    view=await send('workspace');$('connection').textContent='此浏览器 · 已连接';render();
   }catch(e){$('connection').textContent='连接中断';error(e);}finally{refreshing=false;}
 }
 $('signin').onclick=()=>action(async()=>{
   const server=new URL($('server').value).origin;
   if(!await chrome.permissions.request({origins:[permissionPattern(server)]}))throw Error('需要允许插件连接你填写的服务地址。');
-  await send('login',{server,name:$('name').value,password:$('password').value,invite:$('invite').value.trim()});$('password').value='';$('invite').value='';selected='';checked.clear();
+  await send('connect',{server});selected='';checked.clear();
 });
 $('logout').onclick=()=>action(async()=>{await send('logout');selected='';view=null;checked.clear();});
 $('bind').onclick=()=>action(async()=>{
@@ -66,5 +66,11 @@ $('send').onclick=()=>action(async()=>{
 $('confirm').onclick=()=>action(()=>send('approve',{id:selected,plan_hash:current().plan_hash}));
 $('cancel').onclick=$('cancel-task').onclick=()=>action(()=>send('cancel',{id:selected}));
 $('reconcile').onclick=()=>action(()=>send('reconcile',{id:selected}));
-send('settings').then(s=>{$('server').value=s.server||'http://127.0.0.1:18791';refresh();}).catch(error);
+send('settings').then(async s=>{
+  $('server').value=s.server||'http://192.168.0.124:18791';
+  if(s.auto_connect&&!s.login&&s.server&&await chrome.permissions.contains({origins:[permissionPattern(s.server)]})){
+    await send('connect',{server:s.server});
+  }
+  await refresh();
+}).catch(error);
 setInterval(refresh,2500);
