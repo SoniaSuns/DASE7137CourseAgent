@@ -1,0 +1,33 @@
+{
+  "batch_id": "SMOKE-MOODLE-WA-001",
+  "approval_run_id": "RUN-TEMPLATE",
+  "operation_id": "SANDBOX-GROUP-API",
+  "operation_kind": "group_api",
+  "risk_level": "medium",
+  "target_course_url": "https://migrationtest-moodle.hku.hk/course/view.php?id=105330",
+  "target_course_id": "105330",
+  "section_name": "Participants / Groups",
+  "target_object": "[API TEST] Sandbox group RUN-TEMPLATE",
+  "object_type": "Moodle group",
+  "action": "create_group",
+  "group_name": "[API TEST] Sandbox group RUN-TEMPLATE",
+  "description": "Sandbox group created through HKU APIM Moodle API.",
+  "approval_attachments": [
+    {
+      "kind": "approval_attachment",
+      "label": "Sandbox API review sample",
+      "path": "review_samples/sandbox_api_review_sample.md"
+    }
+  ],
+  "api_execution": {
+    "api_url": "https://apidev.hku.hk/dase7137agent/",
+    "key_env": "DASE7137_KEY",
+    "wsfunction": "core_group_create_groups"
+  },
+  "guardrails": [
+    "sandbox course only: migrationtest Moodle course id 105330",
+    "use APIM endpoint only; do not use browser writes for Moodle changes",
+    "do not use the legacy real DASE7137/IMSE7137 Moodle course",
+    "subscription key must come from DASE7137_KEY and must not be written to files"
+  ]
+}

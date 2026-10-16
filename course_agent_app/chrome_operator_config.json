@@ -1,0 +1,17 @@
+{
+  "browser_mode": "dedicated",
+  "file_library_root": "C:\\Users\\Sonia\\DASE_Agent\\files",
+  "file_library_planner_access": true,
+  "recent_result_limit": 10,
+  "approval_timeout_seconds": null,
+  "defer_uncertain_items": true,
+  "chrome_chat_enabled": true,
+  "remote_workspace": {"enabled": true, "port": 18791, "public_origin": "", "lan_address": "192.168.0.124", "lan_subnet": "192.168.0.0/24"},
+  "autonomous_exploration": {"enabled": true, "max_calls": 6, "timeout_seconds": 300},
+  "planner_model": "gpt-6-astra",
+  "auto_block_recovery": {"enabled": true, "model": "gpt-6-astra", "reasoning_effort": "high"},
+  "chats": ["DASE7137 - 2026", "test approval"],
+  "whatsapp_response_policy": "v1",
+  "mention_only_chats": ["DASE7137 - 2026", "test approval"],
+  "course_ids": ["140147", "140148"]
+}

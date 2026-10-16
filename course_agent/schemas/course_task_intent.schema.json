@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Course Task Intent",
+  "type": "object",
+  "required": ["run_id", "raw_task", "interpreted_intent", "target_course_id", "allowed_operation_kinds"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "pipeline_stage": {"type": "string", "const": "planner"},
+    "planner": {"type": "object"},
+    "raw_task": {"type": "string"},
+    "interpreted_intent": {"type": "string"},
+    "target_course_id": {"type": "string", "const": "105330"},
+    "target_course_url": {"type": "string"},
+    "allowed_operation_kinds": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "expected_moodle_impact": {"type": "string"},
+    "risk_boundaries": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "requires_reapproval_if": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "tool_boundary": {"type": "object"},
+    "verification_requirements": {"type": "object"}
+  },
+  "additionalProperties": true
+}

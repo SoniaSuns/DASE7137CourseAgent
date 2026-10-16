@@ -1,0 +1,9 @@
+# Run the reverse proxy on the same computer as the agent.
+# Replace the example hostname after DNS points to the reachable proxy.
+# Do not expose the owner's 18790 bridge or Chrome debugging port.
+agent.example.edu {
+    request_body {
+        max_size 46MB
+    }
+    reverse_proxy 127.0.0.1:18791
+}

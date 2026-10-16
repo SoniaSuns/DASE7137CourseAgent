@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Course Agent Result",
+  "type": "object",
+  "required": ["run_id", "status", "summary"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "pipeline_stage": {"type": "string", "const": "verifiers"},
+    "verifiers": {"type": "object"},
+    "status": {"type": "string", "enum": ["PASS", "BLOCKED", "FAIL", "PENDING_MOODLE_AGENT"]},
+    "summary": {"type": "string"},
+    "moodle_urls": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "items": {
+      "type": "array",
+      "items": {"type": "object"}
+    },
+    "evidence": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "verification": {"type": "object"}
+  },
+  "additionalProperties": true
+}

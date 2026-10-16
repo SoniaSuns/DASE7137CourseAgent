@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Moodle Course Chat</title><link rel="stylesheet" href="panel.css"></head>
+<body>
+  <header><div class="brand" aria-hidden="true">m</div><div><h1>Moodle Chat</h1><p>Class A · Class B</p></div><span id="connection" class="pill">连接中</span></header>
+  <section class="taskbar" aria-live="polite"><span id="phase">准备连接课程 agent</span><span id="task-id"></span></section>
+  <div id="notice" class="notice" hidden></div>
+  <main id="messages" role="log" aria-label="对话记录" aria-live="polite">
+    <section id="welcome"><p class="eyebrow">课程工作，从一句话开始</p><h2>你希望调整什么？</h2><p>检查资料、对照 syllabus、调整位置和日期。先看 Plan，再确认执行。</p>
+      <button class="example" data-prompt="对照 Class A 和 B 的 internal syllabus，检查文件位置和日期，只报告差异，不修改。">核对课程与 syllabus <span>↗</span></button>
+      <button class="example" data-prompt="检查 Class B 的 Week 7 之后的教学资料，给出开放时间调整计划，不确定项单独列出。">规划后续资料的开放时间 <span>↗</span></button>
+      <button class="example" data-prompt="/tasks">查看这个对话的任务 <span>↗</span></button>
+    </section>
+  </main>
+  <section id="approval" hidden aria-label="确认当前计划"><div><strong>当前 Plan 待确认</strong><p>仅执行上方列出的修改</p></div><div class="actions"><button id="reject" class="secondary">取消</button><button id="confirm" class="primary">确认执行</button></div></section>
+  <footer><form id="compose"><label class="sr-only" for="request">输入课程操作要求</label><textarea id="request" rows="3" maxlength="20000" placeholder="输入要求，或回复当前问题…"></textarea><div class="compose-bottom"><span>Enter 发送 · Shift+Enter 换行</span><button id="send" class="primary" type="submit">发送 ↑</button></div></form><div class="footnote"><span>使用本机课程 agent</span><button id="refresh" type="button">重新连接</button></div><p id="error" role="alert" hidden></p></footer>
+  <script src="panel.js"></script>
+</body></html>

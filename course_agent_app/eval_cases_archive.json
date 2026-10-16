@@ -1,0 +1,33 @@
+{
+  "note": "Rotated out of the bounded 30-case smoke evaluation; these tests still run in full unittest discovery.",
+  "cases": [
+    {
+      "id": "R05",
+      "request": "all",
+      "expected": "选择全部范围不等同于批准保存，仍需当前审批。",
+      "layer": "审批",
+      "test": "test_shared_chrome_agent.ApprovalTests.test_scope_is_not_approval"
+    },
+    {
+      "id": "R06",
+      "request": "群里普通讨论课程时间，未 @ agent",
+      "expected": "不得创建任务或随意响应。",
+      "layer": "消息接入",
+      "test": "test_task_memory.RuntimeTaskMemoryTests.test_no_mention_does_not_resume_expired_task"
+    },
+    {
+      "id": "R11",
+      "request": "审批后有人更换了图片或描述，再执行移动",
+      "expected": "真实内容、文件名、文本或来源变化必须被识别。",
+      "layer": "表单校验",
+      "test": "test_draft_content.DraftComparisonTests.test_content_filename_text_context_and_host_changes_are_not_ignored"
+    },
+    {
+      "id": "R16",
+      "request": "发送包含很多操作的审批",
+      "expected": "分段有界，全部范围保留，审批码仅在最后一段。",
+      "layer": "WhatsApp 工具",
+      "test": "test_chrome_delivery.MultipartTests.test_parts_are_bounded_and_approval_footer_is_last"
+    }
+  ]
+}

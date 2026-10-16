@@ -1,0 +1,13 @@
+<!doctype html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>我的 Moodle 工作区</title><link rel="stylesheet" href="panel.css"></head>
+<body><header><strong>我的 Moodle 工作区</strong><span id="connection">未登录</span></header>
+<section id="login"><h1>连接共享课程 agent</h1><p>分析在服务器进行，Moodle 操作在你自己的 Chrome 中进行。</p>
+<label>服务地址<input id="server" placeholder="https://agent.example.edu" autocomplete="url"></label>
+<label>账号<input id="name" autocomplete="username"></label><label>密码<input id="password" type="password" autocomplete="current-password"></label>
+<label>首次注册邀请码<input id="invite" autocomplete="off" placeholder="已有账号可留空"></label><button id="signin">登录 / 注册</button></section>
+<section id="workspace" hidden><div class="row"><button id="bind">连接当前 Moodle 课程</button><button id="logout" class="secondary">退出</button></div><p id="binding">请打开自己的 Moodle 课程主页，再连接。</p>
+<details open><summary>我的资料</summary><p class="hint">仅上传你选择的文件，供本次任务及后续任务使用。每份最多 32 MiB。</p><input id="files" type="file" multiple><div id="library"></div></details>
+<label>我的任务<select id="tasks"><option value="">新任务</option></select></label><section id="result" aria-live="polite"></section>
+<section id="approval" hidden><h2>确认当前 Plan</h2><p>以下修改将在你自己的 Moodle 账号中执行。</p><div id="plan"></div><div class="row"><button id="confirm">确认执行</button><button id="cancel" class="secondary">取消</button></div></section>
+<button id="reconcile" hidden>仅核查上次保存结果（不重复保存）</button><button id="cancel-task" class="secondary" hidden>取消当前任务</button>
+<label for="request">操作要求或补充说明</label><textarea id="request" rows="4" maxlength="20000" placeholder="例如：检查这门课程的 Prototype Presentation 分组成绩。"></textarea><button id="send">发送</button>
+<p class="hint">执行时请保持 Chrome 和侧栏打开。登录、文件、记录和确认按用户隔离。</p></section><p id="error" role="alert"></p><script src="panel.js"></script></body></html>

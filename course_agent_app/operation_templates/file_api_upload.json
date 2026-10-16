@@ -1,0 +1,43 @@
+{
+  "batch_id": "SMOKE-MOODLE-WA-001",
+  "approval_run_id": "RUN-TEMPLATE",
+  "operation_id": "SANDBOX-FILE-API-UPLOAD",
+  "operation_kind": "file_api_upload",
+  "risk_level": "medium",
+  "target_course_url": "https://migrationtest-moodle.hku.hk/course/view.php?id=105330",
+  "target_course_id": "105330",
+  "section_name": "Moodle API file upload test",
+  "target_object": "moodle_upload_demo_v2.txt",
+  "object_type": "Moodle API file upload",
+  "action": "upload_file_api",
+  "target_file_path": "test_upload_files/moodle_upload_demo_v2.txt",
+  "upload_file_path": "test_upload_files/moodle_upload_demo_v2.txt",
+  "expected_uploaded_filename": "moodle_upload_demo_v2.txt",
+  "contextid": "",
+  "contextlevel": "user",
+  "instanceid": "",
+  "component": "user",
+  "filearea": "draft",
+  "itemid": "0",
+  "filepath": "/",
+  "approval_attachments": [
+    {
+      "kind": "approval_attachment",
+      "label": "Moodle API upload file",
+      "path": "test_upload_files/moodle_upload_demo_v2.txt"
+    }
+  ],
+  "api_execution": {
+    "api_url": "https://apidev.hku.hk/dase7137agent/",
+    "key_env": "DASE7137_KEY",
+    "wsfunction": "core_files_upload"
+  },
+  "guardrails": [
+    "sandbox APIM only; do not use browser writes for Moodle changes",
+    "upload only the harmless approved local test file",
+    "this API upload test uploads to the Moodle file API area only and must not create, replace, delete, or publish course File resources",
+    "default target is the Moodle user draft area: component=user, filearea=draft",
+    "do not use the legacy real DASE7137/IMSE7137 Moodle course",
+    "subscription key must come from DASE7137_KEY and must not be written to files"
+  ]
+}

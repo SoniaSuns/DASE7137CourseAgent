@@ -1,0 +1,4314 @@
+[
+  {
+    "plan_artifact": "1f3da29e631f430aa101b10c380b6e8e",
+    "targets": {
+      "140147:module:4254872": {
+        "key": "140147:module:4254872",
+        "title": "Announcements  Forum",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254873": {
+        "key": "140147:module:4254873",
+        "title": "Course Forum",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254874": {
+        "key": "140147:module:4254874",
+        "title": "[IMPORTANT] Student Feedback on Teaching and Learning Survey  URL",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254875": {
+        "key": "140147:module:4254875",
+        "title": "Assignment Requirement  File",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254876": {
+        "key": "140147:module:4254876",
+        "title": "Assignment 1",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254877": {
+        "key": "140147:module:4254877",
+        "title": "Project Grouping  Group choice",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254878": {
+        "key": "140147:module:4254878",
+        "title": "Group Project Topic Selection  Choice",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254879": {
+        "key": "140147:module:4254879",
+        "title": "Peer evaluation  Peer Assessment",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254880": {
+        "key": "140147:module:4254880",
+        "title": "XRCC installation on your own laptop  Folder",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254881": {
+        "key": "140147:module:4254881",
+        "title": "Group Project Guidance  File",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254882": {
+        "key": "140147:module:4254882",
+        "title": "Guidelines on GenAI use in DASE7137 coursework  File",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254883": {
+        "key": "140147:module:4254883",
+        "title": "Bonus Documentation Submission  Assignment",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254885": {
+        "key": "140147:module:4254885",
+        "title": "Workshop Questionnaire",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254888": {
+        "key": "140147:module:4254888",
+        "title": "XRCC questionnaire  URL",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254984": {
+        "key": "140147:module:4254984",
+        "title": "Course Syllabus  File",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4317667": {
+        "key": "140147:module:4317667",
+        "title": "Laptop Borrowing Form  File",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4280162": {
+        "key": "140147:module:4280162",
+        "title": "DASE7137A L1 Intro  File",
+        "section_key": "140147:section:1607926",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4261911": {
+        "key": "140147:module:4261911",
+        "title": "Cardboard Workshop  File",
+        "section_key": "140147:section:1607926",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4280164": {
+        "key": "140147:module:4280164",
+        "title": "DASE7137A L2 VR History  File",
+        "section_key": "140147:section:1607927",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254893": {
+        "key": "140147:module:4254893",
+        "title": "Workshop 1: XRCC tutorial 1  File",
+        "section_key": "140147:section:1607927",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254894": {
+        "key": "140147:module:4254894",
+        "title": "Workshop 1 Slides  File",
+        "section_key": "140147:section:1607927",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254895": {
+        "key": "140147:module:4254895",
+        "title": "Workshop 1 XR Testing Submission  Assignment",
+        "section_key": "140147:section:1607927",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4297225": {
+        "key": "140147:module:4297225",
+        "title": "DASE7137A L3 HumanPerception  File",
+        "section_key": "140147:section:1607928",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254898": {
+        "key": "140147:module:4254898",
+        "title": "Workshop 2:  XRCC tutorial 2  File",
+        "section_key": "140147:section:1607928",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254899": {
+        "key": "140147:module:4254899",
+        "title": "Workshop 2 Slides  File",
+        "section_key": "140147:section:1607928",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254901": {
+        "key": "140147:module:4254901",
+        "title": "Workshop II Reference Materials  URL",
+        "section_key": "140147:section:1607928",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4290431": {
+        "key": "140147:module:4290431",
+        "title": "Workshop2 XRCC ccdata File Submission  Assignment",
+        "section_key": "140147:section:1607928",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4309255": {
+        "key": "140147:module:4309255",
+        "title": "DASE7137 L4 Crafting-Immersive-VR-Experiences  File",
+        "section_key": "140147:section:1607930",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4312016": {
+        "key": "140147:module:4312016",
+        "title": "Prototype Presentation Submission  URL",
+        "section_key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254903": {
+        "key": "140147:module:4254903",
+        "title": "XRCC Workshop 3 Slides  File",
+        "section_key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254904": {
+        "key": "140147:module:4254904",
+        "title": "Workshop 3: XRCC tutorial 3  File",
+        "section_key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254905": {
+        "key": "140147:module:4254905",
+        "title": "XRCC Workshop 3 Starter  File",
+        "section_key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4298597": {
+        "key": "140147:module:4298597",
+        "title": "Workshop3 XRCC ccdata File Submission  Assignment",
+        "section_key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254907": {
+        "key": "140147:module:4254907",
+        "title": "XRCC Workshop In-class Quiz",
+        "section_key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254913": {
+        "key": "140147:module:4254913",
+        "title": "Workshop IV Slides  File",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254914": {
+        "key": "140147:module:4254914",
+        "title": "XRCC Workshop IV Tutorial  File",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254908": {
+        "key": "140147:module:4254908",
+        "title": "Workshop 4: Storyboard Development  File",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254909": {
+        "key": "140147:module:4254909",
+        "title": "Workshop IV Reference Video  URL",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254910": {
+        "key": "140147:module:4254910",
+        "title": "Lecture 4 Crafting Immersive VR Experiences  URL",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254911": {
+        "key": "140147:module:4254911",
+        "title": "Menti Survey  File",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254915": {
+        "key": "140147:module:4254915",
+        "title": "Workshop 5: XRCC tutorial 4  File",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254916": {
+        "key": "140147:module:4254916",
+        "title": "Workshop 5: XRCC tutorial 4 ccdata File Submission  URL",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4312009": {
+        "key": "140147:module:4312009",
+        "title": "Prototype Presentation Guidelines  File",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254922": {
+        "key": "140147:module:4254922",
+        "title": "Prototype Presentation  Assignment",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254917": {
+        "key": "140147:module:4254917",
+        "title": "VR Workshop 7: Group Project  File",
+        "section_key": "140147:section:1607934",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254918": {
+        "key": "140147:module:4254918",
+        "title": "Prototype Presentation  File",
+        "section_key": "140147:section:1607935",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254919": {
+        "key": "140147:module:4254919",
+        "title": "Prototype Reference Video  URL",
+        "section_key": "140147:section:1607935",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254920": {
+        "key": "140147:module:4254920",
+        "title": "Prototype Video Submission  URL",
+        "section_key": "140147:section:1607935",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254921": {
+        "key": "140147:module:4254921",
+        "title": "Voting for the most novel prototype topic  Questionnaire",
+        "section_key": "140147:section:1607935",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254923": {
+        "key": "140147:module:4254923",
+        "title": "Project Interaction Reference Video  URL",
+        "section_key": "140147:section:1692713",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254924": {
+        "key": "140147:module:4254924",
+        "title": "Demo Day Poster  Assignment",
+        "section_key": "140147:section:1692713",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254925": {
+        "key": "140147:module:4254925",
+        "title": "CCDATA File Submission for Interactive Presentation  URL",
+        "section_key": "140147:section:1692713",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254926": {
+        "key": "140147:module:4254926",
+        "title": "Interactive Presentation  Assignment",
+        "section_key": "140147:section:1692713",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254927": {
+        "key": "140147:module:4254927",
+        "title": "Equipment Borrow Form  URL",
+        "section_key": "140147:section:1692714",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254928": {
+        "key": "140147:module:4254928",
+        "title": "Demo Day Instruction  File",
+        "section_key": "140147:section:1692714",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254929": {
+        "key": "140147:module:4254929",
+        "title": "Demo Reel Video Submission  URL",
+        "section_key": "140147:section:1692714",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254930": {
+        "key": "140147:module:4254930",
+        "title": "Final Presentation Slides Submission  Assignment",
+        "section_key": "140147:section:1692715",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254931": {
+        "key": "140147:module:4254931",
+        "title": "Final Presentation  Assignment",
+        "section_key": "140147:section:1692715",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254932": {
+        "key": "140147:module:4254932",
+        "title": "Final Project Submission  URL",
+        "section_key": "140147:section:1692716",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:section:1607925": {
+        "title": "General",
+        "key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607926": {
+        "title": "Week 1",
+        "key": "140147:section:1607926",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607927": {
+        "title": "Week 2",
+        "key": "140147:section:1607927",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607928": {
+        "title": "Week 3",
+        "key": "140147:section:1607928",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607930": {
+        "title": "Week 4",
+        "key": "140147:section:1607930",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607929": {
+        "title": "Week 5",
+        "key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607931": {
+        "title": "Week 6",
+        "key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607932": {
+        "title": "Week 7",
+        "key": "140147:section:1607932",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607933": {
+        "title": "Week 8",
+        "key": "140147:section:1607933",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607934": {
+        "title": "Week 9",
+        "key": "140147:section:1607934",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607935": {
+        "title": "Week 10",
+        "key": "140147:section:1607935",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1692713": {
+        "title": "Week 11",
+        "key": "140147:section:1692713",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1692714": {
+        "title": "Week 12",
+        "key": "140147:section:1692714",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1692715": {
+        "title": "Week 13",
+        "key": "140147:section:1692715",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1692716": {
+        "title": "Week 14",
+        "key": "140147:section:1692716",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140148:module:4255015": {
+        "key": "140148:module:4255015",
+        "title": "Announcements  Forum",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255016": {
+        "key": "140148:module:4255016",
+        "title": "Course Forum",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255017": {
+        "key": "140148:module:4255017",
+        "title": "[IMPORTANT] Student Feedback on Teaching and Learning Survey  URL",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255018": {
+        "key": "140148:module:4255018",
+        "title": "Assignment Requirement  File",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255019": {
+        "key": "140148:module:4255019",
+        "title": "Assignment 1",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255020": {
+        "key": "140148:module:4255020",
+        "title": "Project Grouping  Group choice",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255021": {
+        "key": "140148:module:4255021",
+        "title": "Group Project Topic Selection  Choice",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255022": {
+        "key": "140148:module:4255022",
+        "title": "Peer evaluation  Peer Assessment",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255023": {
+        "key": "140148:module:4255023",
+        "title": "XRCC installation on your own laptop  Folder",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255024": {
+        "key": "140148:module:4255024",
+        "title": "Group Project Guidance  File",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255025": {
+        "key": "140148:module:4255025",
+        "title": "Guidelines on GenAI use in DASE7137 coursework  File",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255026": {
+        "key": "140148:module:4255026",
+        "title": "Bonus Documentation Submission  Assignment",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255027": {
+        "key": "140148:module:4255027",
+        "title": "Workshop Questionnaire",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255028": {
+        "key": "140148:module:4255028",
+        "title": "XRCC questionnaire  URL",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255030": {
+        "key": "140148:module:4255030",
+        "title": "Course Syllabus  File",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4317674": {
+        "key": "140148:module:4317674",
+        "title": "Laptop Borrowing Form  File",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4280166": {
+        "key": "140148:module:4280166",
+        "title": "DASE7137B L1 Intro  File",
+        "section_key": "140148:section:1607937",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4261930": {
+        "key": "140148:module:4261930",
+        "title": "Cardboard Workshop  File",
+        "section_key": "140148:section:1607937",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4287405": {
+        "key": "140148:module:4287405",
+        "title": "DASE7137B L2 VR History  File",
+        "section_key": "140148:section:1607938",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255034": {
+        "key": "140148:module:4255034",
+        "title": "Workshop 1: XRCC tutorial 1  File",
+        "section_key": "140148:section:1607938",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255035": {
+        "key": "140148:module:4255035",
+        "title": "Workshop 1 Slides  File",
+        "section_key": "140148:section:1607938",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255036": {
+        "key": "140148:module:4255036",
+        "title": "Workshop 1 XR Testing Submission  Assignment",
+        "section_key": "140148:section:1607938",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4297767": {
+        "key": "140148:module:4297767",
+        "title": "DASE7137B L3 HumanPerception  File",
+        "section_key": "140148:section:1607939",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255039": {
+        "key": "140148:module:4255039",
+        "title": "Workshop 2:  XRCC tutorial 2  File",
+        "section_key": "140148:section:1607939",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255040": {
+        "key": "140148:module:4255040",
+        "title": "Workshop 2 Slides  File",
+        "section_key": "140148:section:1607939",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255042": {
+        "key": "140148:module:4255042",
+        "title": "Workshop II Reference Materials  URL",
+        "section_key": "140148:section:1607939",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4290447": {
+        "key": "140148:module:4290447",
+        "title": "Workshop2 XRCC ccdata File Submission  Assignment",
+        "section_key": "140148:section:1607939",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4309286": {
+        "key": "140148:module:4309286",
+        "title": "DASE7137 L4 Crafting-Immersive-VR-Experiences  File",
+        "section_key": "140148:section:1607941",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255049": {
+        "key": "140148:module:4255049",
+        "title": "Workshop 4: Storyboard Development  File",
+        "section_key": "140148:section:1607941",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255050": {
+        "key": "140148:module:4255050",
+        "title": "Workshop IV Reference Video  URL",
+        "section_key": "140148:section:1607941",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255051": {
+        "key": "140148:module:4255051",
+        "title": "Lecture 5 Crafting Immersive VR Experiences  URL",
+        "section_key": "140148:section:1607941",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255052": {
+        "key": "140148:module:4255052",
+        "title": "Menti Survey  File",
+        "section_key": "140148:section:1607941",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4312028": {
+        "key": "140148:module:4312028",
+        "title": "Prototype Presentation Guidelines  File",
+        "section_key": "140148:section:1607940",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4312047": {
+        "key": "140148:module:4312047",
+        "title": "Prototype Presentation Submission  URL",
+        "section_key": "140148:section:1607940",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4298604": {
+        "key": "140148:module:4298604",
+        "title": "Workshop3 XRCC ccdata File Submission  Assignment",
+        "section_key": "140148:section:1607940",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255048": {
+        "key": "140148:module:4255048",
+        "title": "XRCC Workshop In-class Quiz",
+        "section_key": "140148:section:1607940",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255044": {
+        "key": "140148:module:4255044",
+        "title": "XRCC Workshop 3 Slides  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255045": {
+        "key": "140148:module:4255045",
+        "title": "Workshop 3: XRCC tutorial 3  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255046": {
+        "key": "140148:module:4255046",
+        "title": "XRCC Workshop 3 Starter  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255054": {
+        "key": "140148:module:4255054",
+        "title": "Workshop IV Slides  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255055": {
+        "key": "140148:module:4255055",
+        "title": "XRCC Workshop IV Tutorial  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255056": {
+        "key": "140148:module:4255056",
+        "title": "Workshop 5: XRCC tutorial 4  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255057": {
+        "key": "140148:module:4255057",
+        "title": "Workshop 5: XRCC tutorial 4 ccdata File Submission  URL",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255058": {
+        "key": "140148:module:4255058",
+        "title": "VR Workshop 7: Group Project  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255059": {
+        "key": "140148:module:4255059",
+        "title": "Prototype Presentation  File",
+        "section_key": "140148:section:1607945",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255060": {
+        "key": "140148:module:4255060",
+        "title": "Prototype Reference Video  URL",
+        "section_key": "140148:section:1607945",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255061": {
+        "key": "140148:module:4255061",
+        "title": "Prototype Video Submission  URL",
+        "section_key": "140148:section:1607945",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255062": {
+        "key": "140148:module:4255062",
+        "title": "Voting for the most novel prototype topic  Questionnaire",
+        "section_key": "140148:section:1607945",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255063": {
+        "key": "140148:module:4255063",
+        "title": "Prototype Presentation  Assignment",
+        "section_key": "140148:section:1607945",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255064": {
+        "key": "140148:module:4255064",
+        "title": "Project Interaction Reference Video  URL",
+        "section_key": "140148:section:1692730",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255065": {
+        "key": "140148:module:4255065",
+        "title": "Demo Day Poster  Assignment",
+        "section_key": "140148:section:1692730",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255066": {
+        "key": "140148:module:4255066",
+        "title": "CCDATA File Submission for Interactive Presentation  URL",
+        "section_key": "140148:section:1692730",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255067": {
+        "key": "140148:module:4255067",
+        "title": "Interactive Presentation  Assignment",
+        "section_key": "140148:section:1692730",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255068": {
+        "key": "140148:module:4255068",
+        "title": "Equipment Borrow Form  URL",
+        "section_key": "140148:section:1692731",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255069": {
+        "key": "140148:module:4255069",
+        "title": "Demo Day Instruction  File",
+        "section_key": "140148:section:1692731",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255070": {
+        "key": "140148:module:4255070",
+        "title": "Demo Reel Video Submission  URL",
+        "section_key": "140148:section:1692731",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255071": {
+        "key": "140148:module:4255071",
+        "title": "Final Presentation Slides Submission  Assignment",
+        "section_key": "140148:section:1692732",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255072": {
+        "key": "140148:module:4255072",
+        "title": "Final Presentation  Assignment",
+        "section_key": "140148:section:1692732",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255073": {
+        "key": "140148:module:4255073",
+        "title": "Final Project Submission  URL",
+        "section_key": "140148:section:1692733",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:section:1607936": {
+        "title": "General",
+        "key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607937": {
+        "title": "Week 1",
+        "key": "140148:section:1607937",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607938": {
+        "title": "Week 2",
+        "key": "140148:section:1607938",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607939": {
+        "title": "Week 3",
+        "key": "140148:section:1607939",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607941": {
+        "title": "Week 4",
+        "key": "140148:section:1607941",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607940": {
+        "title": "Week 5",
+        "key": "140148:section:1607940",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607946": {
+        "title": "Week 6",
+        "key": "140148:section:1607946",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607942": {
+        "title": "Week 7",
+        "key": "140148:section:1607942",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607943": {
+        "title": "Week 8",
+        "key": "140148:section:1607943",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607944": {
+        "title": "Week 9",
+        "key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607945": {
+        "title": "Week 10",
+        "key": "140148:section:1607945",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1692730": {
+        "title": "Week 11",
+        "key": "140148:section:1692730",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1692731": {
+        "title": "Week 12",
+        "key": "140148:section:1692731",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1692732": {
+        "title": "Week 13",
+        "key": "140148:section:1692732",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1692733": {
+        "title": "Week 14",
+        "key": "140148:section:1692733",
+        "course_id": "140148",
+        "kind": "section"
+      }
+    },
+    "alignment": {
+      "required": true,
+      "course_ids": [
+        "140147"
+      ],
+      "sources": [
+        {
+          "course_id": "140147",
+          "file_id": "file:6fa752cfb1e52eb1d004"
+        }
+      ],
+      "items": [
+        {
+          "target": "140147:module:4254872",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General announcement forum is administrative course infrastructure, not a scheduled syllabus material to sequence."
+        },
+        {
+          "target": "140147:module:4254873",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Course forum is administrative course infrastructure, not a scheduled syllabus material to sequence."
+        },
+        {
+          "target": "140147:module:4254874",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Student feedback survey is an institutional survey and is not part of the internal syllabus weekly teaching sequence."
+        },
+        {
+          "target": "140147:module:4254875",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Assignment Requirement is a general course document; the current correction is for weekly placement from Week 4 onward and the explicitly reviewed peer evaluation milestone."
+        },
+        {
+          "target": "140147:module:4254876",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Assignment 1 remains in General because the current correction request is sequence placement of relevant course materials and specifically reviewed milestones; no current inspected evidence requests moving this generic General portal."
+        },
+        {
+          "target": "140147:module:4254877",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Project Grouping relates to the Week 3 grouping milestone, and the latest correction says to keep General and Weeks 1-3 unchanged unless directly part of this correction."
+        },
+        {
+          "target": "140147:module:4254878",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Topic selection is a General administrative choice; the latest review specifically required adding peer evaluation but did not require moving this General choice."
+        },
+        {
+          "target": "140147:module:4254879",
+          "target_section": "140147:section:1692715",
+          "file_id": "",
+          "row_id": "t3:r14",
+          "week_column": 4,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "The internal syllabus explicitly lists peer evaluation in the Week 13 deadline column."
+        },
+        {
+          "target": "140147:module:4254880",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "XRCC installation folder is a general support resource, not a weekly syllabus item to sequence."
+        },
+        {
+          "target": "140147:module:4254881",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Group Project Guidance is a general support document and not a specific weekly material in the internal syllabus table."
+        },
+        {
+          "target": "140147:module:4254882",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "GenAI coursework guidance is a general policy document and not a weekly syllabus item to sequence."
+        },
+        {
+          "target": "140147:module:4254883",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Bonus Documentation Submission is not listed as a weekly milestone in the inspected internal syllabus table."
+        },
+        {
+          "target": "140147:module:4254885",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Workshop Questionnaire has a generic title and no inspected syllabus row identifies it as a specific weekly activity for this correction."
+        },
+        {
+          "target": "140147:module:4254888",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "XRCC questionnaire is generic and no inspected syllabus row establishes a specific week for this item."
+        },
+        {
+          "target": "140147:module:4254984",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Course Syllabus is a general reference document, not a weekly activity to sequence."
+        },
+        {
+          "target": "140147:module:4317667",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Laptop Borrowing Form is a general support document, not a weekly syllabus activity."
+        },
+        {
+          "target": "140147:module:4280162",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 1 is outside the latest Class A correction scope and is to be kept unchanged."
+        },
+        {
+          "target": "140147:module:4261911",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 1 is outside the latest Class A correction scope and is to be kept unchanged."
+        },
+        {
+          "target": "140147:module:4280164",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 2 is outside the latest Class A correction scope and is to be kept unchanged."
+        },
+        {
+          "target": "140147:module:4254893",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 2 is outside the latest Class A correction scope and is to be kept unchanged."
+        },
+        {
+          "target": "140147:module:4254894",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 2 is outside the latest Class A correction scope and is to be kept unchanged."
+        },
+        {
+          "target": "140147:module:4254895",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 2 is outside the latest Class A correction scope and is to be kept unchanged."
+        },
+        {
+          "target": "140147:module:4297225",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 3 is outside the latest Class A correction scope and is to be kept unchanged."
+        },
+        {
+          "target": "140147:module:4254898",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 3 is outside the latest Class A correction scope and is to be kept unchanged."
+        },
+        {
+          "target": "140147:module:4254899",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 3 is outside the latest Class A correction scope and is to be kept unchanged."
+        },
+        {
+          "target": "140147:module:4254901",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 3 is outside the latest Class A correction scope and is to be kept unchanged."
+        },
+        {
+          "target": "140147:module:4290431",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 3 is outside the latest Class A correction scope and is to be kept unchanged."
+        },
+        {
+          "target": "140147:module:4309255",
+          "target_section": "140147:section:1607929",
+          "file_id": "",
+          "row_id": "t3:r6",
+          "week_column": 2,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "The internal syllabus places Crafting Immersive VR Experiences in Week 5."
+        },
+        {
+          "target": "140147:module:4312016",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 4,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Prototype video submission aligns with the Week 6 prototype video deadline."
+        },
+        {
+          "target": "140147:module:4254903",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 3,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "XRCC Workshop 3 material corresponds to XRCC tutorial 3, which the internal syllabus places in Week 6."
+        },
+        {
+          "target": "140147:module:4254904",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 3,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "Workshop 3: XRCC tutorial 3 corresponds to the Week 6 XRCC tutorial 3 syllabus row."
+        },
+        {
+          "target": "140147:module:4254905",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 3,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "XRCC Workshop 3 Starter is part of the Week 6 XRCC tutorial 3 material set."
+        },
+        {
+          "target": "140147:module:4298597",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 3,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Workshop3 ccdata submission is tied to XRCC tutorial 3, which the internal syllabus places in Week 6."
+        },
+        {
+          "target": "140147:module:4254907",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 3,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "XRCC Workshop In-class Quiz is tied to the Week 6 XRCC tutorial 3 material set."
+        },
+        {
+          "target": "140147:module:4254913",
+          "target_section": "140147:section:1607933",
+          "file_id": "",
+          "row_id": "t3:r9",
+          "week_column": 2,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "The inspected resource filename refers to generative AI application in VR, matching the Week 8 lecture topic on VR applications and AI."
+        },
+        {
+          "target": "140147:module:4254914",
+          "target_section": "140147:section:1607933",
+          "file_id": "",
+          "row_id": "t3:r9",
+          "week_column": 3,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "XRCC Workshop IV Tutorial corresponds to XRCC tutorial 4, confirmed for Week 8."
+        },
+        {
+          "target": "140147:module:4254908",
+          "target_section": "140147:section:1607929",
+          "file_id": "",
+          "row_id": "t3:r6",
+          "week_column": 3,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "Storyboard Development is explicitly listed as the Week 5 workshop in the internal syllabus."
+        },
+        {
+          "target": "140147:module:4254909",
+          "target_section": "140147:section:1607929",
+          "file_id": "",
+          "row_id": "t3:r6",
+          "week_column": 3,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "The reference video belongs with the Week 5 Storyboard Development workshop material set."
+        },
+        {
+          "target": "140147:module:4254910",
+          "target_section": "140147:section:1607929",
+          "file_id": "",
+          "row_id": "t3:r6",
+          "week_column": 2,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "The lecture URL topic matches the Week 5 Crafting Immersive VR Experiences lecture."
+        },
+        {
+          "target": "140147:module:4254911",
+          "target_section": "140147:section:1607929",
+          "file_id": "",
+          "row_id": "t3:r6",
+          "week_column": 2,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "The Menti Survey is part of the Week 5 Crafting Immersive VR Experiences material set."
+        },
+        {
+          "target": "140147:module:4254915",
+          "target_section": "140147:section:1607933",
+          "file_id": "",
+          "row_id": "t3:r9",
+          "week_column": 3,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "The owner-confirmed mapping and internal syllabus place XRCC tutorial 4 in Week 8."
+        },
+        {
+          "target": "140147:module:4254916",
+          "target_section": "140147:section:1607933",
+          "file_id": "",
+          "row_id": "t3:r9",
+          "week_column": 3,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "This ccdata submission belongs to XRCC tutorial 4, which the internal syllabus places in Week 8."
+        },
+        {
+          "target": "140147:module:4312009",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 2,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "Prototype Presentation Guidelines already sit with the Week 6 Prototype Presentation milestone."
+        },
+        {
+          "target": "140147:module:4254922",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 4,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Prototype Presentation assignment aligns with the Week 6 prototype presentation and assignment milestone."
+        },
+        {
+          "target": "140147:module:4254917",
+          "target_section": "140147:section:1607934",
+          "file_id": "",
+          "row_id": "t3:r10",
+          "week_column": 3,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "VR Workshop 7: Group Project aligns with the Week 9 group development row."
+        },
+        {
+          "target": "140147:module:4254918",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 2,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "Prototype Presentation file aligns with the Week 6 Prototype Presentation row and should be visible under the earlier Week 6 visibility instruction."
+        },
+        {
+          "target": "140147:module:4254919",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 2,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "Prototype Reference Video supports the Week 6 Prototype Presentation milestone and should be visible under the earlier Week 6 visibility instruction."
+        },
+        {
+          "target": "140147:module:4254920",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 4,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Prototype Video Submission aligns with the Week 6 prototype video deadline; submission portal visibility is preserved."
+        },
+        {
+          "target": "140147:module:4254921",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 2,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "The voting questionnaire belongs to the Week 6 prototype presentation activity set; questionnaire visibility is preserved."
+        },
+        {
+          "target": "140147:module:4254923",
+          "target_section": "140147:section:1607935",
+          "file_id": "",
+          "row_id": "t3:r11",
+          "week_column": 2,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Project Interaction Reference Video aligns with the Week 10 interaction development demo row."
+        },
+        {
+          "target": "140147:module:4254924",
+          "target_section": "140147:section:1607934",
+          "file_id": "",
+          "row_id": "t3:r10",
+          "week_column": 4,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Demo Day Poster is explicitly listed in the Week 9 deadline column."
+        },
+        {
+          "target": "140147:module:4254925",
+          "target_section": "140147:section:1607935",
+          "file_id": "",
+          "row_id": "t3:r11",
+          "week_column": 4,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "CCDATA submission for Interactive Presentation aligns with the Week 10 interaction demo milestone."
+        },
+        {
+          "target": "140147:module:4254926",
+          "target_section": "140147:section:1607935",
+          "file_id": "",
+          "row_id": "t3:r11",
+          "week_column": 4,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Interactive Presentation aligns with the Week 10 interaction demo milestone."
+        },
+        {
+          "target": "140147:module:4254927",
+          "target_section": "140147:section:1692713",
+          "file_id": "",
+          "row_id": "t3:r12",
+          "week_column": 4,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Equipment borrow form is explicitly listed in the Week 11 deadline column."
+        },
+        {
+          "target": "140147:module:4254928",
+          "target_section": "140147:section:1692714",
+          "file_id": "",
+          "row_id": "t3:r13",
+          "week_column": 2,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Demo Day Instruction aligns with the Week 12 Project Demo Day row."
+        },
+        {
+          "target": "140147:module:4254929",
+          "target_section": "140147:section:1692715",
+          "file_id": "",
+          "row_id": "t3:r14",
+          "week_column": 4,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Demo Reel Video is explicitly listed in the Week 13 deadline column."
+        },
+        {
+          "target": "140147:module:4254930",
+          "target_section": "140147:section:1692715",
+          "file_id": "",
+          "row_id": "t3:r14",
+          "week_column": 4,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Final Presentation Slides Submission already aligns with the Week 13 presentation slides deadline."
+        },
+        {
+          "target": "140147:module:4254931",
+          "target_section": "140147:section:1692715",
+          "file_id": "",
+          "row_id": "t3:r14",
+          "week_column": 2,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Final Presentation already aligns with the Week 13 final project presentation row."
+        },
+        {
+          "target": "140147:module:4254932",
+          "target_section": "140147:section:1692715",
+          "file_id": "",
+          "row_id": "t3:r14",
+          "week_column": 4,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Final Project Submission aligns with the Week 13 final project ccdata deadline."
+        }
+      ]
+    },
+    "operations": [
+      {
+        "id": "move_a_l4_file_to_week5",
+        "capability": "move_module",
+        "target": "140147:module:4309255",
+        "summary": "Move the Crafting Immersive VR Experiences lecture file into Class A Week 5.",
+        "scope": "requested",
+        "reason": "The internal syllabus places Crafting Immersive VR Experiences and storyboarding in Week 5, not Week 4 or Week 6.",
+        "depends_on": [],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607929",
+          "before_module": "140147:module:4312016",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_storyboard_file_to_week5",
+        "capability": "move_module",
+        "target": "140147:module:4254908",
+        "summary": "Move Workshop 4: Storyboard Development into Class A Week 5.",
+        "scope": "requested",
+        "reason": "The internal syllabus lists Workshop 4: Storyboard Development in Week 5.",
+        "depends_on": [
+          "move_a_l4_file_to_week5"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607929",
+          "before_module": "140147:module:4312016",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_workshop4_reference_to_week5",
+        "capability": "move_module",
+        "target": "140147:module:4254909",
+        "summary": "Move the Workshop IV reference video into Class A Week 5 with the storyboard workshop materials.",
+        "scope": "requested",
+        "reason": "The reference video is part of the storyboard workshop material set that aligns to Week 5 in the internal syllabus.",
+        "depends_on": [
+          "move_a_storyboard_file_to_week5"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607929",
+          "before_module": "140147:module:4312016",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_lecture4_url_to_week5",
+        "capability": "move_module",
+        "target": "140147:module:4254910",
+        "summary": "Move the Crafting Immersive VR Experiences lecture URL into Class A Week 5.",
+        "scope": "requested",
+        "reason": "The internal syllabus places the Crafting Immersive VR Experiences lecture in Week 5; the legacy lecture number is not treated as a week number.",
+        "depends_on": [
+          "move_a_workshop4_reference_to_week5"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607929",
+          "before_module": "140147:module:4312016",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_menti_to_week5",
+        "capability": "move_module",
+        "target": "140147:module:4254911",
+        "summary": "Move the Menti Survey file into Class A Week 5 with the Crafting Immersive VR Experiences materials.",
+        "scope": "requested",
+        "reason": "The Menti Survey is part of the same inspected lecture/workshop material group aligned to Week 5 by topic.",
+        "depends_on": [
+          "move_a_lecture4_url_to_week5"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607929",
+          "before_module": "140147:module:4312016",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_prototype_submission_to_week6",
+        "capability": "move_module",
+        "target": "140147:module:4312016",
+        "summary": "Move Prototype Presentation Submission into Class A Week 6.",
+        "scope": "requested",
+        "reason": "The internal syllabus lists Prototype Presentation and prototype video due one day before the Week 6 class.",
+        "depends_on": [],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607931",
+          "before_module": "140147:module:4254922",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_prototype_file_to_week6",
+        "capability": "move_module",
+        "target": "140147:module:4254918",
+        "summary": "Move the Prototype Presentation file into Class A Week 6.",
+        "scope": "requested",
+        "reason": "The internal syllabus places Prototype Presentation in Week 6.",
+        "depends_on": [
+          "move_a_prototype_submission_to_week6"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607931",
+          "before_module": "140147:module:4254922",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_prototype_reference_to_week6",
+        "capability": "move_module",
+        "target": "140147:module:4254919",
+        "summary": "Move the Prototype Reference Video into Class A Week 6.",
+        "scope": "requested",
+        "reason": "The reference video supports the Week 6 Prototype Presentation milestone in the internal syllabus.",
+        "depends_on": [
+          "move_a_prototype_file_to_week6"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607931",
+          "before_module": "140147:module:4254922",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_prototype_video_to_week6",
+        "capability": "move_module",
+        "target": "140147:module:4254920",
+        "summary": "Move Prototype Video Submission into Class A Week 6.",
+        "scope": "requested",
+        "reason": "The internal syllabus lists the prototype video deadline with the Week 6 Prototype Presentation milestone.",
+        "depends_on": [
+          "move_a_prototype_reference_to_week6"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607931",
+          "before_module": "140147:module:4254922",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_prototype_voting_to_week6",
+        "capability": "move_module",
+        "target": "140147:module:4254921",
+        "summary": "Move the prototype voting questionnaire into Class A Week 6 with the prototype presentation materials.",
+        "scope": "requested",
+        "reason": "The voting questionnaire belongs to the prototype presentation activity set aligned to Week 6.",
+        "depends_on": [
+          "move_a_prototype_video_to_week6"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607931",
+          "before_module": "140147:module:4254922",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_w3_slides_to_week6",
+        "capability": "move_module",
+        "target": "140147:module:4254903",
+        "summary": "Move XRCC Workshop 3 Slides into Class A Week 6.",
+        "scope": "requested",
+        "reason": "The internal syllabus places XRCC tutorial 3 in Week 6; the inspected file title identifies this as tutorial 3 material.",
+        "depends_on": [
+          "move_a_prototype_voting_to_week6"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607931",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_w3_tutorial_to_week6",
+        "capability": "move_module",
+        "target": "140147:module:4254904",
+        "summary": "Move Workshop 3: XRCC tutorial 3 into Class A Week 6.",
+        "scope": "requested",
+        "reason": "The internal syllabus places XRCC tutorial 3 in Week 6; the workshop number is not used as the week number.",
+        "depends_on": [
+          "move_a_w3_slides_to_week6"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607931",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_w3_starter_to_week6",
+        "capability": "move_module",
+        "target": "140147:module:4254905",
+        "summary": "Move XRCC Workshop 3 Starter into Class A Week 6.",
+        "scope": "requested",
+        "reason": "The starter file is part of the XRCC tutorial 3 material set placed in Week 6 by the internal syllabus.",
+        "depends_on": [
+          "move_a_w3_tutorial_to_week6"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607931",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_w3_ccdata_to_week6",
+        "capability": "move_module",
+        "target": "140147:module:4298597",
+        "summary": "Move Workshop3 XRCC ccdata File Submission into Class A Week 6.",
+        "scope": "requested",
+        "reason": "The submission portal is tied to XRCC tutorial 3, which the internal syllabus places in Week 6.",
+        "depends_on": [
+          "move_a_w3_starter_to_week6"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607931",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_w3_quiz_to_week6",
+        "capability": "move_module",
+        "target": "140147:module:4254907",
+        "summary": "Move XRCC Workshop In-class Quiz into Class A Week 6 with XRCC tutorial 3.",
+        "scope": "requested",
+        "reason": "The quiz is part of the XRCC workshop material group aligned to Week 6 by the internal syllabus.",
+        "depends_on": [
+          "move_a_w3_ccdata_to_week6"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607931",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_workshop_iv_slides_to_week8",
+        "capability": "move_module",
+        "target": "140147:module:4254913",
+        "summary": "Move Workshop IV Slides into Class A Week 8.",
+        "scope": "requested",
+        "reason": "The inspected file name refers to generative AI application in VR, matching the Week 8 internal syllabus topic on VR applications and AI in system engineering.",
+        "depends_on": [],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607933",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_workshop_iv_tutorial_to_week8",
+        "capability": "move_module",
+        "target": "140147:module:4254914",
+        "summary": "Move XRCC Workshop IV Tutorial into Class A Week 8.",
+        "scope": "requested",
+        "reason": "The owner-confirmed mapping and the internal syllabus place XRCC tutorial 4 in Week 8.",
+        "depends_on": [
+          "move_a_workshop_iv_slides_to_week8"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607933",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_w5_tutorial4_to_week8",
+        "capability": "move_module",
+        "target": "140147:module:4254915",
+        "summary": "Move Workshop 5: XRCC tutorial 4 into Class A Week 8.",
+        "scope": "requested",
+        "reason": "The owner-confirmed mapping and the internal syllabus place XRCC tutorial 4 in Week 8; the legacy workshop number is not treated as a week number.",
+        "depends_on": [
+          "move_a_workshop_iv_tutorial_to_week8"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607933",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_w5_tutorial4_ccdata_to_week8",
+        "capability": "move_module",
+        "target": "140147:module:4254916",
+        "summary": "Move Workshop 5: XRCC tutorial 4 ccdata File Submission into Class A Week 8.",
+        "scope": "requested",
+        "reason": "This submission portal is tied to XRCC tutorial 4, which the internal syllabus places in Week 8.",
+        "depends_on": [
+          "move_a_w5_tutorial4_to_week8"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607933",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_demo_poster_to_week9",
+        "capability": "move_module",
+        "target": "140147:module:4254924",
+        "summary": "Move Demo Day Poster into Class A Week 9.",
+        "scope": "requested",
+        "reason": "The internal syllabus lists Poster in the Week 9 deadline column.",
+        "depends_on": [],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607934",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_interaction_reference_to_week10",
+        "capability": "move_module",
+        "target": "140147:module:4254923",
+        "summary": "Move Project Interaction Reference Video into Class A Week 10.",
+        "scope": "requested",
+        "reason": "The internal syllabus places Project Interaction development demo at HMD and the interaction demo milestone in Week 10.",
+        "depends_on": [
+          "move_a_prototype_voting_to_week6"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607935",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_interaction_ccdata_to_week10",
+        "capability": "move_module",
+        "target": "140147:module:4254925",
+        "summary": "Move CCDATA File Submission for Interactive Presentation into Class A Week 10.",
+        "scope": "requested",
+        "reason": "The submission portal is tied to the Week 10 interaction demo milestone in the internal syllabus.",
+        "depends_on": [
+          "move_a_interaction_reference_to_week10"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607935",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_interactive_assignment_to_week10",
+        "capability": "move_module",
+        "target": "140147:module:4254926",
+        "summary": "Move Interactive Presentation into Class A Week 10.",
+        "scope": "requested",
+        "reason": "The internal syllabus places the interaction demo milestone in Week 10.",
+        "depends_on": [
+          "move_a_interaction_ccdata_to_week10"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1607935",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_equipment_borrow_to_week11",
+        "capability": "move_module",
+        "target": "140147:module:4254927",
+        "summary": "Move Equipment Borrow Form into Class A Week 11.",
+        "scope": "requested",
+        "reason": "The internal syllabus lists Equipment borrow form in the Week 11 deadline column.",
+        "depends_on": [
+          "move_a_interactive_assignment_to_week10"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1692713",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_demo_reel_to_week13",
+        "capability": "move_module",
+        "target": "140147:module:4254929",
+        "summary": "Move Demo Reel Video Submission into Class A Week 13.",
+        "scope": "requested",
+        "reason": "The internal syllabus lists Demo Reel Video one day before the Week 13 final project presentation.",
+        "depends_on": [],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1692715",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_final_project_submission_to_week13",
+        "capability": "move_module",
+        "target": "140147:module:4254932",
+        "summary": "Move Final Project Submission into Class A Week 13.",
+        "scope": "requested",
+        "reason": "The internal syllabus lists final project ccdata in the Week 13 deadline column.",
+        "depends_on": [
+          "move_a_demo_reel_to_week13"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1692715",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      },
+      {
+        "id": "move_a_peer_evaluation_to_week13",
+        "capability": "move_module",
+        "target": "140147:module:4254879",
+        "summary": "Move Peer evaluation into Class A Week 13.",
+        "scope": "requested",
+        "reason": "The independent review found this was previously omitted; the internal syllabus explicitly lists peer evaluation in the Week 13 deadline column.",
+        "depends_on": [
+          "move_a_final_project_submission_to_week13"
+        ],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1692715",
+          "before_module": "",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "file_id": "file:6fa752cfb1e52eb1d004",
+        "relative_path": "00 Overview/DASE7137_1_Course_Syllabus_Internal.docx",
+        "status": "read",
+        "table_rows": [
+          {
+            "row_id": "t1:r1",
+            "cells": [
+              "Miss Sonia Sun"
+            ]
+          },
+          {
+            "row_id": "t1:r2",
+            "cells": [
+              "Mr. Angus Zou"
+            ]
+          },
+          {
+            "row_id": "t1:r3",
+            "cells": [
+              "Miss Bo Hui "
+            ]
+          },
+          {
+            "row_id": "t1:r4",
+            "cells": [
+              "Miss Elly He\nMr. Rafi\nMiss Luo yi"
+            ]
+          },
+          {
+            "row_id": "t2:r1",
+            "cells": [
+              "",
+              ""
+            ]
+          },
+          {
+            "row_id": "t2:r2",
+            "cells": [
+              "Assignments\n&\nGroup Project  \n(Total 50%)  ",
+              "[10 % Total] continuous assessments on techniques and concepts   \n 1% *3 Quiz + 7% *1 Assignments  \n[40%] Group Project (Milestones):   \nDesign spec., Interim work/ presentation/ demo / peer evaluation"
+            ]
+          },
+          {
+            "row_id": "t2:r3",
+            "cells": [
+              "Examination (50%)  ",
+              "Paper exam based on reading list, lectures and workshops."
+            ]
+          },
+          {
+            "row_id": "t3:r1",
+            "cells": [
+              "Week",
+              "Date",
+              "Lecture Theme ",
+              "Tutorials and Workshop  ",
+              "DDL"
+            ]
+          },
+          {
+            "row_id": "t3:r2",
+            "cells": [
+              "1",
+              "Sep 1",
+              "L1: Introduction to VR",
+              "Workshop 1: Lab Visit and Google Cardboard",
+              ""
+            ]
+          },
+          {
+            "row_id": "t3:r3",
+            "cells": [
+              "2",
+              "Sep 8",
+              "L2: Guest Lecture ",
+              "Workshop 2: XRCC tutorial 1",
+              ""
+            ]
+          },
+          {
+            "row_id": "t3:r4",
+            "cells": [
+              "3",
+              "Sep 15",
+              "L3: History of VR",
+              "Workshop 3: XRCC tutorial 2",
+              "Grouping"
+            ]
+          },
+          {
+            "row_id": "t3:r5",
+            "cells": [
+              "4",
+              "Sep 22",
+              "-",
+              "-",
+              ""
+            ]
+          },
+          {
+            "row_id": "t3:r6",
+            "cells": [
+              "5",
+              "Sep 29",
+              "L5: Crafting Immersive VR Experiences: Storyboarding and Design Principles",
+              "Workshop 4: Storyboard Development",
+              "Topic Selection"
+            ]
+          },
+          {
+            "row_id": "t3:r7",
+            "cells": [
+              "6",
+              "Oct 6",
+              "Prototype Presentation",
+              "Workshop 5: XRCC tutorial 3",
+              "Prototype video (1 day before), Assignment"
+            ]
+          },
+          {
+            "row_id": "t3:r8",
+            "cells": [
+              "7",
+              "Oct 13",
+              "Reading Week",
+              "Reading Week",
+              ""
+            ]
+          },
+          {
+            "row_id": "t3:r9",
+            "cells": [
+              "8",
+              "Oct 20",
+              "L6: VR Applications and AI in System Engineering ",
+              "Workshop 6: XRCC tutorial 4",
+              ""
+            ]
+          },
+          {
+            "row_id": "t3:r10",
+            "cells": [
+              "9",
+              "Oct 27",
+              "L7: VR Systems and Platforms",
+              "Group Development",
+              "Poster"
+            ]
+          },
+          {
+            "row_id": "t3:r11",
+            "cells": [
+              "10",
+              "Nov 3",
+              "Project Interaction development demo at HMD ",
+              "Group Development",
+              "Interaction Demo (1 day before)"
+            ]
+          },
+          {
+            "row_id": "t3:r12",
+            "cells": [
+              "11",
+              "Nov 10",
+              "Demo Day preparation (Final Test)",
+              "Demo Day preparation (Final Test)",
+              "Equipment borrow form"
+            ]
+          },
+          {
+            "row_id": "t3:r13",
+            "cells": [
+              "12",
+              "TBA",
+              "Project Demo Day",
+              "Project Demo Day",
+              ""
+            ]
+          },
+          {
+            "row_id": "t3:r14",
+            "cells": [
+              "13",
+              "Nov 24",
+              "Final Project presentation with demo reel",
+              "Final Project presentation with demo reel",
+              "Presentation slides (1 day before), Demo Reel Video (1 day before), Final project ccdata, peer evaluation"
+            ]
+          }
+        ]
+      }
+    ],
+    "blank_citations": 33
+  },
+  {
+    "plan_artifact": "8061d347b349457089010b2d31976b83",
+    "targets": {
+      "140147:module:4254872": {
+        "key": "140147:module:4254872",
+        "title": "Announcements  Forum",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254873": {
+        "key": "140147:module:4254873",
+        "title": "Course Forum",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254874": {
+        "key": "140147:module:4254874",
+        "title": "[IMPORTANT] Student Feedback on Teaching and Learning Survey  URL",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254875": {
+        "key": "140147:module:4254875",
+        "title": "Assignment Requirement  File",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254876": {
+        "key": "140147:module:4254876",
+        "title": "Assignment 1",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254877": {
+        "key": "140147:module:4254877",
+        "title": "Project Grouping  Group choice",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254878": {
+        "key": "140147:module:4254878",
+        "title": "Group Project Topic Selection  Choice",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254879": {
+        "key": "140147:module:4254879",
+        "title": "Peer evaluation  Peer Assessment",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254880": {
+        "key": "140147:module:4254880",
+        "title": "XRCC installation on your own laptop  Folder",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254881": {
+        "key": "140147:module:4254881",
+        "title": "Group Project Guidance  File",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254882": {
+        "key": "140147:module:4254882",
+        "title": "Guidelines on GenAI use in DASE7137 coursework  File",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254883": {
+        "key": "140147:module:4254883",
+        "title": "Bonus Documentation Submission  Assignment",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254885": {
+        "key": "140147:module:4254885",
+        "title": "Workshop Questionnaire",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254888": {
+        "key": "140147:module:4254888",
+        "title": "XRCC questionnaire  URL",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254984": {
+        "key": "140147:module:4254984",
+        "title": "Course Syllabus  File",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4317667": {
+        "key": "140147:module:4317667",
+        "title": "Laptop Borrowing Form  File",
+        "section_key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4280162": {
+        "key": "140147:module:4280162",
+        "title": "DASE7137A L1 Intro  File",
+        "section_key": "140147:section:1607926",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4261911": {
+        "key": "140147:module:4261911",
+        "title": "Cardboard Workshop  File",
+        "section_key": "140147:section:1607926",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4280164": {
+        "key": "140147:module:4280164",
+        "title": "DASE7137A L2 VR History  File",
+        "section_key": "140147:section:1607927",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254893": {
+        "key": "140147:module:4254893",
+        "title": "Workshop 1: XRCC tutorial 1  File",
+        "section_key": "140147:section:1607927",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254894": {
+        "key": "140147:module:4254894",
+        "title": "Workshop 1 Slides  File",
+        "section_key": "140147:section:1607927",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254895": {
+        "key": "140147:module:4254895",
+        "title": "Workshop 1 XR Testing Submission  Assignment",
+        "section_key": "140147:section:1607927",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4297225": {
+        "key": "140147:module:4297225",
+        "title": "DASE7137A L3 HumanPerception  File",
+        "section_key": "140147:section:1607928",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254898": {
+        "key": "140147:module:4254898",
+        "title": "Workshop 2:  XRCC tutorial 2  File",
+        "section_key": "140147:section:1607928",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254899": {
+        "key": "140147:module:4254899",
+        "title": "Workshop 2 Slides  File",
+        "section_key": "140147:section:1607928",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254901": {
+        "key": "140147:module:4254901",
+        "title": "Workshop II Reference Materials  URL",
+        "section_key": "140147:section:1607928",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4290431": {
+        "key": "140147:module:4290431",
+        "title": "Workshop2 XRCC ccdata File Submission  Assignment",
+        "section_key": "140147:section:1607928",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4309255": {
+        "key": "140147:module:4309255",
+        "title": "DASE7137 L4 Crafting-Immersive-VR-Experiences  File",
+        "section_key": "140147:section:1607930",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4312016": {
+        "key": "140147:module:4312016",
+        "title": "Prototype Presentation Submission  URL",
+        "section_key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254903": {
+        "key": "140147:module:4254903",
+        "title": "XRCC Workshop 3 Slides  File",
+        "section_key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254904": {
+        "key": "140147:module:4254904",
+        "title": "Workshop 3: XRCC tutorial 3  File",
+        "section_key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254905": {
+        "key": "140147:module:4254905",
+        "title": "XRCC Workshop 3 Starter  File",
+        "section_key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4298597": {
+        "key": "140147:module:4298597",
+        "title": "Workshop3 XRCC ccdata File Submission  Assignment",
+        "section_key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254907": {
+        "key": "140147:module:4254907",
+        "title": "XRCC Workshop In-class Quiz",
+        "section_key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254913": {
+        "key": "140147:module:4254913",
+        "title": "Workshop IV Slides  File",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254914": {
+        "key": "140147:module:4254914",
+        "title": "XRCC Workshop IV Tutorial  File",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254908": {
+        "key": "140147:module:4254908",
+        "title": "Workshop 4: Storyboard Development  File",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254909": {
+        "key": "140147:module:4254909",
+        "title": "Workshop IV Reference Video  URL",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254910": {
+        "key": "140147:module:4254910",
+        "title": "Lecture 4 Crafting Immersive VR Experiences  URL",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254911": {
+        "key": "140147:module:4254911",
+        "title": "Menti Survey  File",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254915": {
+        "key": "140147:module:4254915",
+        "title": "Workshop 5: XRCC tutorial 4  File",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254916": {
+        "key": "140147:module:4254916",
+        "title": "Workshop 5: XRCC tutorial 4 ccdata File Submission  URL",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4312009": {
+        "key": "140147:module:4312009",
+        "title": "Prototype Presentation Guidelines  File",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254922": {
+        "key": "140147:module:4254922",
+        "title": "Prototype Presentation  Assignment",
+        "section_key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254917": {
+        "key": "140147:module:4254917",
+        "title": "VR Workshop 7: Group Project  File",
+        "section_key": "140147:section:1607934",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254918": {
+        "key": "140147:module:4254918",
+        "title": "Prototype Presentation  File",
+        "section_key": "140147:section:1607935",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254919": {
+        "key": "140147:module:4254919",
+        "title": "Prototype Reference Video  URL",
+        "section_key": "140147:section:1607935",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254920": {
+        "key": "140147:module:4254920",
+        "title": "Prototype Video Submission  URL",
+        "section_key": "140147:section:1607935",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254921": {
+        "key": "140147:module:4254921",
+        "title": "Voting for the most novel prototype topic  Questionnaire",
+        "section_key": "140147:section:1607935",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254923": {
+        "key": "140147:module:4254923",
+        "title": "Project Interaction Reference Video  URL",
+        "section_key": "140147:section:1692713",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254924": {
+        "key": "140147:module:4254924",
+        "title": "Demo Day Poster  Assignment",
+        "section_key": "140147:section:1692713",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254925": {
+        "key": "140147:module:4254925",
+        "title": "CCDATA File Submission for Interactive Presentation  URL",
+        "section_key": "140147:section:1692713",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254926": {
+        "key": "140147:module:4254926",
+        "title": "Interactive Presentation  Assignment",
+        "section_key": "140147:section:1692713",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254927": {
+        "key": "140147:module:4254927",
+        "title": "Equipment Borrow Form  URL",
+        "section_key": "140147:section:1692714",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254928": {
+        "key": "140147:module:4254928",
+        "title": "Demo Day Instruction  File",
+        "section_key": "140147:section:1692714",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254929": {
+        "key": "140147:module:4254929",
+        "title": "Demo Reel Video Submission  URL",
+        "section_key": "140147:section:1692714",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254930": {
+        "key": "140147:module:4254930",
+        "title": "Final Presentation Slides Submission  Assignment",
+        "section_key": "140147:section:1692715",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254931": {
+        "key": "140147:module:4254931",
+        "title": "Final Presentation  Assignment",
+        "section_key": "140147:section:1692715",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:module:4254932": {
+        "key": "140147:module:4254932",
+        "title": "Final Project Submission  URL",
+        "section_key": "140147:section:1692716",
+        "course_id": "140147",
+        "kind": "module"
+      },
+      "140147:section:1607925": {
+        "title": "General",
+        "key": "140147:section:1607925",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607926": {
+        "title": "Week 1",
+        "key": "140147:section:1607926",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607927": {
+        "title": "Week 2",
+        "key": "140147:section:1607927",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607928": {
+        "title": "Week 3",
+        "key": "140147:section:1607928",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607930": {
+        "title": "Week 4",
+        "key": "140147:section:1607930",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607929": {
+        "title": "Week 5",
+        "key": "140147:section:1607929",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607931": {
+        "title": "Week 6",
+        "key": "140147:section:1607931",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607932": {
+        "title": "Week 7",
+        "key": "140147:section:1607932",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607933": {
+        "title": "Week 8",
+        "key": "140147:section:1607933",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607934": {
+        "title": "Week 9",
+        "key": "140147:section:1607934",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1607935": {
+        "title": "Week 10",
+        "key": "140147:section:1607935",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1692713": {
+        "title": "Week 11",
+        "key": "140147:section:1692713",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1692714": {
+        "title": "Week 12",
+        "key": "140147:section:1692714",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1692715": {
+        "title": "Week 13",
+        "key": "140147:section:1692715",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140147:section:1692716": {
+        "title": "Week 14",
+        "key": "140147:section:1692716",
+        "course_id": "140147",
+        "kind": "section"
+      },
+      "140148:module:4255015": {
+        "key": "140148:module:4255015",
+        "title": "Announcements  Forum",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255016": {
+        "key": "140148:module:4255016",
+        "title": "Course Forum",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255017": {
+        "key": "140148:module:4255017",
+        "title": "[IMPORTANT] Student Feedback on Teaching and Learning Survey  URL",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255018": {
+        "key": "140148:module:4255018",
+        "title": "Assignment Requirement  File",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255019": {
+        "key": "140148:module:4255019",
+        "title": "Assignment 1",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255020": {
+        "key": "140148:module:4255020",
+        "title": "Project Grouping  Group choice",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255021": {
+        "key": "140148:module:4255021",
+        "title": "Group Project Topic Selection  Choice",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255022": {
+        "key": "140148:module:4255022",
+        "title": "Peer evaluation  Peer Assessment",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255023": {
+        "key": "140148:module:4255023",
+        "title": "XRCC installation on your own laptop  Folder",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255024": {
+        "key": "140148:module:4255024",
+        "title": "Group Project Guidance  File",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255025": {
+        "key": "140148:module:4255025",
+        "title": "Guidelines on GenAI use in DASE7137 coursework  File",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255026": {
+        "key": "140148:module:4255026",
+        "title": "Bonus Documentation Submission  Assignment",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255027": {
+        "key": "140148:module:4255027",
+        "title": "Workshop Questionnaire",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255028": {
+        "key": "140148:module:4255028",
+        "title": "XRCC questionnaire  URL",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255030": {
+        "key": "140148:module:4255030",
+        "title": "Course Syllabus  File",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4317674": {
+        "key": "140148:module:4317674",
+        "title": "Laptop Borrowing Form  File",
+        "section_key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4280166": {
+        "key": "140148:module:4280166",
+        "title": "DASE7137B L1 Intro  File",
+        "section_key": "140148:section:1607937",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4261930": {
+        "key": "140148:module:4261930",
+        "title": "Cardboard Workshop  File",
+        "section_key": "140148:section:1607937",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4287405": {
+        "key": "140148:module:4287405",
+        "title": "DASE7137B L2 VR History  File",
+        "section_key": "140148:section:1607938",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255034": {
+        "key": "140148:module:4255034",
+        "title": "Workshop 1: XRCC tutorial 1  File",
+        "section_key": "140148:section:1607938",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255035": {
+        "key": "140148:module:4255035",
+        "title": "Workshop 1 Slides  File",
+        "section_key": "140148:section:1607938",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255036": {
+        "key": "140148:module:4255036",
+        "title": "Workshop 1 XR Testing Submission  Assignment",
+        "section_key": "140148:section:1607938",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4297767": {
+        "key": "140148:module:4297767",
+        "title": "DASE7137B L3 HumanPerception  File",
+        "section_key": "140148:section:1607939",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255039": {
+        "key": "140148:module:4255039",
+        "title": "Workshop 2:  XRCC tutorial 2  File",
+        "section_key": "140148:section:1607939",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255040": {
+        "key": "140148:module:4255040",
+        "title": "Workshop 2 Slides  File",
+        "section_key": "140148:section:1607939",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255042": {
+        "key": "140148:module:4255042",
+        "title": "Workshop II Reference Materials  URL",
+        "section_key": "140148:section:1607939",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4290447": {
+        "key": "140148:module:4290447",
+        "title": "Workshop2 XRCC ccdata File Submission  Assignment",
+        "section_key": "140148:section:1607939",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4309286": {
+        "key": "140148:module:4309286",
+        "title": "DASE7137 L4 Crafting-Immersive-VR-Experiences  File",
+        "section_key": "140148:section:1607941",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255049": {
+        "key": "140148:module:4255049",
+        "title": "Workshop 4: Storyboard Development  File",
+        "section_key": "140148:section:1607941",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255050": {
+        "key": "140148:module:4255050",
+        "title": "Workshop IV Reference Video  URL",
+        "section_key": "140148:section:1607941",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255051": {
+        "key": "140148:module:4255051",
+        "title": "Lecture 5 Crafting Immersive VR Experiences  URL",
+        "section_key": "140148:section:1607941",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255052": {
+        "key": "140148:module:4255052",
+        "title": "Menti Survey  File",
+        "section_key": "140148:section:1607941",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4312028": {
+        "key": "140148:module:4312028",
+        "title": "Prototype Presentation Guidelines  File",
+        "section_key": "140148:section:1607940",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4312047": {
+        "key": "140148:module:4312047",
+        "title": "Prototype Presentation Submission  URL",
+        "section_key": "140148:section:1607940",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4298604": {
+        "key": "140148:module:4298604",
+        "title": "Workshop3 XRCC ccdata File Submission  Assignment",
+        "section_key": "140148:section:1607940",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255048": {
+        "key": "140148:module:4255048",
+        "title": "XRCC Workshop In-class Quiz",
+        "section_key": "140148:section:1607940",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255044": {
+        "key": "140148:module:4255044",
+        "title": "XRCC Workshop 3 Slides  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255045": {
+        "key": "140148:module:4255045",
+        "title": "Workshop 3: XRCC tutorial 3  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255046": {
+        "key": "140148:module:4255046",
+        "title": "XRCC Workshop 3 Starter  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255054": {
+        "key": "140148:module:4255054",
+        "title": "Workshop IV Slides  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255055": {
+        "key": "140148:module:4255055",
+        "title": "XRCC Workshop IV Tutorial  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255056": {
+        "key": "140148:module:4255056",
+        "title": "Workshop 5: XRCC tutorial 4  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255057": {
+        "key": "140148:module:4255057",
+        "title": "Workshop 5: XRCC tutorial 4 ccdata File Submission  URL",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255058": {
+        "key": "140148:module:4255058",
+        "title": "VR Workshop 7: Group Project  File",
+        "section_key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255059": {
+        "key": "140148:module:4255059",
+        "title": "Prototype Presentation  File",
+        "section_key": "140148:section:1607945",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255060": {
+        "key": "140148:module:4255060",
+        "title": "Prototype Reference Video  URL",
+        "section_key": "140148:section:1607945",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255061": {
+        "key": "140148:module:4255061",
+        "title": "Prototype Video Submission  URL",
+        "section_key": "140148:section:1607945",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255062": {
+        "key": "140148:module:4255062",
+        "title": "Voting for the most novel prototype topic  Questionnaire",
+        "section_key": "140148:section:1607945",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255063": {
+        "key": "140148:module:4255063",
+        "title": "Prototype Presentation  Assignment",
+        "section_key": "140148:section:1607945",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255064": {
+        "key": "140148:module:4255064",
+        "title": "Project Interaction Reference Video  URL",
+        "section_key": "140148:section:1692730",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255065": {
+        "key": "140148:module:4255065",
+        "title": "Demo Day Poster  Assignment",
+        "section_key": "140148:section:1692730",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255066": {
+        "key": "140148:module:4255066",
+        "title": "CCDATA File Submission for Interactive Presentation  URL",
+        "section_key": "140148:section:1692730",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255067": {
+        "key": "140148:module:4255067",
+        "title": "Interactive Presentation  Assignment",
+        "section_key": "140148:section:1692730",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255068": {
+        "key": "140148:module:4255068",
+        "title": "Equipment Borrow Form  URL",
+        "section_key": "140148:section:1692731",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255069": {
+        "key": "140148:module:4255069",
+        "title": "Demo Day Instruction  File",
+        "section_key": "140148:section:1692731",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255070": {
+        "key": "140148:module:4255070",
+        "title": "Demo Reel Video Submission  URL",
+        "section_key": "140148:section:1692731",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255071": {
+        "key": "140148:module:4255071",
+        "title": "Final Presentation Slides Submission  Assignment",
+        "section_key": "140148:section:1692732",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255072": {
+        "key": "140148:module:4255072",
+        "title": "Final Presentation  Assignment",
+        "section_key": "140148:section:1692732",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:module:4255073": {
+        "key": "140148:module:4255073",
+        "title": "Final Project Submission  URL",
+        "section_key": "140148:section:1692733",
+        "course_id": "140148",
+        "kind": "module"
+      },
+      "140148:section:1607936": {
+        "title": "General",
+        "key": "140148:section:1607936",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607937": {
+        "title": "Week 1",
+        "key": "140148:section:1607937",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607938": {
+        "title": "Week 2",
+        "key": "140148:section:1607938",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607939": {
+        "title": "Week 3",
+        "key": "140148:section:1607939",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607941": {
+        "title": "Week 4",
+        "key": "140148:section:1607941",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607940": {
+        "title": "Week 5",
+        "key": "140148:section:1607940",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607946": {
+        "title": "Week 6",
+        "key": "140148:section:1607946",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607942": {
+        "title": "Week 7",
+        "key": "140148:section:1607942",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607943": {
+        "title": "Week 8",
+        "key": "140148:section:1607943",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607944": {
+        "title": "Week 9",
+        "key": "140148:section:1607944",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1607945": {
+        "title": "Week 10",
+        "key": "140148:section:1607945",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1692730": {
+        "title": "Week 11",
+        "key": "140148:section:1692730",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1692731": {
+        "title": "Week 12",
+        "key": "140148:section:1692731",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1692732": {
+        "title": "Week 13",
+        "key": "140148:section:1692732",
+        "course_id": "140148",
+        "kind": "section"
+      },
+      "140148:section:1692733": {
+        "title": "Week 14",
+        "key": "140148:section:1692733",
+        "course_id": "140148",
+        "kind": "section"
+      }
+    },
+    "alignment": {
+      "required": true,
+      "course_ids": [
+        "140147"
+      ],
+      "sources": [
+        {
+          "course_id": "140147",
+          "file_id": "file:6fa752cfb1e52eb1d004"
+        }
+      ],
+      "items": [
+        {
+          "target": "140147:module:4254872",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General forum activity; the correction is for Class A course files from Week 4 onward, not forums."
+        },
+        {
+          "target": "140147:module:4254873",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General course forum; not a week-sequenced course file."
+        },
+        {
+          "target": "140147:module:4254874",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Student feedback survey URL in General; unrelated to the syllabus file sequence correction."
+        },
+        {
+          "target": "140147:module:4254875",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General assignment requirement file; not part of the Week 4 onward sequence correction."
+        },
+        {
+          "target": "140147:module:4254876",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General assignment activity; the current request is file sequence, not assignment timing."
+        },
+        {
+          "target": "140147:module:4254877",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General project grouping activity; not a file sequence item."
+        },
+        {
+          "target": "140147:module:4254878",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General project topic choice; not a course file move."
+        },
+        {
+          "target": "140147:module:4254879",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General peer assessment activity; the request covers file sequence, not this assessment activity."
+        },
+        {
+          "target": "140147:module:4254880",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General installation folder; not part of Week 4 onward syllabus sequencing."
+        },
+        {
+          "target": "140147:module:4254881",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General group project guidance file; not a Week 4 onward misplaced weekly material."
+        },
+        {
+          "target": "140147:module:4254882",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General GenAI guideline file; not a weekly syllabus placement item."
+        },
+        {
+          "target": "140147:module:4254883",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General bonus assignment; not a requested file-sequence item."
+        },
+        {
+          "target": "140147:module:4254885",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General questionnaire; not a file material placement."
+        },
+        {
+          "target": "140147:module:4254888",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "General XRCC questionnaire URL; not a weekly file sequence item."
+        },
+        {
+          "target": "140147:module:4254984",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Course syllabus file in General; not a moved weekly teaching material."
+        },
+        {
+          "target": "140147:module:4317667",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Laptop borrowing form in General; not part of the requested Week 4 onward file sequence correction."
+        },
+        {
+          "target": "140147:module:4280162",
+          "target_section": "140147:section:1607926",
+          "file_id": "",
+          "row_id": "t3:r2",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 1 is explicitly to remain unchanged unless directly affected; this file matches the Week 1 introductory lecture row."
+        },
+        {
+          "target": "140147:module:4261911",
+          "target_section": "140147:section:1607926",
+          "file_id": "",
+          "row_id": "t3:r2",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 1 is explicitly to remain unchanged unless directly affected; this file matches the Week 1 lab visit and Google Cardboard workshop row."
+        },
+        {
+          "target": "140147:module:4280164",
+          "target_section": "140147:section:1607927",
+          "file_id": "",
+          "row_id": "t3:r3",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 2 is explicitly to remain unchanged unless directly affected."
+        },
+        {
+          "target": "140147:module:4254893",
+          "target_section": "140147:section:1607927",
+          "file_id": "",
+          "row_id": "t3:r3",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 2 is explicitly to remain unchanged unless directly affected."
+        },
+        {
+          "target": "140147:module:4254894",
+          "target_section": "140147:section:1607927",
+          "file_id": "",
+          "row_id": "t3:r3",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 2 is explicitly to remain unchanged unless directly affected."
+        },
+        {
+          "target": "140147:module:4254895",
+          "target_section": "140147:section:1607927",
+          "file_id": "",
+          "row_id": "t3:r3",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Submission portal in Week 2; the request is file sequence and Week 1 to Week 3 are to remain unchanged."
+        },
+        {
+          "target": "140147:module:4297225",
+          "target_section": "140147:section:1607928",
+          "file_id": "",
+          "row_id": "t3:r4",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 3 is explicitly to remain unchanged unless directly affected."
+        },
+        {
+          "target": "140147:module:4254898",
+          "target_section": "140147:section:1607928",
+          "file_id": "",
+          "row_id": "t3:r4",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 3 is explicitly to remain unchanged unless directly affected."
+        },
+        {
+          "target": "140147:module:4254899",
+          "target_section": "140147:section:1607928",
+          "file_id": "",
+          "row_id": "t3:r4",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 3 is explicitly to remain unchanged unless directly affected."
+        },
+        {
+          "target": "140147:module:4254901",
+          "target_section": "140147:section:1607928",
+          "file_id": "",
+          "row_id": "t3:r4",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Week 3 is explicitly to remain unchanged unless directly affected."
+        },
+        {
+          "target": "140147:module:4290431",
+          "target_section": "140147:section:1607928",
+          "file_id": "",
+          "row_id": "t3:r4",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Submission portal in Week 3; the current request is file sequence and Week 1 to Week 3 are to remain unchanged."
+        },
+        {
+          "target": "140147:module:4309255",
+          "target_section": "140147:section:1607929",
+          "file_id": "",
+          "row_id": "t3:r6",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "Crafting Immersive VR Experiences matches the Week 5 lecture theme in the authoritative syllabus. It is currently already in a shown Week 4 section but belongs in Week 5; this accepted placement decision stands from the previous review and is not repeated here because the present rejection only concerns the Demo Day/final presentation support file."
+        },
+        {
+          "target": "140147:module:4312016",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "Prototype Presentation Submission relates to the Week 6 Prototype Presentation row and the prototype video deadline one day before. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4254903",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "XRCC Workshop 3 materials match the Week 6 Workshop 5: XRCC tutorial 3 row. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4254904",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "XRCC tutorial 3 matches the Week 6 workshop row, not the legacy workshop number. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4254905",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "The starter file belongs with XRCC tutorial 3, which the authoritative syllabus places in Week 6. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4298597",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Submission portal for XRCC Workshop 3; the owner requested file sequence and files-only visibility does not automatically include submission portals."
+        },
+        {
+          "target": "140147:module:4254907",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Quiz activity; the request is file sequence and files-only visibility does not automatically include quizzes."
+        },
+        {
+          "target": "140147:module:4254913",
+          "target_section": "140147:section:1607933",
+          "file_id": "",
+          "row_id": "t3:r9",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Workshop IV Generative AI materials align with Week 8 L6 VR Applications and AI in System Engineering / XRCC tutorial 4. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4254914",
+          "target_section": "140147:section:1607933",
+          "file_id": "",
+          "row_id": "t3:r9",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "XRCC Workshop IV Tutorial corresponds to XRCC tutorial 4, which the authoritative syllabus places in Week 8. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4254908",
+          "target_section": "140147:section:1607929",
+          "file_id": "",
+          "row_id": "t3:r6",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "Storyboard Development matches the Week 5 Workshop 4: Storyboard Development row. It was previously moved to Week 6, so the accepted corrective placement is Week 5; no new operation is proposed in this narrow recovery output."
+        },
+        {
+          "target": "140147:module:4254909",
+          "target_section": "140147:section:1607929",
+          "file_id": "",
+          "row_id": "t3:r6",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "The Workshop IV reference video belongs with Storyboard Development and Crafting Immersive VR Experiences, which match the Week 5 row. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4254910",
+          "target_section": "140147:section:1607929",
+          "file_id": "",
+          "row_id": "t3:r6",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "Crafting Immersive VR Experiences matches the Week 5 lecture theme. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4254911",
+          "target_section": "140147:section:1607929",
+          "file_id": "",
+          "row_id": "t3:r6",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "The Menti Survey sits with the Crafting Immersive VR Experiences / Storyboard Development teaching materials, which match Week 5. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4254915",
+          "target_section": "140147:section:1607933",
+          "file_id": "",
+          "row_id": "t3:r9",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "XRCC tutorial 4 matches Week 8 in the authoritative syllabus. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4254916",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r9",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Submission URL for XRCC tutorial 4; the owner requested file sequence and files-only visibility does not automatically include submission portals."
+        },
+        {
+          "target": "140147:module:4312009",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "Prototype Presentation Guidelines match the Week 6 Prototype Presentation milestone and are already verified in Week 6; no repeat move is proposed."
+        },
+        {
+          "target": "140147:module:4254922",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Prototype Presentation assignment activity; the current request is file sequence, and assignment portals are preserved unless explicitly requested."
+        },
+        {
+          "target": "140147:module:4254917",
+          "target_section": "140147:section:1692714",
+          "file_id": "",
+          "row_id": "t3:r13",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "The observed resource file is Demo Day and Final Presentation. The authoritative syllabus places Project Demo Day in Week 12 and Final Project presentation in Week 13; because this single support file spans both milestones, it is placed at Week 12, the first matching milestone before both events."
+        },
+        {
+          "target": "140147:module:4254918",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "Prototype Presentation file matches the Week 6 Prototype Presentation row. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4254919",
+          "target_section": "140147:section:1607931",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "shown",
+          "reason": "Prototype reference video supports the Week 6 Prototype Presentation milestone. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4254920",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Prototype Video Submission is a submission URL, not a file material; files-only visibility does not automatically include it."
+        },
+        {
+          "target": "140147:module:4254921",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r7",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Voting questionnaire for prototype topic; not a file material."
+        },
+        {
+          "target": "140147:module:4254923",
+          "target_section": "140147:section:1607935",
+          "file_id": "",
+          "row_id": "t3:r11",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Project Interaction Reference Video matches the Week 10 Project Interaction development demo milestone. Accepted placement decision stands; no new operation is proposed here."
+        },
+        {
+          "target": "140147:module:4254924",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r10",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Demo Day Poster is an assignment activity tied to the Week 9 poster deadline; the current request is file sequence, so this assignment is preserved."
+        },
+        {
+          "target": "140147:module:4254925",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r11",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "CCDATA submission URL for interactive presentation; not a file material."
+        },
+        {
+          "target": "140147:module:4254926",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r11",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Interactive Presentation assignment; the current request is file sequence, not assignment movement."
+        },
+        {
+          "target": "140147:module:4254927",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r12",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Equipment Borrow Form is a URL/form milestone in Week 11, not a file resource."
+        },
+        {
+          "target": "140147:module:4254928",
+          "target_section": "140147:section:1692714",
+          "file_id": "",
+          "row_id": "t3:r13",
+          "week_column": 0,
+          "disposition": "place",
+          "visibility": "preserve",
+          "reason": "Demo Day Instruction matches the Week 12 Project Demo Day row and is already in Week 12."
+        },
+        {
+          "target": "140147:module:4254929",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r14",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Demo Reel Video Submission is a submission URL tied to the Week 13 final presentation milestone, not a file resource."
+        },
+        {
+          "target": "140147:module:4254930",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r14",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Final Presentation Slides Submission is an assignment activity; the current request is file sequence, so it is preserved."
+        },
+        {
+          "target": "140147:module:4254931",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r14",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Final Presentation assignment activity; not a file material move."
+        },
+        {
+          "target": "140147:module:4254932",
+          "target_section": "",
+          "file_id": "",
+          "row_id": "t3:r14",
+          "week_column": 0,
+          "disposition": "out_of_scope",
+          "visibility": "preserve",
+          "reason": "Final Project Submission URL; not a file resource, so preserved."
+        }
+      ]
+    },
+    "operations": [
+      {
+        "id": "move_a_demo_final_support_to_week12",
+        "capability": "move_module",
+        "target": "140147:module:4254917",
+        "summary": "Move Class A VR Workshop 7: Group Project from Week 9 to Week 12 before the existing Demo Day materials.",
+        "scope": "requested",
+        "reason": "The inspected resource file is named Demo Day and Final Presentation, and the authoritative Class A internal syllabus places Project Demo Day in Week 12 and Final Project presentation in Week 13. Since one Moodle file can only sit in one section, Week 12 is the first matching milestone and keeps the shared Demo Day/final presentation support material with the Demo Day preparation materials before the final presentation week. Its existing hidden visibility is preserved because this is after Week 6.",
+        "depends_on": [],
+        "fields": [],
+        "params": {
+          "action": "",
+          "source_group": "",
+          "target_group": "",
+          "user_id": "",
+          "user_name": "",
+          "add_groups": [],
+          "remove_groups": [],
+          "target_section": "140147:section:1692714",
+          "before_module": "140147:module:4254928",
+          "file_id": "",
+          "visibility_policy": ""
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "file_id": "file:6fa752cfb1e52eb1d004",
+        "relative_path": "00 Overview/DASE7137_1_Course_Syllabus_Internal.docx",
+        "status": "read",
+        "table_rows": [
+          {
+            "row_id": "t1:r1",
+            "cells": [
+              "Miss Sonia Sun"
+            ]
+          },
+          {
+            "row_id": "t1:r2",
+            "cells": [
+              "Mr. Angus Zou"
+            ]
+          },
+          {
+            "row_id": "t1:r3",
+            "cells": [
+              "Miss Bo Hui "
+            ]
+          },
+          {
+            "row_id": "t1:r4",
+            "cells": [
+              "Miss Elly He\nMr. Rafi\nMiss Luo yi"
+            ]
+          },
+          {
+            "row_id": "t2:r1",
+            "cells": [
+              "",
+              ""
+            ]
+          },
+          {
+            "row_id": "t2:r2",
+            "cells": [
+              "Assignments\n&\nGroup Project  \n(Total 50%)  ",
+              "[10 % Total] continuous assessments on techniques and concepts   \n 1% *3 Quiz + 7% *1 Assignments  \n[40%] Group Project (Milestones):   \nDesign spec., Interim work/ presentation/ demo / peer evaluation"
+            ]
+          },
+          {
+            "row_id": "t2:r3",
+            "cells": [
+              "Examination (50%)  ",
+              "Paper exam based on reading list, lectures and workshops."
+            ]
+          },
+          {
+            "row_id": "t3:r1",
+            "cells": [
+              "Week",
+              "Date",
+              "Lecture Theme ",
+              "Tutorials and Workshop  ",
+              "DDL"
+            ]
+          },
+          {
+            "row_id": "t3:r2",
+            "cells": [
+              "1",
+              "Sep 1",
+              "L1: Introduction to VR",
+              "Workshop 1: Lab Visit and Google Cardboard",
+              ""
+            ]
+          },
+          {
+            "row_id": "t3:r3",
+            "cells": [
+              "2",
+              "Sep 8",
+              "L2: Guest Lecture ",
+              "Workshop 2: XRCC tutorial 1",
+              ""
+            ]
+          },
+          {
+            "row_id": "t3:r4",
+            "cells": [
+              "3",
+              "Sep 15",
+              "L3: History of VR",
+              "Workshop 3: XRCC tutorial 2",
+              "Grouping"
+            ]
+          },
+          {
+            "row_id": "t3:r5",
+            "cells": [
+              "4",
+              "Sep 22",
+              "-",
+              "-",
+              ""
+            ]
+          },
+          {
+            "row_id": "t3:r6",
+            "cells": [
+              "5",
+              "Sep 29",
+              "L5: Crafting Immersive VR Experiences: Storyboarding and Design Principles",
+              "Workshop 4: Storyboard Development",
+              "Topic Selection"
+            ]
+          },
+          {
+            "row_id": "t3:r7",
+            "cells": [
+              "6",
+              "Oct 6",
+              "Prototype Presentation",
+              "Workshop 5: XRCC tutorial 3",
+              "Prototype video (1 day before), Assignment"
+            ]
+          },
+          {
+            "row_id": "t3:r8",
+            "cells": [
+              "7",
+              "Oct 13",
+              "Reading Week",
+              "Reading Week",
+              ""
+            ]
+          },
+          {
+            "row_id": "t3:r9",
+            "cells": [
+              "8",
+              "Oct 20",
+              "L6: VR Applications and AI in System Engineering ",
+              "Workshop 6: XRCC tutorial 4",
+              ""
+            ]
+          },
+          {
+            "row_id": "t3:r10",
+            "cells": [
+              "9",
+              "Oct 27",
+              "L7: VR Systems and Platforms",
+              "Group Development",
+              "Poster"
+            ]
+          },
+          {
+            "row_id": "t3:r11",
+            "cells": [
+              "10",
+              "Nov 3",
+              "Project Interaction development demo at HMD ",
+              "Group Development",
+              "Interaction Demo (1 day before)"
+            ]
+          },
+          {
+            "row_id": "t3:r12",
+            "cells": [
+              "11",
+              "Nov 10",
+              "Demo Day preparation (Final Test)",
+              "Demo Day preparation (Final Test)",
+              "Equipment borrow form"
+            ]
+          },
+          {
+            "row_id": "t3:r13",
+            "cells": [
+              "12",
+              "TBA",
+              "Project Demo Day",
+              "Project Demo Day",
+              ""
+            ]
+          },
+          {
+            "row_id": "t3:r14",
+            "cells": [
+              "13",
+              "Nov 24",
+              "Final Project presentation with demo reel",
+              "Final Project presentation with demo reel",
+              "Presentation slides (1 day before), Demo Reel Video (1 day before), Final project ccdata, peer evaluation"
+            ]
+          }
+        ]
+      }
+    ],
+    "blank_citations": 18
+  }
+]

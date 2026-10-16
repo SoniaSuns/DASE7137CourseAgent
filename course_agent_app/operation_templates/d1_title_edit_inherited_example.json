@@ -1,0 +1,16 @@
+{
+  "inherits_from": "d1_title_edit.json",
+  "approval_run_id": "RUN-TEMPLATE",
+  "operation_id": "SANDBOX-D1-TITLE-EDIT-INHERITED-UNSUPPORTED",
+  "target_title": "Announcements [INHERITED API TEST TITLE - UNSUPPORTED]",
+  "guardrails": [
+    "sandbox course only: migrationtest Moodle course id 105330",
+    "this action is unsupported by the current Moodle APIM whitelist and should block in api_action mode",
+    "do not use the legacy real DASE7137/IMSE7137 Moodle course",
+    "do not change visibility",
+    "do not change access restrictions",
+    "do not change dates, grades, submission settings, or notifications",
+    "do not delete or upload Moodle files",
+    "this example inherits all unchanged settings from d1_title_edit.json"
+  ]
+}

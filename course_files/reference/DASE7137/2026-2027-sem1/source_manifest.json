@@ -1,0 +1,58 @@
+{
+  "course_code": "DASE7137",
+  "semester": "2026-2027-sem1",
+  "status": "ready",
+  "purpose": "Provenance map for the local reference pack rebuild.",
+  "generated_references": [
+    {
+      "path": "course_files\\reference\\DASE7137\\2026-2027-sem1\\calendar.json",
+      "sha256": "a97125e632a7465504b2ad3b8ed1adedf5c01efaf560441bd3b8b4763e8f69e4"
+    },
+    {
+      "path": "course_files\\reference\\DASE7137\\2026-2027-sem1\\source_calendar.json",
+      "sha256": "e1d85243a43d663890134cc3b7016726ece8b9e2a821c94a2cf9f1cae9b1f77f"
+    },
+    {
+      "path": "course_files\\reference\\DASE7137\\2026-2027-sem1\\timeline.json",
+      "sha256": "fe86fbf2d3ad29d0750b19287765e7eba474fa21d60ab95df14f175c49dc120a"
+    },
+    {
+      "path": "course_files\\reference\\DASE7137\\2026-2027-sem1\\semester_schedule.json",
+      "sha256": "b55ce7d5b328ffc88a17f453099f5629a9305af18ee809ea1309ca63e1f44178"
+    },
+    {
+      "path": "course_files\\reference\\DASE7137\\2026-2027-sem1\\syllabus_rules.json",
+      "sha256": "a7c01b9371b153295e0297c69416d3c6aaa3918877895ad9257175b817215a7f"
+    }
+  ],
+  "stable_references": [
+    {
+      "path": "course_files\\reference\\DASE7137\\2026-2027-sem1\\refresh_rules.md",
+      "sha256": "88a097be92599d40a0d766a0e16e3788cc1dc59f3d7df8647ce0eee496aecca3"
+    }
+  ],
+  "missing_inputs": [],
+  "source_files": [
+    {
+      "path": "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\calendar-24-25-3.pdf",
+      "original_path": "C:\\Users\\q2328\\OneDrive\\文档\\course-agent-private-runtime-windows-20260724-092551\\course_files\\evidence\\process\\course_agent_app\\whatsapp_prompt_attachments\\RUN-074235-4BA9\\calendar 24-25.pdf",
+      "role": "source_calendar_reference",
+      "detected_container": "pdf",
+      "sha256": "9dc090cd254d1dec6df70107e20d1d43809486c6526dd12406a62eb3b37d483d"
+    },
+    {
+      "path": "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\Timeline-reference-3.docx",
+      "original_path": "C:\\Users\\q2328\\OneDrive\\文档\\course-agent-private-runtime-windows-20260724-092551\\course_files\\evidence\\process\\course_agent_app\\whatsapp_prompt_attachments\\RUN-074235-4BA9\\Timeline reference.docx",
+      "role": "timeline_reference",
+      "detected_container": "word",
+      "sha256": "b974557e049835976f54d33b9925260bd6c1aea9e9e439fa3b564b3cf47ce84b"
+    },
+    {
+      "path": "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\Dates-of-Semesters-2026-2027-3.pdf",
+      "original_path": "C:\\Users\\q2328\\OneDrive\\文档\\course-agent-private-runtime-windows-20260724-092551\\course_files\\evidence\\process\\course_agent_app\\whatsapp_prompt_attachments\\RUN-074235-4BA9\\Dates of Semesters 2026-2027.pdf",
+      "role": "target_calendar_reference",
+      "detected_container": "pdf",
+      "sha256": "b9dc4a086371a901db0cca28828fb765542d903d0fa46ab4bbf77192c82f012e"
+    }
+  ]
+}

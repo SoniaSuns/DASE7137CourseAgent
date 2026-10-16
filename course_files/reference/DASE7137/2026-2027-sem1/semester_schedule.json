@@ -1,0 +1,202 @@
+{
+  "course_code": "DASE7137",
+  "semester": "2026-2027-sem1",
+  "timezone": "Asia/Hong_Kong",
+  "status": "source-confirmed",
+  "merge_mode": "replace_all",
+  "source_basis": [
+    "current staff rebuild class weekdays",
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\calendar-24-25-3.pdf",
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\Timeline-reference-3.docx",
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\Dates-of-Semesters-2026-2027-3.pdf"
+  ],
+  "week_numbering": {
+    "mode": "dual",
+    "mapping_field": "teaching_week",
+    "display_field": "date_planner_selected",
+    "available_display_fields": [
+      "calendar_week",
+      "teaching_week"
+    ],
+    "legacy_week_field": "teaching_week",
+    "rule": "Mappings use teaching_week. File refresh Date Planner selects calendar_week or teaching_week for each visible Week column from the source table semantics."
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "teaching_week": 1,
+      "calendar_week": 1,
+      "label": "Teaching Week 1",
+      "teaching_dates": [
+        "2026-09-01"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "notes": "Generated during reference-pack rebuild from the staff-provided recurring class weekdays; holiday and class-suspension dates do not consume teaching-week numbers."
+    },
+    {
+      "week": 2,
+      "teaching_week": 2,
+      "calendar_week": 2,
+      "label": "Teaching Week 2",
+      "teaching_dates": [
+        "2026-09-08"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "notes": "Generated during reference-pack rebuild from the staff-provided recurring class weekdays; holiday and class-suspension dates do not consume teaching-week numbers."
+    },
+    {
+      "week": 3,
+      "teaching_week": 3,
+      "calendar_week": 3,
+      "label": "Teaching Week 3",
+      "teaching_dates": [
+        "2026-09-15"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "notes": "Generated during reference-pack rebuild from the staff-provided recurring class weekdays; holiday and class-suspension dates do not consume teaching-week numbers."
+    },
+    {
+      "week": 4,
+      "teaching_week": 4,
+      "calendar_week": 4,
+      "label": "Teaching Week 4",
+      "teaching_dates": [
+        "2026-09-22"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "notes": "Generated during reference-pack rebuild from the staff-provided recurring class weekdays; holiday and class-suspension dates do not consume teaching-week numbers."
+    },
+    {
+      "week": 5,
+      "teaching_week": 5,
+      "calendar_week": 5,
+      "label": "Teaching Week 5",
+      "teaching_dates": [
+        "2026-09-29"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "notes": "Generated during reference-pack rebuild from the staff-provided recurring class weekdays; holiday and class-suspension dates do not consume teaching-week numbers."
+    },
+    {
+      "week": 6,
+      "teaching_week": 6,
+      "calendar_week": 6,
+      "label": "Teaching Week 6",
+      "teaching_dates": [
+        "2026-10-06"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "notes": "Generated during reference-pack rebuild from the staff-provided recurring class weekdays; holiday and class-suspension dates do not consume teaching-week numbers."
+    },
+    {
+      "week": 7,
+      "teaching_week": 7,
+      "calendar_week": 8,
+      "label": "Teaching Week 7",
+      "teaching_dates": [
+        "2026-10-20"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "notes": "Generated during reference-pack rebuild from the staff-provided recurring class weekdays; holiday and class-suspension dates do not consume teaching-week numbers."
+    },
+    {
+      "week": 8,
+      "teaching_week": 8,
+      "calendar_week": 9,
+      "label": "Teaching Week 8",
+      "teaching_dates": [
+        "2026-10-27"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "notes": "Generated during reference-pack rebuild from the staff-provided recurring class weekdays; holiday and class-suspension dates do not consume teaching-week numbers."
+    },
+    {
+      "week": 9,
+      "teaching_week": 9,
+      "calendar_week": 10,
+      "label": "Teaching Week 9",
+      "teaching_dates": [
+        "2026-11-03"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "notes": "Generated during reference-pack rebuild from the staff-provided recurring class weekdays; holiday and class-suspension dates do not consume teaching-week numbers."
+    },
+    {
+      "week": 10,
+      "teaching_week": 10,
+      "calendar_week": 11,
+      "label": "Teaching Week 10",
+      "teaching_dates": [
+        "2026-11-10"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "notes": "Generated during reference-pack rebuild from the staff-provided recurring class weekdays; holiday and class-suspension dates do not consume teaching-week numbers."
+    },
+    {
+      "week": 11,
+      "teaching_week": 11,
+      "calendar_week": 12,
+      "label": "Teaching Week 11",
+      "teaching_dates": [
+        "2026-11-17"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "notes": "Generated during reference-pack rebuild from the staff-provided recurring class weekdays; holiday and class-suspension dates do not consume teaching-week numbers."
+    },
+    {
+      "week": 12,
+      "teaching_week": 12,
+      "calendar_week": 13,
+      "label": "Teaching Week 12",
+      "teaching_dates": [
+        "2026-11-24"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "notes": "Generated during reference-pack rebuild from the staff-provided recurring class weekdays; holiday and class-suspension dates do not consume teaching-week numbers."
+    }
+  ],
+  "calendar_policy": {
+    "teaching_dates_exclude": "calendar.json non_teaching_days with classes_suspended=true and teaching_suspensions with classes_suspended=true"
+  },
+  "mapping_rules": {
+    "same_week_teaching_date": "target date must be one of the target actual teaching_week teaching_dates",
+    "same_weekday_deadline": "target date must preserve the old actual teaching_week number, weekday, and time",
+    "lab_visit": "must_map_to_teaching_dates_in_same_teaching_week",
+    "lecture": "must_map_to_teaching_dates_in_same_teaching_week",
+    "tutorial": "must_map_to_teaching_dates_in_same_teaching_week",
+    "session_date": "must_map_to_teaching_dates_in_same_teaching_week",
+    "class_visit": "must_map_to_teaching_dates_in_same_teaching_week",
+    "assignment_deadline": "preserve_old_teaching_week_weekday_and_time",
+    "submission_deadline": "preserve_old_teaching_week_weekday_and_time"
+  },
+  "provenance": {
+    "origin": "reference_rebuild_staff_weekdays",
+    "user_supplied": true,
+    "input": "rebuild_reference_pack.params.class_weekdays",
+    "merge_mode": "replace_all"
+  }
+}

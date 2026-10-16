@@ -1,0 +1,10 @@
+# Runtime state, browser profile and secrets never belong in version control.
+.chrome_agent_profile/
+.venv/
+.analysis_runtime/
+__pycache__/
+*.pyc
+course_agent_app/.env
+course_agent_app/reports/
+course_files/library_index.json
+course_files/library_index.md

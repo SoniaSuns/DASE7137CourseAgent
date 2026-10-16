@@ -1,0 +1,43 @@
+{
+  "batch_id": "SMOKE-MOODLE-WA-001",
+  "approval_run_id": "RUN-TEMPLATE",
+  "operation_id": "SANDBOX-COURSE-FILE-RESOURCE-UPLOAD",
+  "operation_kind": "course_file_resource_upload",
+  "risk_level": "medium",
+  "target_course_url": "https://migrationtest-moodle.hku.hk/course/view.php?id=105330",
+  "target_course_id": "105330",
+  "section_name": "General",
+  "sectionnum": "0",
+  "target_object": "TEST ONLY - API uploaded course file",
+  "object_type": "Moodle File resource",
+  "action": "upload_course_file_resource",
+  "resource_name": "TEST ONLY - API uploaded course file",
+  "target_module_id": "0",
+  "target_file_path": "test_upload_files/moodle_upload_demo_v2.txt",
+  "upload_file_path": "test_upload_files/moodle_upload_demo_v2.txt",
+  "expected_uploaded_filename": "moodle_upload_demo_v2.txt",
+  "intro": "<p>Sandbox-only file resource created through the course operations API.</p>",
+  "visible": false,
+  "replacefiles": true,
+  "approval_attachments": [
+    {
+      "kind": "approval_attachment",
+      "label": "Moodle course file upload",
+      "path": "test_upload_files/moodle_upload_demo_v2.txt"
+    }
+  ],
+  "api_execution": {
+    "api_url": "https://apidev.hku.hk/dase7137agent/",
+    "key_env": "DASE7137_KEY",
+    "wsfunction": "local_courseops_api_upload_file_resource"
+  },
+  "guardrails": [
+    "requires the local_courseops_api Moodle plugin and APIM whitelist",
+    "sandbox course only: migrationtest Moodle course id 105330",
+    "target_module_id=0 means create a new File resource",
+    "new resource must stay hidden unless visible=true is explicitly approved",
+    "upload only the approved harmless local test file",
+    "do not use the legacy real DASE7137/IMSE7137 Moodle course",
+    "subscription key must come from DASE7137_KEY and must not be written to files"
+  ]
+}

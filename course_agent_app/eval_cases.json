@@ -1,0 +1,217 @@
+{
+  "version": 1,
+  "mode": "deterministic_workflow_and_tool_regression",
+  "limitation": "请求文本用于标注典型意图；测试执行对应的流程/工具断言，不是让在线模型逐条理解请求。通过率不能当作模型语义准确率或生产端到端成功率。",
+  "cases": [
+    {
+      "id": "R01",
+      "request": "continue taskT-a881c3557b99",
+      "expected": "识别续办编号，不能新建无关任务。",
+      "layer": "任务路由",
+      "test": "test_task_memory.TaskMemoryTests.test_real_reported_resume_phrase_and_spacing_variants"
+    },
+    {
+      "id": "R37",
+      "request": "could you use the result of T-3897576d5898 to do the adjustment?",
+      "expected": "Use the settled reference to answer the active question while retaining current task identity and requiring fresh approval.",
+      "layer": "Task reference",
+      "test": "test_recent_results.ReferenceRuntimeTests.test_natural_reference_answers_active_question_keeps_current_identity"
+    },
+    {
+      "id": "R36",
+      "request": "according to the check result change the moodle file sequence",
+      "expected": "Automatically inject prior check result in the same requester/chat, without requiring a task code.",
+      "layer": "Historical context",
+      "test": "test_recent_results.ReferenceRuntimeTests.test_new_request_context_automatically_includes_prior_answer"
+    },
+    {
+      "id": "R04",
+      "request": "已有部分操作完成，请继续剩余部分",
+      "expected": "跳过已有核验回执的操作，保持剩余依赖顺序。",
+      "layer": "固定续办",
+      "test": "test_approval_renewal.ApprovalRenewalTests.test_resume_skips_receipted_operation_and_keeps_remaining_dependency_order"
+    },
+    {
+      "id": "R07",
+      "request": "把 L4 和 L5 移到 Week 5，保留隐藏状态",
+      "expected": "按批准顺序移动，保留原 ID 和设置，不误判前一步造成的变化。",
+      "layer": "Moodle 工具",
+      "test": "test_course_structure.StructureFixture.test_two_moves_use_verified_intermediate_state_preserve_hidden_and_manifest"
+    },
+    {
+      "id": "R38",
+      "request": "Move a shown file into a hidden week",
+      "expected": "Ask about visibility before offering or executing the move.",
+      "layer": "Move preflight",
+      "test": "test_course_structure.StructureFixture.test_hidden_destination_conflict_is_found_before_move_is_offered"
+    },
+    {
+      "id": "R39",
+      "request": "The move succeeded but the visibility options changed",
+      "expected": "Do not reuse the numeric value; retain position and ask for a visibility outcome without replay.",
+      "layer": "Readback recovery",
+      "test": "test_blocked_repair.RepairTests.test_settled_move_with_unavailable_visibility_automatically_asks_without_replay"
+    },
+    {
+      "id": "R10",
+      "request": "移动描述里包含图片的活动",
+      "expected": "草稿 URL 变化但图片字节相同，不误报设置变化。",
+      "layer": "表单校验",
+      "test": "test_draft_content.DraftReadTests.test_real_browser_fetch_confirms_rotation_but_detects_replacement"
+    },
+    {
+      "id": "R12",
+      "request": "按 syllabus 改时间，保留原来的间隔",
+      "expected": "从原设置测量时间差，不编造固定间隔。",
+      "layer": "日期工具",
+      "test": "test_date_readback_recovery.DateTests.test_interval_evidence_measures_actual_gap_without_inventing_new_dates"
+    },
+    {
+      "id": "R13",
+      "request": "把提交开放和截止时间设成同一刻",
+      "expected": "无效时间窗口在保存前被拒绝。",
+      "layer": "日期校验",
+      "test": "test_date_readback_recovery.DateTests.test_equal_or_reversed_submission_interval_is_rejected"
+    },
+    {
+      "id": "R14",
+      "request": "检查相关设置后再修改",
+      "expected": "缺少已知表单时先补读，不能声称已经检查。",
+      "layer": "模型输出校验",
+      "test": "test_plan_grounding_recovery.PlanGroundingTests.test_known_missing_forms_are_read_then_replanned_without_offering_or_saving"
+    },
+    {
+      "id": "R15",
+      "request": "模型提交了不存在或重复的字段",
+      "expected": "返回精确字段反馈，不执行臆造字段。",
+      "layer": "模型输出校验",
+      "test": "test_plan_grounding_recovery.PlanGroundingTests.test_invalid_and_duplicate_fields_get_exact_structured_feedback"
+    },
+    {
+      "id": "R17",
+      "request": "发送按钮点过但响应超时",
+      "expected": "先读回核验，不重复点击发送。",
+      "layer": "WhatsApp 工具",
+      "test": "test_chrome_delivery.DeliveryTests.test_click_response_loss_never_clicks_twice_and_can_be_read_back"
+    },
+    {
+      "id": "R18",
+      "request": "从 files 替换课程文件",
+      "expected": "保留活动 ID、名称、可见性，并核验上传字节。",
+      "layer": "文件工具",
+      "test": "test_resource_files.ResourceFixture.test_replace_preserves_identity_name_visibility_and_checks_bytes"
+    },
+    {
+      "id": "R19",
+      "request": "上传文件，但尚未批准",
+      "expected": "不能上传草稿或保存。",
+      "layer": "审批边界",
+      "test": "test_resource_files.ResourceFixture.test_no_approval_no_draft_upload_or_save"
+    },
+    {
+      "id": "R20",
+      "request": "审批后 files 中的源文件被更改",
+      "expected": "检测源文件变化，停止上传。",
+      "layer": "文件校验",
+      "test": "test_resource_files.ResourceFixture.test_source_changes_after_approval_prevent_upload"
+    },
+    {
+      "id": "R21",
+      "request": "agent 还活着但任务几十分钟没进展",
+      "expected": "心跳不重置任务进展时间，显示进展缓慢。",
+      "layer": "可观测性",
+      "test": "test_task_observability.ObservationTests.test_live_heartbeat_does_not_reset_real_progress"
+    },
+    {
+      "id": "R31",
+      "request": "change all the topic x to week x，点击保存被遮挡并超时",
+      "expected": "零点击事件和零写请求可证实未派发，允许只读检查，不进入无限等待响应。",
+      "layer": "保存派发",
+      "test": "test_moodle_submit_boundary.SubmitBoundaryTests.test_overlay_after_trial_proves_save_input_never_dispatched"
+    },
+    {
+      "id": "R32",
+      "request": "点击已发出但 POST 延迟，继续等待保存",
+      "expected": "即使暂时没有 POST，也不得重放；原提交完成后只读验证。",
+      "layer": "延迟提交",
+      "test": "test_moodle_submit_boundary.SubmitBoundaryTests.test_click_timeout_after_dispatch_does_not_authorize_repeat"
+    },
+    {
+      "id": "R33",
+      "request": "修复旧版零 POST 的章节改名阻塞",
+      "expected": "只允许显式停用精确标记的旧编辑页，再独立读取完整原状态；不能直接重发保存。",
+      "layer": "遗留恢复",
+      "test": "test_course_structure.StructureFixture.test_operator_retires_only_marked_legacy_section_tab_then_reads_without_save"
+    },
+    {
+      "id": "R25",
+      "request": "after you move the files please let them invisible",
+      "expected": "受阻时接收原请求人的修复指令，保留同一任务和完成回执，先规划审批，不直接保存。",
+      "layer": "受阻恢复",
+      "test": "test_blocked_repair.RepairTests.test_existing_queued_instruction_replans_same_task_without_writes"
+    },
+    {
+      "id": "R35",
+      "request": "Save timed out while Moodle background requests were running",
+      "expected": "Known read RPCs cannot turn proven zero-click into an unresolved save; unknown RPCs remain protected.",
+      "layer": "Submit observation",
+      "test": "test_moodle_submit_boundary.SubmitBoundaryTests.test_background_rpc_does_not_turn_zero_click_into_pending_save"
+    },
+    {
+      "id": "R27",
+      "request": "另一位群成员要求修复正在执行的任务",
+      "expected": "不能接管其他请求人的任务或复用旧审批。",
+      "layer": "请求隔离",
+      "test": "test_blocked_repair.RepairTests.test_other_sender_chat_or_unmentioned_cannot_repair"
+    },
+    {
+      "id": "R28",
+      "request": "原提交尚未返回，现在继续修复",
+      "expected": "保持只读等待，不标记成功，不循环触发修复或重复写入。",
+      "layer": "提交边界",
+      "test": "test_blocked_repair.RepairTests.test_unsettled_submission_stays_blocked_and_does_not_spin"
+    },
+    {
+      "id": "R29",
+      "request": "移动隐藏文件，保持隐藏",
+      "expected": "若 Moodle 移动副作用改变可见性，在同一有效批准下恢复一次并完整读回。",
+      "layer": "移动工具",
+      "test": "test_course_structure.StructureFixture.test_move_preserves_visibility_when_moodle_changes_it"
+    },
+    {
+      "id": "R30",
+      "request": "已经移动到目标位置，仅修复可见性",
+      "expected": "规划校验拒绝重复移动，续办时保留该约束。",
+      "layer": "防止重放",
+      "test": "test_blocked_repair.RepairTests.test_model_cannot_repeat_already_applied_move_and_guard_survives_continuation"
+    },
+    {
+      "id": "R40",
+      "request": "Place Storyboard in Week 6 from a Week 5 syllabus row",
+      "expected": "Reject before writing; row week must equal destination week",
+      "layer": "source grounding",
+      "test": "test_schedule_alignment.AlignmentTests.test_actual_failure_wrong_destination_rejected_before_any_write"
+    },
+    {
+      "id": "R41",
+      "request": "Resume an expired one-section prerequisite of a 44-item task",
+      "expected": "Retain all 44 parent items, including after prerequisite completion",
+      "layer": "task memory",
+      "test": "test_schedule_alignment.GoalLifecycleTests.test_expired_section_prerequisite_keeps_all_44_parent_items"
+    },
+    {
+      "id": "R42",
+      "request": "Finish the approved batch while some source mappings are unresolved",
+      "expected": "Keep the overall goal incomplete and queue fresh planning",
+      "layer": "goal completion",
+      "test": "test_schedule_alignment.GoalLifecycleTests.test_incomplete_batch_queues_followup_and_keeps_unresolved_scope"
+    },
+    {
+      "id": "R43",
+      "request": "Review a correct move from current Week 6 to proposed Week 5",
+      "expected": "Give the reviewer separate observed-before and proposed-after labels plus source cells; omit current section controls",
+      "layer": "review evidence contract",
+      "test": "test_schedule_alignment.AlignmentTests.test_reviewer_cannot_confuse_current_form_section_with_proposed_week"
+    }
+  ]
+}

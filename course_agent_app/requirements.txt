@@ -1,0 +1,10 @@
+playwright==1.60.0
+wasmtime==49.0.0
+python-docx==1.2.0
+openpyxl==3.1.5
+xlrd==2.0.2
+python-pptx==1.0.2
+pypdf==6.4.0
+pdfplumber==0.11.8
+tzdata==2025.3; sys_platform == "win32"
+pywin32==312; sys_platform == "win32"

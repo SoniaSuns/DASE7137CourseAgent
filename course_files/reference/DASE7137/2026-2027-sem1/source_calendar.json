@@ -1,0 +1,269 @@
+{
+  "course_code": "DASE7137",
+  "academic_year": "2024-2025",
+  "target_semester": "first",
+  "status": "source-confirmed",
+  "source_basis": [
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\calendar-24-25-3.pdf"
+  ],
+  "source_documents": [
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\calendar-24-25-3.pdf"
+  ],
+  "non_teaching_days": [
+    {
+      "date": "2024-09-18",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[18]"
+    },
+    {
+      "date": "2024-10-01",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[1]"
+    },
+    {
+      "date": "2024-10-11",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[11]"
+    },
+    {
+      "date": "2024-12-24",
+      "name": "University Holiday",
+      "type": "university_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "(24)"
+    },
+    {
+      "date": "2024-12-25",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[25]"
+    },
+    {
+      "date": "2024-12-26",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[26]"
+    },
+    {
+      "date": "2024-12-31",
+      "name": "University Holiday (afternoon only)",
+      "type": "university_holiday_afternoon",
+      "classes_suspended": false,
+      "full_day": false,
+      "source_marker": "<31>"
+    },
+    {
+      "date": "2025-01-01",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[1]"
+    },
+    {
+      "date": "2025-01-28",
+      "name": "University Holiday (afternoon only)",
+      "type": "university_holiday_afternoon",
+      "classes_suspended": false,
+      "full_day": false,
+      "source_marker": "<28>"
+    },
+    {
+      "date": "2025-01-29",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[29]"
+    },
+    {
+      "date": "2025-01-30",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[30]"
+    },
+    {
+      "date": "2025-01-31",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[31]"
+    },
+    {
+      "date": "2025-04-04",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[4]"
+    },
+    {
+      "date": "2025-04-18",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[18]"
+    },
+    {
+      "date": "2025-04-19",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[19]"
+    },
+    {
+      "date": "2025-04-21",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[21]"
+    },
+    {
+      "date": "2025-05-01",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[1]"
+    },
+    {
+      "date": "2025-05-05",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[5]"
+    },
+    {
+      "date": "2025-05-31",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[31]"
+    },
+    {
+      "date": "2025-07-01",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[1]"
+    }
+  ],
+  "teaching_suspensions": [
+    {
+      "name": "Reading/Field Trip Week",
+      "type": "reading_or_field_trip_week",
+      "start": "2024-10-14",
+      "end": "2024-10-19",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    },
+    {
+      "name": "Revision Period",
+      "type": "revision_period",
+      "start": "2024-12-02",
+      "end": "2024-12-06",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    },
+    {
+      "name": "Assessment Period",
+      "type": "assessment_period",
+      "start": "2024-12-07",
+      "end": "2024-12-23",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    },
+    {
+      "name": "Class Suspension Period for the Lunar New Year",
+      "type": "class_suspension",
+      "start": "2025-01-29",
+      "end": "2025-02-04",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    },
+    {
+      "name": "Reading/Field Trip Week",
+      "type": "reading_or_field_trip_week",
+      "start": "2025-03-10",
+      "end": "2025-03-15",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    },
+    {
+      "name": "Revision Period",
+      "type": "revision_period",
+      "start": "2025-05-05",
+      "end": "2025-05-10",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    },
+    {
+      "name": "Assessment Period",
+      "type": "assessment_period",
+      "start": "2025-05-12",
+      "end": "2025-05-27",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    }
+  ],
+  "semesters": {
+    "first": {
+      "name": "first",
+      "start": "2024-09-02",
+      "end": "2024-12-23",
+      "first_teaching": "2024-09-02",
+      "last_teaching": "2024-11-30",
+      "reading_start": "2024-10-14",
+      "reading_end": "2024-10-19",
+      "revision_start": "2024-12-02",
+      "revision_end": "2024-12-06",
+      "assessment_start": "2024-12-07",
+      "assessment_end": "2024-12-23",
+      "class_suspension_start": null,
+      "class_suspension_end": null
+    },
+    "second": {
+      "name": "second",
+      "start": "2025-01-20",
+      "end": "2025-05-27",
+      "first_teaching": "2025-01-20",
+      "last_teaching": "2025-05-03",
+      "reading_start": "2025-03-10",
+      "reading_end": "2025-03-15",
+      "revision_start": "2025-05-05",
+      "revision_end": "2025-05-10",
+      "assessment_start": "2025-05-12",
+      "assessment_end": "2025-05-27",
+      "class_suspension_start": "2025-01-29",
+      "class_suspension_end": "2025-02-04"
+    }
+  },
+  "refresh_policy": {
+    "unmapped_dates": "needs_review"
+  },
+  "calendar_role": "source",
+  "purpose": "Resolve old visible dates to source academic year, semester, calendar week, teaching week, and weekday."
+}

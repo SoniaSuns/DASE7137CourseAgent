@@ -1,0 +1,41 @@
+{
+  "batch_id": "SMOKE-MOODLE-WA-001",
+  "approval_run_id": "RUN-TEMPLATE",
+  "operation_id": "SANDBOX-BROWSER-COURSE-FILE-RESOURCE-UPLOAD",
+  "operation_kind": "browser_course_file_resource_upload",
+  "risk_level": "medium",
+  "target_course_url": "https://migrationtest-moodle.hku.hk/course/view.php?id=105330",
+  "target_course_id": "105330",
+  "section_name": "General",
+  "sectionnum": "0",
+  "target_object": "TEST ONLY - browser uploaded course file",
+  "object_type": "Moodle File resource",
+  "action": "create_file_resource",
+  "resource_name": "TEST ONLY - browser uploaded course file",
+  "target_module_id": "0",
+  "target_settings_url": "",
+  "create_new_resource": true,
+  "target_file_path": "test_upload_files/moodle_upload_demo_v2.txt",
+  "upload_file_path": "test_upload_files/moodle_upload_demo_v2.txt",
+  "expected_uploaded_filename": "moodle_upload_demo_v2.txt",
+  "intro": "<p>Sandbox-only browser automation upload test.</p>",
+  "visible": true,
+  "expected_visibility": "Show on course page",
+  "approval_attachments": [
+    {
+      "kind": "approval_attachment",
+      "label": "Moodle browser course file upload",
+      "path": "test_upload_files/moodle_upload_demo_v2.txt"
+    }
+  ],
+  "guardrails": [
+    "browser automation fallback is allowed only for the migrationtest sandbox course id 105330",
+    "create exactly one Moodle File resource in the approved section",
+    "new resources default to visible unless visible=false is explicitly approved",
+    "upload only the approved harmless local test file",
+    "do not change grades, dates, access restrictions, groups, completion, or notifications",
+    "do not create duplicate resources if the exact approved title/file is already present",
+    "do not use the legacy real DASE7137/IMSE7137 Moodle course",
+    "run-id-bound action-time approval is required before opening the browser upload/save path"
+  ]
+}

@@ -1,0 +1,47 @@
+$ErrorActionPreference = 'Stop'
+$appRoot = Join-Path $PSScriptRoot 'course_agent_app'
+$reportRoot = Join-Path $appRoot 'reports\recent_results_20261009'
+$stateRoot = Join-Path $appRoot 'reports\shared_chrome\state'
+$tests = Get-Content -LiteralPath (Join-Path $reportRoot 'regression.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+if (-not $tests.passed) { throw 'Regression tests must pass.' }
+$evaluation = Get-Content -LiteralPath (Join-Path $appRoot 'reports\evaluations\latest.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+if ($evaluation.passed -ne $evaluation.total -or $evaluation.total -ne 30) { throw 'The 30-case evaluation set must pass.' }
+foreach ($property in $tests.code_sha256.PSObject.Properties) {
+    if ((Get-FileHash -LiteralPath (Join-Path $appRoot $property.Name) -Algorithm SHA256).Hash.ToLowerInvariant() -ne $property.Value) {
+        throw ('Source changed after regression: ' + $property.Name)
+    }
+}
+$statusPath = Join-Path $appRoot 'reports\shared_chrome\status.json'
+$status = Get-Content -LiteralPath $statusPath -Raw -Encoding UTF8 | ConvertFrom-Json
+if ($status.runtime_version -eq '2026-10-09-recent-results') { Write-Output 'Save dispatch fix is already deployed.'; exit 0 }
+function Test-RecoveryBoundary {
+    foreach ($file in Get-ChildItem -LiteralPath $stateRoot -Filter '*.json') {
+        if ($file.BaseName -notmatch '^[a-f0-9]{12}$') { continue }
+        $state = Get-Content -LiteralPath $file.FullName -Raw -Encoding UTF8 | ConvertFrom-Json
+        if ($state.pending_delivery) { throw 'A message delivery is still unresolved.' }
+        if ($state.run -eq '831aa08a33ac') { continue }
+        if ($state.phase -in @('PLANNING','SCOPE','QUESTION','APPROVAL','APPROVED','EXECUTING','NEEDS_READBACK')) { throw 'Another task is active.' }
+    }
+    $flow = Get-Content -LiteralPath (Join-Path $stateRoot '29ed78e10116.json') -Raw -Encoding UTF8 | ConvertFrom-Json
+    if ($flow.run -ne '831aa08a33ac' -or $flow.phase -ne 'QUESTION' -or $flow.pending_delivery) { throw 'The investigated task boundary changed.' }
+    if ($flow.resume_phase -ne 'PLANNING' -or $flow.results.Count -ne 0 -or $flow.write_started -or $flow.selected -or $flow.approval_sent) { throw 'Waiting task is no longer an unwritten planning question.' }
+    $queue = ConvertFrom-Json -InputObject (Get-Content -LiteralPath (Join-Path $stateRoot 'inbox.json') -Raw -Encoding UTF8)
+    if ($null -ne $queue -and $queue.Count -ne 0) { throw 'New queued work must be preserved explicitly before restart.' }
+}
+Test-RecoveryBoundary
+$oldProcessId = [int]$status.pid
+$processInfo = Get-CimInstance Win32_Process -Filter "ProcessId = $oldProcessId"
+if (-not $processInfo -or $processInfo.CommandLine -notlike '*v2*run_shared_chrome_agent.py*') { throw 'Reported PID is not the v2 listener.' }
+$backup = Join-Path $reportRoot ('deployment-' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
+New-Item -ItemType Directory -Path $backup | Out-Null
+Copy-Item -LiteralPath $stateRoot -Destination (Join-Path $backup 'state') -Recurse
+Test-RecoveryBoundary
+$latest = Get-Content -LiteralPath $statusPath -Raw -Encoding UTF8 | ConvertFrom-Json
+if ($latest.pid -ne $oldProcessId) { throw 'Listener PID changed; nothing stopped.' }
+Stop-Process -Id $oldProcessId
+Start-Sleep -Milliseconds 700
+if (Get-Process -Id $oldProcessId -ErrorAction SilentlyContinue) { throw 'Old listener has not stopped.' }
+$entry = Join-Path $appRoot 'run_shared_chrome_agent.py'
+$process = Start-Process -FilePath (Join-Path $PSScriptRoot '.venv\Scripts\python.exe') -ArgumentList @('-u',$entry,'--run','--replan-waiting-run','831aa08a33ac') -WorkingDirectory $appRoot -WindowStyle Hidden -PassThru -RedirectStandardOutput (Join-Path $reportRoot 'runtime.out.log') -RedirectStandardError (Join-Path $reportRoot 'runtime.err.log')
+@{version='2026-10-09-recent-results';started=(Get-Date).ToString('o');previous_pid=$oldProcessId;launcher_pid=$process.Id;source_run='831aa08a33ac';backup=$backup} | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $reportRoot 'deployment.json') -Encoding UTF8
+Write-Output ('Started fixed listener; launcher PID ' + $process.Id + '. Old approval will not be reused.')

@@ -1,0 +1,971 @@
+{
+  "course_code": "DASE7137",
+  "semester": "2026-2027-sem1",
+  "status": "source-confirmed",
+  "source_basis": [
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\Timeline-reference-3.docx",
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\Dates-of-Semesters-2026-2027-3.pdf"
+  ],
+  "source_documents": [
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\Timeline-reference-3.docx"
+  ],
+  "source_academic_year": "2024-2025",
+  "source_calendar_basis": [
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\calendar-24-25-3.pdf"
+  ],
+  "source_week_numbering": {
+    "visible_week_field": "source_visible_week",
+    "calendar_week_field": "source_calendar_week",
+    "teaching_week_field": "source_teaching_week",
+    "weekday_field": "source_weekday",
+    "rule": "Source calendar weeks and weekdays are resolved from source_calendar.json; source teaching weeks exclude source rows marked non-teaching or blocked by the source calendar."
+  },
+  "week_numbering": {
+    "mode": "dual",
+    "mapping_field": "teaching_week",
+    "display_field": "date_planner_selected",
+    "available_display_fields": [
+      "calendar_week",
+      "teaching_week"
+    ],
+    "legacy_week_field": "teaching_week",
+    "rule": "Mappings use teaching_week. File refresh Date Planner selects calendar_week or teaching_week for each visible Week column from the source table semantics.",
+    "source_non_teaching_rows_excluded": true,
+    "target_non_teaching_calendar_gaps_excluded": true
+  },
+  "week_count": 12,
+  "teaching_week_count": 12,
+  "calendar_week_count": 13,
+  "week_calendar": [
+    {
+      "week": 1,
+      "teaching_week": 1,
+      "calendar_week": 1,
+      "date": "2026-09-01",
+      "lecture": "L1: Introduction to VR",
+      "workshop": "Workshop 1: Lab Visit and Google Cardboard",
+      "submission": "",
+      "source_week": 1,
+      "source_visible_week": 1,
+      "source_teaching_week": 1,
+      "source_date": "Jan 20",
+      "source_date_iso": "2025-01-20",
+      "source_weekday": "Monday",
+      "source_calendar_week": 1,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "counts_as_teaching_week": true,
+      "teaching_dates": [
+        "2026-09-01"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "content_item_ids": [
+        "tw1-lecture",
+        "tw1-workshop"
+      ]
+    },
+    {
+      "week": 2,
+      "teaching_week": 2,
+      "calendar_week": 2,
+      "date": "2026-09-08",
+      "lecture": "L2: Guest Lecture",
+      "workshop": "Workshop 2: XRCC tutorial 1",
+      "submission": "W2Q1",
+      "source_week": 2,
+      "source_visible_week": 2,
+      "source_teaching_week": 2,
+      "source_date": "Jan 27",
+      "source_date_iso": "2025-01-27",
+      "source_weekday": "Monday",
+      "source_calendar_week": 2,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "counts_as_teaching_week": true,
+      "teaching_dates": [
+        "2026-09-08"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "content_item_ids": [
+        "tw2-lecture",
+        "tw2-workshop",
+        "tw2-submission"
+      ]
+    },
+    {
+      "week": 3,
+      "teaching_week": 3,
+      "calendar_week": 3,
+      "date": "2026-09-15",
+      "lecture": "L3: History of VR",
+      "workshop": "Workshop 3: XRCC tutorial 2",
+      "submission": "W3 Q2 Grouping",
+      "source_week": 3,
+      "source_visible_week": 3,
+      "source_teaching_week": 3,
+      "source_date": "Feb 3",
+      "source_date_iso": "2025-02-03",
+      "source_weekday": "Monday",
+      "source_calendar_week": 3,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "counts_as_teaching_week": true,
+      "teaching_dates": [
+        "2026-09-15"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "content_item_ids": [
+        "tw3-lecture",
+        "tw3-workshop",
+        "tw3-submission"
+      ]
+    },
+    {
+      "week": 4,
+      "teaching_week": 4,
+      "calendar_week": 4,
+      "date": "2026-09-22",
+      "lecture": "L4: Human Perception",
+      "workshop": "Workshop 4: XRCC tutorial 3",
+      "submission": "W4 Q3 Topic Selection",
+      "source_week": 4,
+      "source_visible_week": 4,
+      "source_teaching_week": 4,
+      "source_date": "Feb 10",
+      "source_date_iso": "2025-02-10",
+      "source_weekday": "Monday",
+      "source_calendar_week": 4,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "counts_as_teaching_week": true,
+      "teaching_dates": [
+        "2026-09-22"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "content_item_ids": [
+        "tw4-lecture",
+        "tw4-workshop",
+        "tw4-submission"
+      ]
+    },
+    {
+      "week": 5,
+      "teaching_week": 5,
+      "calendar_week": 5,
+      "date": "2026-09-29",
+      "lecture": "L5: Crafting Immersive VR Experiences: Storyboarding and Design Principles",
+      "workshop": "Workshop 5: Storyboard Development",
+      "submission": "W5 Assignment",
+      "source_week": 6,
+      "source_visible_week": 6,
+      "source_teaching_week": 5,
+      "source_date": "Feb 24",
+      "source_date_iso": "2025-02-24",
+      "source_weekday": "Monday",
+      "source_calendar_week": 6,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "counts_as_teaching_week": true,
+      "teaching_dates": [
+        "2026-09-29"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "content_item_ids": [
+        "tw5-lecture",
+        "tw5-workshop",
+        "tw5-submission"
+      ]
+    },
+    {
+      "week": 6,
+      "teaching_week": 6,
+      "calendar_week": 6,
+      "date": "2026-10-06",
+      "lecture": "Prototype Presentation",
+      "workshop": "Prototype Presentation",
+      "submission": "Prototype video Voting",
+      "source_week": 7,
+      "source_visible_week": 7,
+      "source_teaching_week": 6,
+      "source_date": "Mar 3",
+      "source_date_iso": "2025-03-03",
+      "source_weekday": "Monday",
+      "source_calendar_week": 7,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "counts_as_teaching_week": true,
+      "teaching_dates": [
+        "2026-10-06"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "content_item_ids": [
+        "tw6-lecture",
+        "tw6-workshop",
+        "tw6-submission"
+      ]
+    },
+    {
+      "week": 7,
+      "teaching_week": 7,
+      "calendar_week": 8,
+      "date": "2026-10-20",
+      "lecture": "L6: VR Applications and AI in System Engineering",
+      "workshop": "Workshop 6: XRCC tutorial 4",
+      "submission": "Poster",
+      "source_week": 9,
+      "source_visible_week": 9,
+      "source_teaching_week": 7,
+      "source_date": "Mar 17",
+      "source_date_iso": "2025-03-17",
+      "source_weekday": "Monday",
+      "source_calendar_week": 9,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "counts_as_teaching_week": true,
+      "teaching_dates": [
+        "2026-10-20"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "content_item_ids": [
+        "tw7-lecture",
+        "tw7-workshop",
+        "tw7-submission"
+      ]
+    },
+    {
+      "week": 8,
+      "teaching_week": 8,
+      "calendar_week": 9,
+      "date": "2026-10-27",
+      "lecture": "L7: VR Systems and Platforms",
+      "workshop": "Group Project Development",
+      "submission": "",
+      "source_week": 10,
+      "source_visible_week": 10,
+      "source_teaching_week": 8,
+      "source_date": "Mar 24",
+      "source_date_iso": "2025-03-24",
+      "source_weekday": "Monday",
+      "source_calendar_week": 10,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "counts_as_teaching_week": true,
+      "teaching_dates": [
+        "2026-10-27"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "content_item_ids": [
+        "tw8-lecture",
+        "tw8-workshop"
+      ]
+    },
+    {
+      "week": 9,
+      "teaching_week": 9,
+      "calendar_week": 10,
+      "date": "2026-11-03",
+      "lecture": "Project Interaction development demo at HMD",
+      "workshop": "Project Interaction development demo at HMD",
+      "submission": "Interaction demo",
+      "source_week": 11,
+      "source_visible_week": 11,
+      "source_teaching_week": 9,
+      "source_date": "Mar 31",
+      "source_date_iso": "2025-03-31",
+      "source_weekday": "Monday",
+      "source_calendar_week": 11,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "counts_as_teaching_week": true,
+      "teaching_dates": [
+        "2026-11-03"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "content_item_ids": [
+        "tw9-lecture",
+        "tw9-workshop",
+        "tw9-submission"
+      ]
+    },
+    {
+      "week": 10,
+      "teaching_week": 10,
+      "calendar_week": 11,
+      "date": "2026-11-10",
+      "lecture": "Demo Day preparation (no demo reel)",
+      "workshop": "Demo Day preparation (no demo reel)",
+      "submission": "Equipment borrow form",
+      "source_week": 13,
+      "source_visible_week": 13,
+      "source_teaching_week": 10,
+      "source_date": "Apr 14",
+      "source_date_iso": "2025-04-14",
+      "source_weekday": "Monday",
+      "source_calendar_week": 13,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "counts_as_teaching_week": true,
+      "teaching_dates": [
+        "2026-11-10"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "content_item_ids": [
+        "tw10-lecture",
+        "tw10-workshop",
+        "tw10-submission"
+      ]
+    },
+    {
+      "week": 11,
+      "teaching_week": 11,
+      "calendar_week": 12,
+      "date": "2026-11-17",
+      "lecture": "Project Demo Day",
+      "workshop": "Project Demo Day",
+      "submission": "",
+      "source_week": 14,
+      "source_visible_week": 14,
+      "source_teaching_week": 11,
+      "source_date": "Apr 21",
+      "source_date_iso": "2025-04-21",
+      "source_weekday": "Monday",
+      "source_calendar_week": 14,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "counts_as_teaching_week": true,
+      "teaching_dates": [
+        "2026-11-17"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "content_item_ids": [
+        "tw11-lecture",
+        "tw11-workshop"
+      ]
+    },
+    {
+      "week": 12,
+      "teaching_week": 12,
+      "calendar_week": 13,
+      "date": "2026-11-24",
+      "lecture": "Final Project presentation with demo reel",
+      "workshop": "Final Project presentation with demo reel",
+      "submission": "Presentation slides Demo Reel Video Final project ccdata peer evaluation",
+      "source_week": 15,
+      "source_visible_week": 15,
+      "source_teaching_week": 12,
+      "source_date": "Apr 28",
+      "source_date_iso": "2025-04-28",
+      "source_weekday": "Monday",
+      "source_calendar_week": 15,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "counts_as_teaching_week": true,
+      "teaching_dates": [
+        "2026-11-24"
+      ],
+      "allowed_session_weekdays": [
+        "Tuesday"
+      ],
+      "content_item_ids": [
+        "tw12-lecture",
+        "tw12-workshop",
+        "tw12-submission"
+      ]
+    }
+  ],
+  "excluded_source_rows": [
+    {
+      "source_week": 5,
+      "source_date": "Feb 17",
+      "lecture": "Holiday",
+      "workshop": "Holiday",
+      "source_date_iso": "2025-02-17",
+      "source_weekday": "Monday",
+      "source_calendar_week": 5,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "source_calendar_status": "teaching_date",
+      "reason": "source row is non-teaching and does not consume a teaching week"
+    },
+    {
+      "source_week": 8,
+      "source_date": "Mar 10",
+      "lecture": "Reading Week",
+      "workshop": "Reading Week",
+      "source_date_iso": "2025-03-10",
+      "source_weekday": "Monday",
+      "source_calendar_week": 8,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "source_calendar_status": "Reading/Field Trip Week",
+      "reason": "source calendar marks this row as Reading/Field Trip Week"
+    },
+    {
+      "source_week": 12,
+      "source_date": "Apr 7",
+      "lecture": "Holiday",
+      "workshop": "Holiday",
+      "source_date_iso": "2025-04-07",
+      "source_weekday": "Monday",
+      "source_calendar_week": 12,
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "source_calendar_status": "teaching_date",
+      "reason": "source row is non-teaching and does not consume a teaching week"
+    }
+  ],
+  "source_calendar_precedence": "timeline_overrides_source_calendar",
+  "source_calendar_overrides": [
+    {
+      "source_week": 3,
+      "source_date": "Feb 3",
+      "source_date_iso": "2025-02-03",
+      "lecture": "L3: History of VR",
+      "workshop": "Workshop 3: XRCC tutorial 2",
+      "calendar_reason": "Class Suspension Period for the Lunar New Year",
+      "resolution": "timeline_overrides_source_calendar",
+      "reason": "Timeline explicitly schedules teaching content on this source-calendar suspension."
+    },
+    {
+      "source_week": 14,
+      "source_date": "Apr 21",
+      "source_date_iso": "2025-04-21",
+      "lecture": "Project Demo Day",
+      "workshop": "Project Demo Day",
+      "calendar_reason": "General Holiday",
+      "resolution": "timeline_overrides_source_calendar",
+      "reason": "Timeline explicitly schedules teaching content on this source-calendar suspension."
+    }
+  ],
+  "source_calendar_unresolved_rows": [],
+  "non_teaching_calendar_gaps": [
+    {
+      "date": "2026-10-13",
+      "calendar_week": 7,
+      "reason": "Reading/Field Trip Week",
+      "week_numbering_effect": "does_not_consume_teaching_week"
+    }
+  ],
+  "content_week_mappings": [
+    {
+      "item_id": "tw1-lecture",
+      "content_kind": "lecture",
+      "content_text": "L1: Introduction to VR",
+      "source_teaching_week": 1,
+      "source_visible_week": 1,
+      "source_calendar_week": 1,
+      "source_date": "Jan 20",
+      "source_date_iso": "2025-01-20",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 1,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw1-workshop",
+      "content_kind": "workshop",
+      "content_text": "Workshop 1: Lab Visit and Google Cardboard",
+      "source_teaching_week": 1,
+      "source_visible_week": 1,
+      "source_calendar_week": 1,
+      "source_date": "Jan 20",
+      "source_date_iso": "2025-01-20",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 1,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw2-lecture",
+      "content_kind": "lecture",
+      "content_text": "L2: Guest Lecture",
+      "source_teaching_week": 2,
+      "source_visible_week": 2,
+      "source_calendar_week": 2,
+      "source_date": "Jan 27",
+      "source_date_iso": "2025-01-27",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 2,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw2-workshop",
+      "content_kind": "workshop",
+      "content_text": "Workshop 2: XRCC tutorial 1",
+      "source_teaching_week": 2,
+      "source_visible_week": 2,
+      "source_calendar_week": 2,
+      "source_date": "Jan 27",
+      "source_date_iso": "2025-01-27",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 2,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw2-submission",
+      "content_kind": "submission",
+      "content_text": "W2Q1",
+      "source_teaching_week": 2,
+      "source_visible_week": 2,
+      "source_calendar_week": 2,
+      "source_date": "Jan 27",
+      "source_date_iso": "2025-01-27",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 2,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw3-lecture",
+      "content_kind": "lecture",
+      "content_text": "L3: History of VR",
+      "source_teaching_week": 3,
+      "source_visible_week": 3,
+      "source_calendar_week": 3,
+      "source_date": "Feb 3",
+      "source_date_iso": "2025-02-03",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 3,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw3-workshop",
+      "content_kind": "workshop",
+      "content_text": "Workshop 3: XRCC tutorial 2",
+      "source_teaching_week": 3,
+      "source_visible_week": 3,
+      "source_calendar_week": 3,
+      "source_date": "Feb 3",
+      "source_date_iso": "2025-02-03",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 3,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw3-submission",
+      "content_kind": "submission",
+      "content_text": "W3 Q2 Grouping",
+      "source_teaching_week": 3,
+      "source_visible_week": 3,
+      "source_calendar_week": 3,
+      "source_date": "Feb 3",
+      "source_date_iso": "2025-02-03",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 3,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw4-lecture",
+      "content_kind": "lecture",
+      "content_text": "L4: Human Perception",
+      "source_teaching_week": 4,
+      "source_visible_week": 4,
+      "source_calendar_week": 4,
+      "source_date": "Feb 10",
+      "source_date_iso": "2025-02-10",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 4,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw4-workshop",
+      "content_kind": "workshop",
+      "content_text": "Workshop 4: XRCC tutorial 3",
+      "source_teaching_week": 4,
+      "source_visible_week": 4,
+      "source_calendar_week": 4,
+      "source_date": "Feb 10",
+      "source_date_iso": "2025-02-10",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 4,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw4-submission",
+      "content_kind": "submission",
+      "content_text": "W4 Q3 Topic Selection",
+      "source_teaching_week": 4,
+      "source_visible_week": 4,
+      "source_calendar_week": 4,
+      "source_date": "Feb 10",
+      "source_date_iso": "2025-02-10",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 4,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw5-lecture",
+      "content_kind": "lecture",
+      "content_text": "L5: Crafting Immersive VR Experiences: Storyboarding and Design Principles",
+      "source_teaching_week": 5,
+      "source_visible_week": 6,
+      "source_calendar_week": 6,
+      "source_date": "Feb 24",
+      "source_date_iso": "2025-02-24",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 5,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw5-workshop",
+      "content_kind": "workshop",
+      "content_text": "Workshop 5: Storyboard Development",
+      "source_teaching_week": 5,
+      "source_visible_week": 6,
+      "source_calendar_week": 6,
+      "source_date": "Feb 24",
+      "source_date_iso": "2025-02-24",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 5,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw5-submission",
+      "content_kind": "submission",
+      "content_text": "W5 Assignment",
+      "source_teaching_week": 5,
+      "source_visible_week": 6,
+      "source_calendar_week": 6,
+      "source_date": "Feb 24",
+      "source_date_iso": "2025-02-24",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 5,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw6-lecture",
+      "content_kind": "lecture",
+      "content_text": "Prototype Presentation",
+      "source_teaching_week": 6,
+      "source_visible_week": 7,
+      "source_calendar_week": 7,
+      "source_date": "Mar 3",
+      "source_date_iso": "2025-03-03",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 6,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw6-workshop",
+      "content_kind": "workshop",
+      "content_text": "Prototype Presentation",
+      "source_teaching_week": 6,
+      "source_visible_week": 7,
+      "source_calendar_week": 7,
+      "source_date": "Mar 3",
+      "source_date_iso": "2025-03-03",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 6,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw6-submission",
+      "content_kind": "submission",
+      "content_text": "Prototype video Voting",
+      "source_teaching_week": 6,
+      "source_visible_week": 7,
+      "source_calendar_week": 7,
+      "source_date": "Mar 3",
+      "source_date_iso": "2025-03-03",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 6,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw7-lecture",
+      "content_kind": "lecture",
+      "content_text": "L6: VR Applications and AI in System Engineering",
+      "source_teaching_week": 7,
+      "source_visible_week": 9,
+      "source_calendar_week": 9,
+      "source_date": "Mar 17",
+      "source_date_iso": "2025-03-17",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 7,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw7-workshop",
+      "content_kind": "workshop",
+      "content_text": "Workshop 6: XRCC tutorial 4",
+      "source_teaching_week": 7,
+      "source_visible_week": 9,
+      "source_calendar_week": 9,
+      "source_date": "Mar 17",
+      "source_date_iso": "2025-03-17",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 7,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw7-submission",
+      "content_kind": "submission",
+      "content_text": "Poster",
+      "source_teaching_week": 7,
+      "source_visible_week": 9,
+      "source_calendar_week": 9,
+      "source_date": "Mar 17",
+      "source_date_iso": "2025-03-17",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 7,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw8-lecture",
+      "content_kind": "lecture",
+      "content_text": "L7: VR Systems and Platforms",
+      "source_teaching_week": 8,
+      "source_visible_week": 10,
+      "source_calendar_week": 10,
+      "source_date": "Mar 24",
+      "source_date_iso": "2025-03-24",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 8,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw8-workshop",
+      "content_kind": "workshop",
+      "content_text": "Group Project Development",
+      "source_teaching_week": 8,
+      "source_visible_week": 10,
+      "source_calendar_week": 10,
+      "source_date": "Mar 24",
+      "source_date_iso": "2025-03-24",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 8,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw9-lecture",
+      "content_kind": "lecture",
+      "content_text": "Project Interaction development demo at HMD",
+      "source_teaching_week": 9,
+      "source_visible_week": 11,
+      "source_calendar_week": 11,
+      "source_date": "Mar 31",
+      "source_date_iso": "2025-03-31",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 9,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw9-workshop",
+      "content_kind": "workshop",
+      "content_text": "Project Interaction development demo at HMD",
+      "source_teaching_week": 9,
+      "source_visible_week": 11,
+      "source_calendar_week": 11,
+      "source_date": "Mar 31",
+      "source_date_iso": "2025-03-31",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 9,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw9-submission",
+      "content_kind": "submission",
+      "content_text": "Interaction demo",
+      "source_teaching_week": 9,
+      "source_visible_week": 11,
+      "source_calendar_week": 11,
+      "source_date": "Mar 31",
+      "source_date_iso": "2025-03-31",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 9,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw10-lecture",
+      "content_kind": "lecture",
+      "content_text": "Demo Day preparation (no demo reel)",
+      "source_teaching_week": 10,
+      "source_visible_week": 13,
+      "source_calendar_week": 13,
+      "source_date": "Apr 14",
+      "source_date_iso": "2025-04-14",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 10,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw10-workshop",
+      "content_kind": "workshop",
+      "content_text": "Demo Day preparation (no demo reel)",
+      "source_teaching_week": 10,
+      "source_visible_week": 13,
+      "source_calendar_week": 13,
+      "source_date": "Apr 14",
+      "source_date_iso": "2025-04-14",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 10,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw10-submission",
+      "content_kind": "submission",
+      "content_text": "Equipment borrow form",
+      "source_teaching_week": 10,
+      "source_visible_week": 13,
+      "source_calendar_week": 13,
+      "source_date": "Apr 14",
+      "source_date_iso": "2025-04-14",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 10,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw11-lecture",
+      "content_kind": "lecture",
+      "content_text": "Project Demo Day",
+      "source_teaching_week": 11,
+      "source_visible_week": 14,
+      "source_calendar_week": 14,
+      "source_date": "Apr 21",
+      "source_date_iso": "2025-04-21",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 11,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw11-workshop",
+      "content_kind": "workshop",
+      "content_text": "Project Demo Day",
+      "source_teaching_week": 11,
+      "source_visible_week": 14,
+      "source_calendar_week": 14,
+      "source_date": "Apr 21",
+      "source_date_iso": "2025-04-21",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 11,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw12-lecture",
+      "content_kind": "lecture",
+      "content_text": "Final Project presentation with demo reel",
+      "source_teaching_week": 12,
+      "source_visible_week": 15,
+      "source_calendar_week": 15,
+      "source_date": "Apr 28",
+      "source_date_iso": "2025-04-28",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 12,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw12-workshop",
+      "content_kind": "workshop",
+      "content_text": "Final Project presentation with demo reel",
+      "source_teaching_week": 12,
+      "source_visible_week": 15,
+      "source_calendar_week": 15,
+      "source_date": "Apr 28",
+      "source_date_iso": "2025-04-28",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 12,
+      "status": "unchanged"
+    },
+    {
+      "item_id": "tw12-submission",
+      "content_kind": "submission",
+      "content_text": "Presentation slides Demo Reel Video Final project ccdata peer evaluation",
+      "source_teaching_week": 12,
+      "source_visible_week": 15,
+      "source_calendar_week": 15,
+      "source_date": "Apr 28",
+      "source_date_iso": "2025-04-28",
+      "source_weekday": "Monday",
+      "source_semester": "second",
+      "source_academic_year": "2024-2025",
+      "target_teaching_week": 12,
+      "status": "unchanged"
+    }
+  ],
+  "class_weekdays": [
+    "Tuesday"
+  ]
+}

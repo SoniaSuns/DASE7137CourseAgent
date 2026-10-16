@@ -1,0 +1,8 @@
+# Configure credentials with your tunnel provider on the agent computer.
+# Replace placeholders; never include credentials in the extension ZIP.
+tunnel: YOUR-TUNNEL-ID
+credentials-file: C:/PRIVATE/PATH/YOUR-TUNNEL-ID.json
+ingress:
+  - hostname: agent.example.edu
+    service: http://127.0.0.1:18791
+  - service: http_status:404

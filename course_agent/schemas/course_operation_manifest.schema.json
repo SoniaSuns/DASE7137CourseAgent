@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Course Operation Manifest",
+  "type": "object",
+  "required": ["run_id", "target_course_id", "operations"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "pipeline_stage": {"type": "string", "const": "tools"},
+    "tools": {"type": "object"},
+    "target_course_id": {"type": "string", "const": "105330"},
+    "target_course_url": {"type": "string"},
+    "operations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["operation_kind", "execution_mode"],
+        "properties": {
+          "operation_kind": {"type": "string"},
+          "execution_mode": {"type": "string"},
+          "tool_name": {"type": "string"},
+          "tool_contract": {"type": "object"},
+          "target_course_id": {"type": "string"},
+          "summary": {"type": "string"},
+          "action": {"type": "string"},
+          "requires_browser_fallback": {"type": "boolean"},
+          "env_overrides": {"type": "object"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "readback_required": {"type": "boolean"},
+    "verification_plan": {"type": "object"}
+  },
+  "additionalProperties": true
+}

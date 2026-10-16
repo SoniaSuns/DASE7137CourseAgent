@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Moodle Course Chat",
+  "version": "0.1.0",
+  "description": "在 Chrome 侧栏对话中检查、规划并确认 Moodle 课程操作。",
+  "minimum_chrome_version": "116",
+  "permissions": ["sidePanel"],
+  "host_permissions": ["http://127.0.0.1/*"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_title": "打开 Moodle 对话"},
+  "side_panel": {"default_path": "panel.html"},
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'"}
+}

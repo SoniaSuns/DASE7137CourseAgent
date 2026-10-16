@@ -1,0 +1,479 @@
+{
+    "format":  "course-agent-runtime-bundle/v2",
+    "built_at":  "2026-07-28T08:16:54.2495855Z",
+    "target_platform":  "windows",
+    "entrypoint":  "course_agent_app/run_course_agent_app.py",
+    "file_count":  91,
+    "files":  [
+                  {
+                      "path":  "AGENTS.md",
+                      "bytes":  21365,
+                      "sha256":  "f7c9214c57043a458c8a1380d8651b6e0a631c1540b53d843ddca65791eb9bea"
+                  },
+                  {
+                      "path":  "course_agent/__init__.py",
+                      "bytes":  1627,
+                      "sha256":  "950451e85a227400fd9bc0e11f1174034014167589541788e469febaf9e8fcb9"
+                  },
+                  {
+                      "path":  "course_agent/capabilities.py",
+                      "bytes":  176605,
+                      "sha256":  "ef778f67981bd38b58d5a923f4bded8ccb33257bbe836444be7a252932e06efc"
+                  },
+                  {
+                      "path":  "course_agent/codex_runtime.py",
+                      "bytes":  3833,
+                      "sha256":  "55fb2d3fa791246833d59c44064d0b80211e82645fbb0830f8b949af3ab88a8a"
+                  },
+                  {
+                      "path":  "course_agent/contracts.py",
+                      "bytes":  24647,
+                      "sha256":  "345fe46942637b264352503a3a7618650730603739ab04ee8f8ec2bdf0ea38b3"
+                  },
+                  {
+                      "path":  "course_agent/pipeline.py",
+                      "bytes":  14748,
+                      "sha256":  "195028a2cae78b6dae120289d4fdd7fae12b51f2fbfacb6c573cc444310ac53b"
+                  },
+                  {
+                      "path":  "course_agent/schemas/course_agent_result.schema.json",
+                      "bytes":  770,
+                      "sha256":  "0955e7389c4af3ee016b6ab6a94f61e98deea288d8c743e095ce937186f34433"
+                  },
+                  {
+                      "path":  "course_agent/schemas/course_operation_manifest.schema.json",
+                      "bytes":  1324,
+                      "sha256":  "f8de98bb0b047250d71f910254d6a719f3dd10cdd5fa4caea85277babbfad2c5"
+                  },
+                  {
+                      "path":  "course_agent/schemas/course_task_intent.schema.json",
+                      "bytes":  1131,
+                      "sha256":  "d9476116a74b918fd5648cf7f2c28aee373e765ea43d61f3ddf79ad9f0435492"
+                  },
+                  {
+                      "path":  "course_agent_app/.env",
+                      "bytes":  4088,
+                      "sha256":  "5fc4cc3845d2556097d1209c112efca2b775f1412db6a3f694dd17aafd5cc3fd"
+                  },
+                  {
+                      "path":  "course_agent_app/.env.example",
+                      "bytes":  9057,
+                      "sha256":  "ea7f0a32f1404d8c2e173880c92c3577fe991aac07b47ef49a2c46f1e1c16f03"
+                  },
+                  {
+                      "path":  "course_agent_app/__init__.py",
+                      "bytes":  61,
+                      "sha256":  "6bb88c5907c03d87e2e2ebef453c475cfd8e22f92a105fc1ce5b15f58bf83e78"
+                  },
+                  {
+                      "path":  "course_agent_app/approval_server.py",
+                      "bytes":  122190,
+                      "sha256":  "dee43e69ff739cdd9407280189a977514e1392030f3f9746e39c48f4e591208c"
+                  },
+                  {
+                      "path":  "course_agent_app/CODEX_COURSE_AGENT.md",
+                      "bytes":  19426,
+                      "sha256":  "723a6677378b1475016389e9ca3c9320242763dfc6e8e71db97944968f1ad78d"
+                  },
+                  {
+                      "path":  "course_agent_app/course_refresh_job.py",
+                      "bytes":  18440,
+                      "sha256":  "04adc2724280701472956e1acad48ba6743211b6bf672a4bd2a83374222541fe"
+                  },
+                  {
+                      "path":  "course_agent_app/date_planning_agent.py",
+                      "bytes":  18530,
+                      "sha256":  "415ff4c4b8128d18eb8988aae8d58a196e26ad3c04ba686c0790d9583e7e7f38"
+                  },
+                  {
+                      "path":  "course_agent_app/document_change_model.py",
+                      "bytes":  55672,
+                      "sha256":  "42d1d38d8ef1252a78dc8b282365515b901854e2a985bf99b4b810d424fbef40"
+                  },
+                  {
+                      "path":  "course_agent_app/file_change_planning_agent.py",
+                      "bytes":  13172,
+                      "sha256":  "84c1e62d5db4b1bfea06237117f967e864e5ac9090d505533fbae07651eb424b"
+                  },
+                  {
+                      "path":  "course_agent_app/file_refresh_batch_preview.py",
+                      "bytes":  49986,
+                      "sha256":  "ef09b3060fdf52298bd6a016dfd36c9c5170da2e2397518160fc4e1d865d6e9b"
+                  },
+                  {
+                      "path":  "course_agent_app/file_refresh_preview.py",
+                      "bytes":  143162,
+                      "sha256":  "1a258fc8a0658beadacfd5a424c814279b1946c670ec08c5df7f28311e7e8b3c"
+                  },
+                  {
+                      "path":  "course_agent_app/moodle_backup_evidence.py",
+                      "bytes":  13135,
+                      "sha256":  "5a6058167d5d97311aff387d6b83927b3c4c78ccd1c7dd92e8019a244241d58c"
+                  },
+                  {
+                      "path":  "course_agent_app/moodle_choicegroup_form.py",
+                      "bytes":  8275,
+                      "sha256":  "b072e891cd36c7a52e53dd16c10d65ae085ed7b883f34257cdd9aa73bd5010fa"
+                  },
+                  {
+                      "path":  "course_agent_app/moodle_group_membership.py",
+                      "bytes":  14577,
+                      "sha256":  "33dc7be29b916a36496236f161a44cef46d29375f589c9d7ba24744ec85bfb31"
+                  },
+                  {
+                      "path":  "course_agent_app/moodle_group_structure.py",
+                      "bytes":  25252,
+                      "sha256":  "60ff31ab323e1b5015ac97f950ea1bd29988427dc48b46ef056930caa7f0de2b"
+                  },
+                  {
+                      "path":  "course_agent_app/moodle_readback_consistency.py",
+                      "bytes":  2429,
+                      "sha256":  "834ec70d23a5a09550455edebec0592e522158aa3fb7c58efba2183eb3b4af3d"
+                  },
+                  {
+                      "path":  "course_agent_app/operation_templates/announcement_draft.json",
+                      "bytes":  1397,
+                      "sha256":  "e2a26dc225bbf2e62bce1299d84091b1fa637b6babaa47969b94ed87373aa388"
+                  },
+                  {
+                      "path":  "course_agent_app/operation_templates/browser_course_file_resource_upload.json",
+                      "bytes":  1895,
+                      "sha256":  "88255f8263870033277faa6779fde07df75cc5c6d31a65eb94d13d287d0bb201"
+                  },
+                  {
+                      "path":  "course_agent_app/operation_templates/course_file_resource_upload.json",
+                      "bytes":  1811,
+                      "sha256":  "f662aa3da911eaf02c10557d04685725bb0adb4cc6b0708072df54fef3c1b863"
+                  },
+                  {
+                      "path":  "course_agent_app/operation_templates/d1_title_edit.json",
+                      "bytes":  1181,
+                      "sha256":  "724736a8b009c861392e91c1dc245256b53da38695f635ab89c820f73087c33c"
+                  },
+                  {
+                      "path":  "course_agent_app/operation_templates/d1_title_edit_inherited_example.json",
+                      "bytes":  750,
+                      "sha256":  "acab6fdfde027b6f3796ec4b6bd0460dcaddc75346490be829627570e27c77d2"
+                  },
+                  {
+                      "path":  "course_agent_app/operation_templates/d2_access_time.json",
+                      "bytes":  1934,
+                      "sha256":  "0b04ad2b697956e3a6963fde751477dbe999b3e77ccdedfdbed5b45e4f147812"
+                  },
+                  {
+                      "path":  "course_agent_app/operation_templates/file_api_upload.json",
+                      "bytes":  1682,
+                      "sha256":  "e4ab2717c4a0e46080c2eded40667b818fc3e695c00047493108ecca2f8af324"
+                  },
+                  {
+                      "path":  "course_agent_app/operation_templates/file_upload_replace.json",
+                      "bytes":  2163,
+                      "sha256":  "0c6acbb51e6cc3b08833e84b23fb4e9bac86945c48bf08385fce468a551a7237"
+                  },
+                  {
+                      "path":  "course_agent_app/operation_templates/group_api.json",
+                      "bytes":  1245,
+                      "sha256":  "08e3eb92dad40ec95059f5451506217abeafc029fce63d9a15935e648836fcde"
+                  },
+                  {
+                      "path":  "course_agent_app/operation_templates/grouping_api.json",
+                      "bytes":  1406,
+                      "sha256":  "51b5f00618b48f6fbf2d5edf56e5c0193617099b508d97caea0342afc28f228d"
+                  },
+                  {
+                      "path":  "course_agent_app/operator_console.py",
+                      "bytes":  36816,
+                      "sha256":  "b6e15770e9dff1045cd7b2bb48dec3cc78f6574577118b3dfa266d411b9061b3"
+                  },
+                  {
+                      "path":  "course_agent_app/reference_pack_rebuild.py",
+                      "bytes":  95547,
+                      "sha256":  "0fb29fbc9bec5687f6eb822f9d37bbac70cd79eda2477a38204e644e13155d5a"
+                  },
+                  {
+                      "path":  "course_agent_app/requirements.txt",
+                      "bytes":  183,
+                      "sha256":  "ab0ab9ea275299cf3bc070cc7119ea55015ad17dd2ee0341b52b3bcf6a71e6f1"
+                  },
+                  {
+                      "path":  "course_agent_app/review_samples/sandbox_api_review_sample.md",
+                      "bytes":  1592,
+                      "sha256":  "bcfdf19786b91436116e15ab5fdce78373cfd69e52bce11786c462d7aa74e298"
+                  },
+                  {
+                      "path":  "course_agent_app/run_agent_listener.py",
+                      "bytes":  30910,
+                      "sha256":  "18adf8a0e706b6ba6835d215d53e51d302529d81e9230b9d915de161ed9c051b"
+                  },
+                  {
+                      "path":  "course_agent_app/run_agent_smoke.py",
+                      "bytes":  29478,
+                      "sha256":  "933f7b8d32ddc4dc69417aa2248eb1df1419616fd2a65c9c24a805942a278b10"
+                  },
+                  {
+                      "path":  "course_agent_app/run_course_agent_app.py",
+                      "bytes":  509693,
+                      "sha256":  "f56bf444ae865a3726f2b629b5dfa91a367a7475b158fb9c946f1b528a80eb4d"
+                  },
+                  {
+                      "path":  "course_agent_app/run_moodle_browser_task_executor.py",
+                      "bytes":  25170,
+                      "sha256":  "c9b8b2341f9283486464f3474b7d4dd601c29316cde8411c2e3706d8bdcfea18"
+                  },
+                  {
+                      "path":  "course_agent_app/run_moodle_course_activity_shell_batch.py",
+                      "bytes":  42331,
+                      "sha256":  "a27e2e3d23b632f95eefdc34404a41a529cc6c7fe9ba8db9362623d4409d979e"
+                  },
+                  {
+                      "path":  "course_agent_app/run_moodle_course_clear_file_resources.py",
+                      "bytes":  10360,
+                      "sha256":  "a6e800246cb6f5660b3a115002f09764680ef3427f587c0e21312c81eabe4068"
+                  },
+                  {
+                      "path":  "course_agent_app/run_moodle_course_file_reset_reupload.py",
+                      "bytes":  13461,
+                      "sha256":  "becbdf575478b722afd825cf0a480e1cf8057447d8c655a2dbb3ba41d1f381ea"
+                  },
+                  {
+                      "path":  "course_agent_app/run_moodle_course_file_resource_delete.py",
+                      "bytes":  11748,
+                      "sha256":  "b62c4788c4e06801aac4e93c8b8deae6834b700756e407a3840d5ddd98b9d9f6"
+                  },
+                  {
+                      "path":  "course_agent_app/run_moodle_course_file_resource_upload.py",
+                      "bytes":  42014,
+                      "sha256":  "363c564f836916e93efc04e74750f98bea4929f56cdfec0fb144fc620e14157f"
+                  },
+                  {
+                      "path":  "course_agent_app/run_moodle_course_file_upload_batch.py",
+                      "bytes":  28614,
+                      "sha256":  "ba0c76fb61c87725e0a046fd53d0b24a77150996de69ba33c18cc23dd1dd4ca1"
+                  },
+                  {
+                      "path":  "course_agent_app/run_moodle_module_access_time.py",
+                      "bytes":  12462,
+                      "sha256":  "5728fdad34bb3a8b2f1c6e7d930e6998c4559040dc88593c58c1c58516dd6f4b"
+                  },
+                  {
+                      "path":  "course_agent_app/run_moodle_module_delete.py",
+                      "bytes":  12678,
+                      "sha256":  "051dffac650978bed26749fa2ed0858e89be39275439494ea4c3c3625809bced"
+                  },
+                  {
+                      "path":  "course_agent_app/run_moodle_module_title.py",
+                      "bytes":  8759,
+                      "sha256":  "1481137c781fb13cb4b52ade93d073c657608471817836efeb77d7d2964dfb05"
+                  },
+                  {
+                      "path":  "course_agent_app/run_moodle_module_visibility.py",
+                      "bytes":  12930,
+                      "sha256":  "55dbae95955d3631943000ca5a8dbd9f54fd688e6422d70922bafef79dbb5601"
+                  },
+                  {
+                      "path":  "course_agent_app/run_moodle_section_rename.py",
+                      "bytes":  18067,
+                      "sha256":  "648f6a07b6deac44d95cd25566f29994ec1ac173ceaa891ea75bb6d848bafa77"
+                  },
+                  {
+                      "path":  "course_agent_app/run_whatsapp_web_smoke.py",
+                      "bytes":  98720,
+                      "sha256":  "f70fff26b953e5c9b070b86b3ad1a0573855232b6b3c20b6bfe88b813530373a"
+                  },
+                  {
+                      "path":  "course_agent_app/schedule_planning_agent.py",
+                      "bytes":  8661,
+                      "sha256":  "66336b19d7b14ae71806755fd49208a29bae70857f66e4285049618a32f8e150"
+                  },
+                  {
+                      "path":  "course_agent_app/semester_schedule_update.py",
+                      "bytes":  66384,
+                      "sha256":  "60ca7d1d0e3fc159174d88c65e24ca5913a94842df967a14b00b0e4401a03161"
+                  },
+                  {
+                      "path":  "course_agent_app/timeline_draft_review.py",
+                      "bytes":  67726,
+                      "sha256":  "7e673243c85817d8acea0ed30df7407b462f78665d6c8a136e2e2ae34cea842d"
+                  },
+                  {
+                      "path":  "course_agent_app/timeline_reconciliation_agent.py",
+                      "bytes":  11107,
+                      "sha256":  "0eed4ac743faa5fb11a29676eb567281a49bec27afc6c9794e997f5ae3696a12"
+                  },
+                  {
+                      "path":  "course_agent_app/windows_office_pdf_worker.py",
+                      "bytes":  3961,
+                      "sha256":  "fcd6a392f86040cd5233f993d93ac275ce52b9dc25d47b39518a2f67fe0106e6"
+                  },
+                  {
+                      "path":  "course_automation_probe/file_layout.py",
+                      "bytes":  5928,
+                      "sha256":  "222079f51e65ed1213424ac7629d4b3f1411908dd2ff819d95a9579266e040a3"
+                  },
+                  {
+                      "path":  "course_automation_probe/run_dase7137_stale_cleanup_rebuild.py",
+                      "bytes":  180868,
+                      "sha256":  "ab416635260b2451f9770ac9fe7e585186464146f6ff1a08ae7ce37e046d2f92"
+                  },
+                  {
+                      "path":  "course_automation_probe/run_sandbox_clean_rebuild_debug.py",
+                      "bytes":  30687,
+                      "sha256":  "5dadff61a770c8fa51d1da46b3515801d42218a250a73116de10aaa855002cf5"
+                  },
+                  {
+                      "path":  "course_files/reference/DASE7137/2026-2027-sem1/calendar.json",
+                      "bytes":  7470,
+                      "sha256":  "a97125e632a7465504b2ad3b8ed1adedf5c01efaf560441bd3b8b4763e8f69e4"
+                  },
+                  {
+                      "path":  "course_files/reference/DASE7137/2026-2027-sem1/README.md",
+                      "bytes":  1492,
+                      "sha256":  "557862102eeb0ac9f41e0e2e84431677a81e07b58e93ed8b2c43a8e6e9060bce"
+                  },
+                  {
+                      "path":  "course_files/reference/DASE7137/2026-2027-sem1/refresh_rules.md",
+                      "bytes":  3612,
+                      "sha256":  "88a097be92599d40a0d766a0e16e3788cc1dc59f3d7df8647ce0eee496aecca3"
+                  },
+                  {
+                      "path":  "course_files/reference/DASE7137/2026-2027-sem1/semester_schedule.json",
+                      "bytes":  7257,
+                      "sha256":  "b55ce7d5b328ffc88a17f453099f5629a9305af18ee809ea1309ca63e1f44178"
+                  },
+                  {
+                      "path":  "course_files/reference/DASE7137/2026-2027-sem1/source_calendar.json",
+                      "bytes":  7359,
+                      "sha256":  "e1d85243a43d663890134cc3b7016726ece8b9e2a821c94a2cf9f1cae9b1f77f"
+                  },
+                  {
+                      "path":  "course_files/reference/DASE7137/2026-2027-sem1/source_manifest.json",
+                      "bytes":  2958,
+                      "sha256":  "1c8873f6419a12c0e0dfbf6b9614f9be6d58973ec070a75a01d5b9f6302fad46"
+                  },
+                  {
+                      "path":  "course_files/reference/DASE7137/2026-2027-sem1/sources/calendar-24-25-3.pdf",
+                      "bytes":  90559,
+                      "sha256":  "9dc090cd254d1dec6df70107e20d1d43809486c6526dd12406a62eb3b37d483d"
+                  },
+                  {
+                      "path":  "course_files/reference/DASE7137/2026-2027-sem1/sources/Dates-of-Semesters-2026-2027-3.pdf",
+                      "bytes":  93569,
+                      "sha256":  "b9dc4a086371a901db0cca28828fb765542d903d0fa46ab4bbf77192c82f012e"
+                  },
+                  {
+                      "path":  "course_files/reference/DASE7137/2026-2027-sem1/sources/Timeline-reference-3.docx",
+                      "bytes":  22750,
+                      "sha256":  "b974557e049835976f54d33b9925260bd6c1aea9e9e439fa3b564b3cf47ce84b"
+                  },
+                  {
+                      "path":  "course_files/reference/DASE7137/2026-2027-sem1/syllabus_rules.json",
+                      "bytes":  1089,
+                      "sha256":  "a7c01b9371b153295e0297c69416d3c6aaa3918877895ad9257175b817215a7f"
+                  },
+                  {
+                      "path":  "course_files/reference/DASE7137/2026-2027-sem1/timeline.json",
+                      "bytes":  30828,
+                      "sha256":  "fe86fbf2d3ad29d0750b19287765e7eba474fa21d60ab95df14f175c49dc120a"
+                  },
+                  {
+                      "path":  "docs/DASE7137_REBUILD_RULES.md",
+                      "bytes":  6260,
+                      "sha256":  "dc4b5c3476d931b2f5b4e854151260edd4f15fd8d198d8fff0069b07b55884cd"
+                  },
+                  {
+                      "path":  "docs/MIGRATION_TEST_ISSUES.md",
+                      "bytes":  20268,
+                      "sha256":  "d9650cc305e551395158605b1ebb7a3af954b2b34acddd89815855ebbde2bfbe"
+                  },
+                  {
+                      "path":  "migration/bootstrap_runtime.ps1",
+                      "bytes":  4839,
+                      "sha256":  "8787e0df1be3a2631ac08d53b28644329cbd9b0fd5a291ebdcb5b360fb2944e6"
+                  },
+                  {
+                      "path":  "migration/build_windows_bundle.ps1",
+                      "bytes":  4261,
+                      "sha256":  "238c481d77d34c04a40206fc4b4ed0d2c044aca4d159431646f5cf81c13265a1"
+                  },
+                  {
+                      "path":  "migration/preflight.py",
+                      "bytes":  12073,
+                      "sha256":  "c1e81390de714fdff0d871538b16e621a97ab7057fabe14ac6e5d66dafe8e827"
+                  },
+                  {
+                      "path":  "migration/README.md",
+                      "bytes":  4271,
+                      "sha256":  "75cd3113061b834d9d3580bbb2d5e11868c059cf9d3ffc2241e9e7631cb5f374"
+                  },
+                  {
+                      "path":  "migration/resolve_playwright_browser.py",
+                      "bytes":  356,
+                      "sha256":  "4cd918e61d2aa5071b56f0c185a73e395fa969dd704c0371c05fefa1bac00676"
+                  },
+                  {
+                      "path":  "migration/start_agent.ps1",
+                      "bytes":  6268,
+                      "sha256":  "f390ad0446929c65ce54807526b5ce62776783103646fccb2a85b721abbdebeb"
+                  },
+                  {
+                      "path":  "moodle_operations/__init__.py",
+                      "bytes":  258,
+                      "sha256":  "3386f440396fecf087063c401af5ecc5b4ba7af879bd32df14c5a87d6db7fad8"
+                  },
+                  {
+                      "path":  "moodle_operations/adapter.py",
+                      "bytes":  129864,
+                      "sha256":  "f23f69e3636c1d5a4965ce24f91c4c582557a80509877d293f6c380e1752700a"
+                  },
+                  {
+                      "path":  "moodle_operations/agent_tools.py",
+                      "bytes":  17663,
+                      "sha256":  "28fb64ebfd147a91c6cfa5e4fc5d4c53fa5fc67838f17ec51f2cae886b7fab8d"
+                  },
+                  {
+                      "path":  "moodle_operations/api_client.py",
+                      "bytes":  59669,
+                      "sha256":  "d1edca4f0ab71910c00d55ec294628ab31f8f87011f523323ec4089e1a456f5a"
+                  },
+                  {
+                      "path":  "moodle_operations/operation_loader.py",
+                      "bytes":  2584,
+                      "sha256":  "38e0cc53101b1e70b27a8928d504b115fba658459ced08dba6a6a04a132b4aba"
+                  },
+                  {
+                      "path":  "python-3.11.9-amd64.exe",
+                      "bytes":  26216840,
+                      "sha256":  "5ee42c4eee1e6b4464bb23722f90b45303f79442df63083f05322f1785f5fdde"
+                  },
+                  {
+                      "path":  "whatsapp_approval/__init__.py",
+                      "bytes":  400,
+                      "sha256":  "cfc03fba1701a496c0cfa5c625359d63a0f41c5baf351ac4eb8f25a217066c13"
+                  },
+                  {
+                      "path":  "whatsapp_approval/commands.py",
+                      "bytes":  1937,
+                      "sha256":  "ebf017c96e42f3e89f4fb3b285235a1d79299dc7b837661e8b80bbe8886de383"
+                  },
+                  {
+                      "path":  "whatsapp_approval/messages.py",
+                      "bytes":  4284,
+                      "sha256":  "9d0af21373ecc8ac291686938263bf230653ebbbf905d68e97eeea8c11da2ec2"
+                  }
+              ],
+    "credential_bundle":  {
+                              "includes_env":  true,
+                              "private_github_repo":  "Richard598/Course_Agent"
+                          },
+    "excluded_state":  [
+                           "course_agent_app/.whatsapp_web_profile/",
+                           "course_agent_app/.moodle_browser_profile/",
+                           "browser cookies and login databases",
+                           "reports, approval ledgers, flow state, caches, and historical build outputs"
+                       ],
+    "destination_steps":  [
+                              "Set-ExecutionPolicy -Scope Process Bypass",
+                              ".\\migration\\bootstrap_runtime.ps1",
+                              ".\\migration\\start_agent.ps1"
+                          ]
+}

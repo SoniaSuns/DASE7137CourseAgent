@@ -1,0 +1,27 @@
+{
+  "course_code": "DASE7137",
+  "semester": "2026-2027-sem1",
+  "status": "reproducible_reference",
+  "source_basis": [
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\calendar-24-25-3.pdf",
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\Timeline-reference-3.docx",
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\Dates-of-Semesters-2026-2027-3.pdf",
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\timeline.json",
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\calendar.json"
+  ],
+  "reproducibility": {
+    "source_manifest": "course_files\\reference\\DASE7137\\2026-2027-sem1\\source_manifest.json"
+  },
+  "rules": [
+    {
+      "id": "source-first",
+      "severity": "hard",
+      "text": "Refresh editable Office/source files first when available; generated PDFs are derived artifacts."
+    },
+    {
+      "id": "dates-grounded",
+      "severity": "hard",
+      "text": "Visible course dates must be grounded in timeline.json or calendar.json; otherwise mark NEEDS_REVIEW."
+    }
+  ]
+}

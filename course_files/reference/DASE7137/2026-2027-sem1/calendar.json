@@ -1,0 +1,276 @@
+{
+  "course_code": "DASE7137",
+  "academic_year": "2026-2027",
+  "target_semester": "first",
+  "status": "source-confirmed",
+  "source_basis": [
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\Dates-of-Semesters-2026-2027-3.pdf"
+  ],
+  "source_documents": [
+    "course_files\\reference\\DASE7137\\2026-2027-sem1\\sources\\Dates-of-Semesters-2026-2027-3.pdf"
+  ],
+  "non_teaching_days": [
+    {
+      "date": "2026-09-26",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[26]"
+    },
+    {
+      "date": "2026-10-01",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[1]"
+    },
+    {
+      "date": "2026-10-19",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[19]"
+    },
+    {
+      "date": "2026-12-24",
+      "name": "University Holiday",
+      "type": "university_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "(24)"
+    },
+    {
+      "date": "2026-12-25",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[25]"
+    },
+    {
+      "date": "2026-12-26",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[26]"
+    },
+    {
+      "date": "2026-12-31",
+      "name": "University Holiday (afternoon only)",
+      "type": "university_holiday_afternoon",
+      "classes_suspended": false,
+      "full_day": false,
+      "source_marker": "<31>"
+    },
+    {
+      "date": "2027-01-01",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[1]"
+    },
+    {
+      "date": "2027-02-05",
+      "name": "University Holiday (afternoon only)",
+      "type": "university_holiday_afternoon",
+      "classes_suspended": false,
+      "full_day": false,
+      "source_marker": "<5>"
+    },
+    {
+      "date": "2027-02-06",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[6]"
+    },
+    {
+      "date": "2027-02-08",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[8]"
+    },
+    {
+      "date": "2027-02-09",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[9]"
+    },
+    {
+      "date": "2027-03-16",
+      "name": "University Holiday",
+      "type": "university_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "(16)"
+    },
+    {
+      "date": "2027-03-26",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[26]"
+    },
+    {
+      "date": "2027-03-27",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[27]"
+    },
+    {
+      "date": "2027-03-29",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[29]"
+    },
+    {
+      "date": "2027-04-05",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[5]"
+    },
+    {
+      "date": "2027-05-01",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[1]"
+    },
+    {
+      "date": "2027-05-13",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[13]"
+    },
+    {
+      "date": "2027-06-09",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[9]"
+    },
+    {
+      "date": "2027-08-01",
+      "name": "General Holiday",
+      "type": "general_holiday",
+      "classes_suspended": true,
+      "full_day": true,
+      "source_marker": "[1]"
+    }
+  ],
+  "teaching_suspensions": [
+    {
+      "name": "Reading/Field Trip Week",
+      "type": "reading_or_field_trip_week",
+      "start": "2026-10-12",
+      "end": "2026-10-17",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    },
+    {
+      "name": "Revision Period",
+      "type": "revision_period",
+      "start": "2026-12-01",
+      "end": "2026-12-05",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    },
+    {
+      "name": "Assessment Period",
+      "type": "assessment_period",
+      "start": "2026-12-07",
+      "end": "2026-12-23",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    },
+    {
+      "name": "Class Suspension Period for the Lunar New Year",
+      "type": "class_suspension",
+      "start": "2027-02-06",
+      "end": "2027-02-12",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    },
+    {
+      "name": "Reading/Field Trip Week",
+      "type": "reading_or_field_trip_week",
+      "start": "2027-03-08",
+      "end": "2027-03-13",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    },
+    {
+      "name": "Revision Period",
+      "type": "revision_period",
+      "start": "2027-05-03",
+      "end": "2027-05-07",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    },
+    {
+      "name": "Assessment Period",
+      "type": "assessment_period",
+      "start": "2027-05-08",
+      "end": "2027-05-25",
+      "classes_suspended": true,
+      "counts_as_teaching_week": false
+    }
+  ],
+  "semesters": {
+    "first": {
+      "name": "first",
+      "start": "2026-09-01",
+      "end": "2026-12-23",
+      "first_teaching": "2026-09-01",
+      "last_teaching": "2026-11-30",
+      "reading_start": "2026-10-12",
+      "reading_end": "2026-10-17",
+      "revision_start": "2026-12-01",
+      "revision_end": "2026-12-05",
+      "assessment_start": "2026-12-07",
+      "assessment_end": "2026-12-23",
+      "class_suspension_start": null,
+      "class_suspension_end": null
+    },
+    "second": {
+      "name": "second",
+      "start": "2027-01-18",
+      "end": "2027-05-25",
+      "first_teaching": "2027-01-18",
+      "last_teaching": "2027-04-30",
+      "reading_start": "2027-03-08",
+      "reading_end": "2027-03-13",
+      "revision_start": "2027-05-03",
+      "revision_end": "2027-05-07",
+      "assessment_start": "2027-05-08",
+      "assessment_end": "2027-05-25",
+      "class_suspension_start": "2027-02-06",
+      "class_suspension_end": "2027-02-12"
+    }
+  },
+  "refresh_policy": {
+    "unmapped_dates": "needs_review"
+  },
+  "calendar_role": "target"
+}

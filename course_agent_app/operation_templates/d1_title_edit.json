@@ -1,0 +1,28 @@
+{
+  "batch_id": "SMOKE-MOODLE-WA-001",
+  "approval_run_id": "RUN-TEMPLATE",
+  "operation_id": "SANDBOX-D1-TITLE-EDIT-UNSUPPORTED",
+  "operation_kind": "direct_title_edit",
+  "risk_level": "low",
+  "target_course_url": "https://migrationtest-moodle.hku.hk/course/view.php?id=105330",
+  "target_course_id": "105330",
+  "target_module_id": "",
+  "target_settings_url": "",
+  "section_name": "General",
+  "target_object": "Announcements",
+  "object_type": "Forum",
+  "action": "edit_assignment_title",
+  "original_title": "Announcements",
+  "target_title": "Announcements [API TEST TITLE - UNSUPPORTED]",
+  "expected_visibility": "Show on course page",
+  "expected_access_restrictions_json": "{\"op\":\"&\",\"c\":[],\"showc\":[]}",
+  "guardrails": [
+    "sandbox course only: migrationtest Moodle course id 105330",
+    "this action is unsupported by the current Moodle APIM whitelist and should block in api_action mode",
+    "do not use the legacy real DASE7137/IMSE7137 Moodle course",
+    "do not change visibility",
+    "do not change access restrictions",
+    "do not change dates, grades, submission settings, or notifications",
+    "do not delete or upload Moodle files"
+  ]
+}
