@@ -50,8 +50,30 @@ MESSAGE_BODY_SCRIPT = r"""input => {
     // Rich-text list items also carry data-pre-plain-text ("- "). They are
     // descendants of the message body, not separate timestamped messages.
     const body = candidates.find(e => !candidates.some(other => other !== e && other.contains(e)));
-    const nodes = body ? [...body.querySelectorAll('.selectable-text')].filter(e =>
-      !e.parentElement.closest('.selectable-text') && !e.closest(quoted)) : [];
+    // Document captions in current WhatsApp have no data-pre-plain-text wrapper.
+    const nodes = (body ? [...body.querySelectorAll('.selectable-text')] :
+      [...root.querySelectorAll('[data-testid~="document-caption"]')]).filter(e =>
+      !e.parentElement.closest('.selectable-text') && !e.closest(quoted));
+    const unquotedTail = direction => [...root.querySelectorAll('[data-testid="tail-'+direction+'"],[data-icon="tail-'+direction+'"]')]
+      .some(e => !e.closest(quoted));
+    const documentDirection = root.querySelector('[data-testid="document-thumb"]') ?
+      (unquotedTail('out') ? 'outgoing' : unquotedTail('in') ? 'incoming' : '') : '';
+    let documentDateLabel = '', documentClock = '';
+    if (!body && root.querySelector('[data-testid="document-thumb"]')) {
+      const clocks = [...root.querySelectorAll('[data-testid="msg-meta"]')].filter(e => !e.closest(quoted));
+      documentClock = clocks.length === 1 ? normalize(clocks[0].textContent) : '';
+      // Read a structural timeline separator, never date-like words in a message.
+      const timeline = root.closest('[data-tab="8"]');
+      const dateLabel = /^(今天|昨天|昨日|Today|Yesterday|\d{4}年\d{1,2}月\d{1,2}日|\d{4}[/-]\d{1,2}[/-]\d{1,2}|\d{1,2}[/-]\d{1,2}[/-]\d{4})$/i;
+      for (let branch = root; timeline && branch && branch !== timeline && !documentDateLabel; branch = branch.parentElement) {
+        for (let sibling = branch.previousElementSibling; sibling; sibling = sibling.previousElementSibling) {
+          if (sibling.getAttribute('tabindex') !== '-1' || sibling.matches('[data-id],[role="row"]') ||
+              sibling.querySelector('[data-id],[data-pre-plain-text],[data-testid="document-thumb"]')) continue;
+          const label = normalize(sibling.innerText || sibling.textContent);
+          if (dateLabel.test(label)) {documentDateLabel = label; break;}
+        }
+      }
+    }
     let selfMentioned = false;
     const raw = [], addressed = [];
     for (const node of nodes) {
@@ -81,6 +103,8 @@ MESSAGE_BODY_SCRIPT = r"""input => {
     }
     return [id, {text:raw.join('\n').trim(), addressed_text:normalize(addressed.join('\n')),
       self_mentioned:selfMentioned, account_identity_available:own.size > 0,
+      document_date_label:documentDateLabel, document_clock:documentClock,
+      document_direction:documentDirection,
       meta:body?.getAttribute('data-pre-plain-text') || ''}];
   }));
 }"""

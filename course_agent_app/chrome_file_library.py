@@ -12,7 +12,8 @@ import zipfile
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[2] / 'files'
 DEFAULT_INDEX = Path(__file__).resolve().parents[1] / 'course_files/library_index.json'
-READABLE = {'.docx', '.pptx', '.xlsx', '.xls', '.pdf', '.txt', '.md', '.csv', '.json', '.html', '.htm'}
+SOURCE_TEXT = {'.cs', '.py', '.js', '.ts', '.tsx', '.jsx', '.css', '.sql', '.java', '.c', '.cpp', '.h', '.xml', '.yaml', '.yml'}
+READABLE = {'.docx', '.pptx', '.xlsx', '.xls', '.pdf', '.txt', '.md', '.csv', '.json', '.html', '.htm'} | SOURCE_TEXT
 PAGE_SIZE = 16000
 
 
@@ -227,7 +228,7 @@ def text_chunks(data, suffix):
             content = page.extract_text() or ''
             if content.strip():
                 yield f'[Page {i}]\n' + content
-    elif suffix in {'.txt', '.md', '.csv', '.json'}:
+    elif suffix in {'.txt', '.md', '.csv', '.json'} | SOURCE_TEXT:
         yield data.decode('utf-8-sig')
     else:
         raise ValueError('No text reader for this format.')

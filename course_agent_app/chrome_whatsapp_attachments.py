@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 import re
+import secrets
 import tempfile
 import time
 import unicodedata
@@ -40,8 +41,10 @@ def download_document(page, message_id, doc, storage):
         session.send('Browser.setDownloadBehavior', {'behavior': 'allowAndName', 'downloadPath': str(staging),
                                                     'eventsEnabled': True, **context})
         configured = True
-        if not page.evaluate(CLICK_DOCUMENT_SCRIPT, {'id': message_id, **doc}):
+        marker=secrets.token_hex(12)
+        if not page.evaluate(CLICK_DOCUMENT_SCRIPT, {'id': message_id, **doc, 'marker':marker}):
             raise ValueError('The exact incoming WhatsApp attachment is no longer visible.')
+        page.locator('[data-course-agent-download="'+marker+'"]').click(timeout=5000)
         viewer_clicked = False
         deadline = time.monotonic() + DOWNLOAD_SECONDS
         while time.monotonic() < deadline:
@@ -98,7 +101,9 @@ DOCUMENTS_SCRIPT = r"""ids => {
    const roots = [...document.querySelectorAll('[data-id]')].filter(e => e.getAttribute('data-id') === id);
    if (roots.length !== 1) continue;
    const root = roots[0];
-   if (!root.matches('.message-in') && !root.closest('.message-in') && !root.querySelector('.message-in')) continue;
+   const unquoted = selector => [...root.querySelectorAll(selector)].some(e=>!e.closest('[data-testid*="quoted"],blockquote'));
+   if (root.matches('.message-out') || root.closest('.message-out') || unquoted('[data-testid="tail-out"],[data-icon="tail-out"]')) continue;
+   if (!root.matches('.message-in') && !root.closest('.message-in') && !unquoted('.message-in,[data-testid="tail-in"],[data-icon="tail-in"]')) continue;
    const docs = [...root.querySelectorAll('[data-testid="document-thumb"]')].filter(e =>
      !e.closest('[data-testid*="quoted"],blockquote') && e.getBoundingClientRect().width);
    result[id] = docs.map((e, index) => {
@@ -113,15 +118,17 @@ DOCUMENTS_SCRIPT = r"""ids => {
  return result;
 }"""
 
-CLICK_DOCUMENT_SCRIPT = r"""({id,index,name}) => {
+CLICK_DOCUMENT_SCRIPT = r"""({id,index,name,marker}) => {
  const roots = [...document.querySelectorAll('[data-id]')].filter(e => e.getAttribute('data-id') === id);
  if (roots.length !== 1) return false;
  const root=roots[0];
- if (!root.matches('.message-in') && !root.closest('.message-in') && !root.querySelector('.message-in')) return false;
+ const unquoted = selector => [...root.querySelectorAll(selector)].some(e=>!e.closest('[data-testid*="quoted"],blockquote'));
+ if (root.matches('.message-out') || root.closest('.message-out') || unquoted('[data-testid="tail-out"],[data-icon="tail-out"]')) return false;
+ if (!root.matches('.message-in') && !root.closest('.message-in') && !unquoted('.message-in,[data-testid="tail-in"],[data-icon="tail-in"]')) return false;
  const docs=[...root.querySelectorAll('[data-testid="document-thumb"]')].filter(e =>
    !e.closest('[data-testid*="quoted"],blockquote') && e.getBoundingClientRect().width);
  const e=docs[index]; if (!e) return false;
- e.click(); return true;
+ e.setAttribute('data-course-agent-download',marker); return true;
 }"""
 
 # A PDF thumbnail can open WhatsApp's viewer. Only use a uniquely labelled

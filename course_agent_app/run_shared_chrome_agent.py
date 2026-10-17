@@ -5,7 +5,7 @@ import argparse
 import copy
 from contextlib import ExitStack
 from concurrent.futures import ThreadPoolExecutor
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
 import os
 import re
@@ -108,7 +108,14 @@ def load_config():
 
 def record_time(record, now):
     # Parse browser metadata only. Never infer observation time from staff text.
-    for source in (str(record.get('meta') or ''),str(record.get('timestamp') or '')):
+    sources=[str(record.get('meta') or ''),str(record.get('timestamp') or '')]
+    label=str(record.get('document_date_label') or '').strip()
+    clock=str(record.get('document_clock') or '').strip()
+    if label and re.fullmatch(r'(?:上午|下午)?\s*\d{1,2}:\d{2}\s*(?:AM|PM)?',clock,re.I):
+        if label.casefold() in {'today','今天'}:label=now.strftime('%Y/%m/%d')
+        elif label.casefold() in {'yesterday','昨天','昨日'}:label=(now-timedelta(days=1)).strftime('%Y/%m/%d')
+        sources.append(clock+', '+label)
+    for source in sources:
         match=re.search(r'(?:(上午|下午)\s*)?(\d{1,2}):(\d{2})\s*(AM|PM)?\s*[,，]\s*(.+)',source,re.I)
         if not match:continue
         local_period,hour,minute,period,date=match.groups()
@@ -161,6 +168,10 @@ def intake_records(page, account_name=''):
             record['self_mentioned']=body['self_mentioned']
             record['addressed_text']=body['addressed_text']
             if body['meta']:record['meta']=body['meta']
+            if body.get('document_direction')=='outgoing':record['direction']='outgoing'
+            elif body.get('document_direction')=='incoming' and record.get('direction')!='outgoing':record['direction']='incoming'
+            for key in ('document_date_label','document_clock'):
+                if body.get(key):record[key]=body[key]
             sender=re.search(r'\]\s*(.*?):\s*$',record.get('meta',''))
             if sender and not record.get('sender_id'):record['sender_id']=sender.group(1).strip()
         record['attachments']=documents.get(record_message_id(record),[])
