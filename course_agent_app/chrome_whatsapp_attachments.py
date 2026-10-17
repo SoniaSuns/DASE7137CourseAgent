@@ -16,9 +16,68 @@ MAX_FILE = 32 * 1024 * 1024
 MAX_TASK = 128 * 1024 * 1024
 MAX_FILES = 12
 DOWNLOAD_SECONDS = 45
+MENU_SECONDS = 3
+
+
+def reject_open_warning(page):
+    warning=page.locator('[data-testid="harmful-file-warning-modal"]:visible')
+    if not warning.count():return
+    # Cancel this exact prompt; never acknowledge Open File or disable a guard.
+    cancel=warning.get_by_role('button',name=re.compile(r'^(Cancel|取消)$',re.I))
+    if cancel.count()==1:cancel.click(timeout=2000)
+    else:page.keyboard.press('Escape')
+    raise ValueError('WhatsApp requested a safety confirmation to open this attachment. '
+                     'The file was not opened or executed; automatic download stopped.')
+
+
+def trigger_document_download(page,message_id,doc,marker):
+    """Use Save/Download, not the file card's potentially unsafe Open action."""
+    reject_open_warning(page)
+    if page.locator('[role="menu"]:visible').count():
+        raise ValueError('An existing WhatsApp menu is open; attachment download cannot be uniquely selected.')
+    source=page.locator('[data-course-agent-download="'+marker+'"]')
+    source.click(button='right',timeout=5000)
+    deadline=time.monotonic()+MENU_SECONDS
+    opened=False
+    try:
+        while time.monotonic()<deadline:
+            reject_open_warning(page)
+            visible_menus=page.locator('[role="menu"]:visible')
+            opened=opened or bool(visible_menus.count())
+            # WhatsApp also renders a sibling reaction toolbar with role=menu.
+            menus=visible_menus.filter(has=page.locator('[role="menuitem"]:visible'))
+            if menus.count()>1:
+                raise ValueError('Multiple attachment action menus are visible; no file was opened.')
+            if menus.count()==1:
+                controls=menus.get_by_role('menuitem',name=re.compile(r'^(Download|下载|下載)$',re.I)).filter(visible=True)
+                if controls.count()>1:
+                    raise ValueError('The exact attachment menu has no unique Download action; no file was opened.')
+                if controls.count()==1:
+                    if doc not in descriptors(page,[message_id]).get(message_id,[]):
+                        raise ValueError('WhatsApp attachment changed while its download menu was open.')
+                    controls.click(timeout=3000)
+                    return
+            page.wait_for_timeout(50)
+        raise ValueError('The exact attachment menu has no unique Download action; no file was opened.')
+    finally:
+        if opened and page.locator('[role="menu"]:visible').count():page.keyboard.press('Escape')
 
 
 def download_document(page, message_id, doc, storage):
+    """Legacy card/viewer adapter, retained for existing callers only.
+
+    The live listener uses download_document_via_menu, never this Open-capable
+    adapter. Both adapters share transfer validation and resource cleanup.
+    """
+    return _download_document(page,message_id,doc,storage,menu_only=False)
+
+
+def download_document_via_menu(page, message_id, doc, storage):
+    """Save through an explicit Download action; never fall back to Open."""
+    return _download_document(page,message_id,doc,storage,menu_only=True)
+
+
+def _download_document(page, message_id, doc, storage, *, menu_only):
     """Bound Chrome download events even on no_defaults CDP connections.
 
     Scope Chrome's temporary download policy to this browser context, restore its
@@ -49,15 +108,17 @@ def download_document(page, message_id, doc, storage):
         marker=secrets.token_hex(12)
         if not page.evaluate(CLICK_DOCUMENT_SCRIPT, {'id': message_id, **doc, 'marker':marker}):
             raise ValueError('The exact incoming WhatsApp attachment is no longer visible.')
-        page.locator('[data-course-agent-download="'+marker+'"]').click(timeout=5000)
+        if menu_only:trigger_document_download(page,message_id,doc,marker)
+        else:page.locator('[data-course-agent-download="'+marker+'"]').click(timeout=5000)
         viewer_clicked = False
         deadline = time.monotonic() + DOWNLOAD_SECONDS
         while time.monotonic() < deadline:
             page.wait_for_timeout(100)
+            reject_open_warning(page)
             if len(received) > 1:
                 raise ValueError('WhatsApp produced multiple downloads; no source was accepted.')
             if not received:
-                if not viewer_clicked: viewer_clicked = page.evaluate(CLICK_VIEWER_DOWNLOAD, doc['name'])
+                if not menu_only and not viewer_clicked: viewer_clicked = page.evaluate(CLICK_VIEWER_DOWNLOAD, doc['name'])
                 continue
             event = received[0]
             if unicodedata.normalize('NFC', event['suggestedFilename']) != safe_name(doc['name']):
@@ -219,13 +280,16 @@ def safe_name(name):
 
 class WhatsAppFiles(FileLibrary):
     """Merge only the active run's downloads with the owner's normal library."""
-    def __init__(self, base, storage):
+    def __init__(self, base, storage, *, document_download=None):
         super().__init__(base.root, base.index, detect_content=True)
         self.base = base
         self.storage = FileLibrary(storage, Path(storage) / 'unused-index.json')
         self.storage.root.mkdir(parents=True, exist_ok=True)
         self.scope = None
         self.files = []
+        # Explicitly inject the menu-only adapter in the live listener. The
+        # default preserves the legacy library API for existing callers.
+        self.document_download = document_download or download_document
 
     def bind(self, chat, state):
         scope = [chat, state.get('sender'), state.get('run')]
@@ -277,7 +341,7 @@ class WhatsAppFiles(FileLibrary):
             if observed != documents:
                 raise ValueError('WhatsApp attachment changed before download; send the file again with your request.')
             data = (download_image(page,message_id,doc) if doc.get('kind')=='image' else
-                    download_document(page, message_id, doc, self.storage.root))
+                    self.document_download(page, message_id, doc, self.storage.root))
             if sum(e['bytes'] for e in self.files) + len(data) > MAX_TASK:
                 raise ValueError('WhatsApp attachments exceed this task\'s 128 MiB limit.')
             relative = key + Path(name).suffix.lower()

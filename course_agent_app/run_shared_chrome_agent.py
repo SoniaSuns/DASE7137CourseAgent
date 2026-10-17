@@ -38,7 +38,7 @@ from chrome_form_dates import validate as validate_dates, MoodleDateConflict, in
 from chrome_planner import CodexPlanner
 from chrome_course_scope import MoodleLoginRequired
 from chrome_file_library import FileLibrary, FileLibraryChanged, DEFAULT_ROOT
-from chrome_whatsapp_attachments import WhatsAppFiles, descriptors, fingerprint
+from chrome_whatsapp_attachments import WhatsAppFiles, descriptors, fingerprint, download_document_via_menu
 from chrome_mentions import MESSAGE_BODY_SCRIPT, discover_account_name, observed_chat_type
 from shared_chrome import SharedChrome
 from listener_health import ListenerHealth, HealthHeartbeat
@@ -2010,7 +2010,8 @@ def main():
                 runtime=Runtime(wa,browser,config['chats'],config['course_ids'],
                                 CodexPlanner(env,ROOT/'reports/shared_chrome/planner'),
                                 ROOT/'reports/shared_chrome/state',pool,
-                                WhatsAppFiles(FileLibrary(config['file_library_root']),ROOT/'reports/shared_chrome/state/attachments'),config['file_library_planner_access'],
+                                WhatsAppFiles(FileLibrary(config['file_library_root']),ROOT/'reports/shared_chrome/state/attachments',
+                                              document_download=download_document_via_menu),config['file_library_planner_access'],
                                 config['mention_only_chats'],config['recent_result_limit'])
                 runtime.auto_block_recovery=bool(config.get('auto_block_recovery',{}).get('enabled',False))
                 runtime.defer_uncertain_items=config['defer_uncertain_items']
