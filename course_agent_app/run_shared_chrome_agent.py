@@ -38,6 +38,7 @@ from chrome_form_dates import validate as validate_dates, MoodleDateConflict, in
 from chrome_planner import CodexPlanner
 from chrome_course_scope import MoodleLoginRequired
 from chrome_file_library import FileLibrary, FileLibraryChanged, DEFAULT_ROOT
+from chrome_whatsapp_attachments import WhatsAppFiles, descriptors, fingerprint
 from chrome_mentions import MESSAGE_BODY_SCRIPT, discover_account_name, observed_chat_type
 from shared_chrome import SharedChrome
 from listener_health import ListenerHealth, HealthHeartbeat
@@ -135,16 +136,24 @@ def request_record(record, started_at=None):
     mid=record_message_id(record)
     sender=str(record.get('sender_id') or record.get('sender_display_name') or '').strip()
     text=str(record.get('message_text') if 'message_text' in record else record.get('text') or '').strip()
-    if not mid or not sender or not text: return None
+    attachments=record.get('attachments',[])
+    if not mid or not sender or (not text and not attachments): return None
     if started_at:
         observed=record_time(record,datetime.now(started_at.tzinfo))
         if observed is None or observed<started_at.replace(second=0,microsecond=0):return None
-    return {'id':mid,'sender':sender,'text':text}
+    result={'id':mid,'sender':sender,'text':text}
+    if attachments:
+        result.update(attachments=attachments,attachment_message_id=mid,
+                      attachment_fingerprint=record.get('attachment_fingerprint') or fingerprint({**record,'dom_id':mid}),
+                      attachment_only=not bool(text))
+        result['text']=text or 'Attached task source: '+', '.join(d['name'] for d in attachments)
+    return result
 
 
 def intake_records(page, account_name=''):
     records=message_records(page)
     bodies=page.evaluate(MESSAGE_BODY_SCRIPT,{'ids':[record_message_id(r) for r in records],'account_name':account_name})
+    documents=descriptors(page,[record_message_id(r) for r in records])
     for record in records:
         body=bodies.get(record_message_id(record))
         if body:
@@ -154,6 +163,9 @@ def intake_records(page, account_name=''):
             if body['meta']:record['meta']=body['meta']
             sender=re.search(r'\]\s*(.*?):\s*$',record.get('meta',''))
             if sender and not record.get('sender_id'):record['sender_id']=sender.group(1).strip()
+        record['attachments']=documents.get(record_message_id(record),[])
+        if record['attachments']:
+            record['attachment_fingerprint']=fingerprint({**record,'dom_id':record_message_id(record)})
     return records
 
 
@@ -668,9 +680,9 @@ class Runtime:
         return resolved
 
     def resume_selected(self,chat,record,previous,memory):
-        if previous.get('exploration_evidence') or previous.get('exploration_required'):
+        if previous.get('exploration_evidence') or previous.get('exploration_required') or previous.get('whatsapp_files'):
             return self.start(chat,{**record,'text':previous['task'],'task_id':task_code(previous),
-                'self_mentioned':True,**memory,'task_memory_context':memory,
+                'self_mentioned':True,**memory,'task_memory_context':memory,'retry_of':previous['run'],
                 'recovery_feedback':'Reacquire and reanalyse the original exploration sources before proposing remaining changes. Historical analysis is not fresh evidence.'})
         """Pure continuation re-reads exact selected operations without scope replanning."""
         if previous.get('selected') and digest(previous['selected'])!=previous.get('manifest_hash'):
@@ -693,6 +705,7 @@ class Runtime:
 
     def finish_selected_resume(self,chat):
         flow=self.flows[chat];state=flow.state
+        self.bind_attachments(flow)
         if state.get('phase')!='PLANNING':raise ValueError('Exact continuation has no planning task.')
         operations=state['exact_resume_operations']
         self.file_evidence=[];self.planning_validation={}
@@ -712,12 +725,14 @@ class Runtime:
     @staticmethod
     def message_body_revision(raw):
         return digest({'text':re.sub(r'\s+',' ',str(raw.get('message_text') or '')).strip(),
+                       **({'attachments':raw['attachments']} if raw.get('attachments') else {}),
                        'direction':raw.get('direction'),'sender':raw.get('sender_id') or raw.get('sender_display_name')})
 
     @staticmethod
     def message_revision(raw):
         text=raw.get('addressed_text') if raw.get('self_mentioned') else raw.get('message_text')
         return digest({'text':re.sub(r'\s+',' ',str(text or '')).strip(),
+                       **({'attachments':raw['attachments']} if raw.get('attachments') else {}),
                        'mentioned':raw.get('self_mentioned') is True,'direction':raw.get('direction'),
                        'sender':raw.get('sender_id') or raw.get('sender_display_name')})
 
@@ -753,7 +768,7 @@ class Runtime:
                 edited=mid in self.seen[chat]
                 if raw.get('direction')=='incoming' and (
                         record_time(raw,self.started) is None or
-                        (not str(raw.get('message_text','')).strip() and not raw.get('documents'))):
+                        (not str(raw.get('message_text','')).strip() and not raw.get('attachments') and not raw.get('documents'))):
                     # Newly mounted bubbles may not have their body/metadata yet.
                     # Observe again next poll instead of consuming an incomplete record.
                     continue
@@ -794,6 +809,7 @@ class Runtime:
                 # time; unchanged historical messages remain excluded.
                 record=request_record(raw,None if edited else self.started)
                 if record:
+                    if record.get('attachment_only') and not bound:continue
                     if edited:
                         if re.fullmatch(r'(?:OK|NO)\s+\d{6}',record['text'].strip(),re.I):continue
                         record.update(id=mid+':edit:'+revision[:16],edited_message_id=mid)
@@ -839,9 +855,34 @@ class Runtime:
         finally:
             if getattr(self,'panel',None):self.panel.drain(self)
 
+    def bind_attachments(self,flow):
+        if isinstance(self.library,WhatsAppFiles) and self.library.bind(flow.chat,flow.state):
+            self.file_snapshot=None
+
+    def capture_attachments(self,chat,record):
+        flow=self.flows[chat]
+        self.bind_attachments(flow)
+        if not record.get('attachments'):return
+        if not isinstance(self.library,WhatsAppFiles):
+            raise ValueError('WhatsApp attachment storage is not enabled in this runtime.')
+        if record['sender']!=flow.state['sender']:
+            raise ValueError('WhatsApp attachment requester does not match this task.')
+        self.open(chat)
+        current=[r for r in intake_records(self.wa,self.account_name)
+                 if record_message_id(r)==record['attachment_message_id']]
+        if not current or any(r.get('attachment_fingerprint')!=record['attachment_fingerprint'] for r in current):
+            raise ValueError('WhatsApp attachment message changed or is unavailable; send it again with your request.')
+        def save(entry):
+            flow.state.setdefault('whatsapp_files',[]).append(entry)
+            flow.save()
+        with self.health.work('downloading_whatsapp_attachments'):
+            self.library.download(self.wa,record['attachment_message_id'],record['attachments'],save)
+        self.file_snapshot=None
+
     def context(self,flow,reply='',feedback=''):
         # Restarted questions enter planning without start(). Restore current
         # source inventory here as well; historical citations grant no evidence.
+        self.bind_attachments(flow)
         if self.library and self.file_snapshot is None:
             self.file_snapshot=self.library.snapshot()
         library_context=None
@@ -895,6 +936,16 @@ class Runtime:
     def start(self,chat,record):
         if chat in self.mention_only_chats and record.get('self_mentioned') is not True:return
         flow=self.flows[chat]
+        attachment_source=None
+        source_run=record.get('retry_of','')
+        if isinstance(self.library,WhatsAppFiles) and re.fullmatch(r'[a-f0-9]{12}',source_run):
+            if flow.state.get('run')==source_run:
+                attachment_source=copy.deepcopy(flow.state)
+            else:
+                archived=self.root/('archived-run-'+source_run+'.json')
+                if archived.exists():attachment_source=json.loads(archived.read_text(encoding='utf-8'))
+            if attachment_source and (attachment_source.get('chat')!=chat or attachment_source.get('sender')!=record['sender']):
+                raise ValueError('Saved WhatsApp sources belong to another requester or chat.')
         if flow.state.get('phase') in {'FAILED','DONE','PARTIAL','CANCELLED','EXPIRED','INTERRUPTED'}:
             prior=flow.state.get('run','')
             if re.fullmatch(r'[a-f0-9]{12}',prior):
@@ -912,6 +963,15 @@ class Runtime:
         self.file_evidence=[]
         self.exploration_broker=None;self.exploration_run=None
         self.planning_validation={}
+        if attachment_source and attachment_source.get('whatsapp_files'):
+            self.library.bind(chat,attachment_source)
+            snapshot=self.library.snapshot()
+            for entry in attachment_source['whatsapp_files']:
+                self.library.read_bytes(snapshot,entry['id'])
+            flow.state['whatsapp_files']=[{**e,'owner':[chat,record['sender'],flow.state['run']]}
+                                          for e in attachment_source['whatsapp_files']]
+            flow.save()
+        self.capture_attachments(chat,record)
         self.file_snapshot=self.library.snapshot() if self.library else None
         self.send(chat,'Status: Waiting\nTask: '+record['text']+'\nChange: Reading current courses and related settings before proposing changes.')
         self.browser.forms.clear()
@@ -1828,7 +1888,7 @@ class Runtime:
             try:
                 phase=flow.state.get('phase')
                 if phase=='APPROVAL':
-                    if re.fullmatch(r'(?:OK|NO)\s+\d{6}',body.strip(),re.I):
+                    if not record.get('attachments') and re.fullmatch(r'(?:OK|NO)\s+\d{6}',body.strip(),re.I):
                         if flow.approve(body,record['sender'],record['id']):
                             with self.health.work('executing_moodle'):self.execute(chat)
                         else:self.send(chat,'Status: Done\nChange: Cancelled. No Moodle write was made.')
@@ -1838,16 +1898,21 @@ class Runtime:
                         flow.state.update(phase='PLANNING',approval_sent=False,code=f'{secrets.randbelow(1000000):06d}')
                         for key in ('candidates','selected','manifest_hash','alignment_repairs'):flow.state.pop(key,None)
                         flow.save();self.browser.forms.clear()
+                        self.capture_attachments(chat,record)
                         for cid in self.course_ids:self.browser.overview(cid)
                         self.submit(chat,self.context(flow,reply=body))
                 elif phase in {'QUESTION','SCOPE'}:
                     flow.bound_reply(record['sender'],record['id'])
                     flow.state.setdefault('conversation',[]).append(body)
                     if phase=='QUESTION': flow.state['phase']=flow.state.pop('resume_phase','PLANNING')
+                    if record.get('attachments'):
+                        flow.state.update(phase='PLANNING',approval_sent=False,code=f'{secrets.randbelow(1000000):06d}')
+                        for key in ('candidates','selected','manifest_hash'):flow.state.pop(key,None)
                     flow.state.pop('pending_question',None)
                     flow.state.pop('alignment_repairs',None)
                     flow.save()
                     flow.state.pop('reply_boundary',None);flow.save()
+                    self.capture_attachments(chat,record)
                     self.submit(chat,self.context(flow,reply=body))
                 else:self.start(chat,record)
             except WhatsAppSendUnconfirmedError:
@@ -1855,7 +1920,8 @@ class Runtime:
             except Exception as exc:
                 self.record_failure(chat,exc,'incoming_reply')
                 if flow.state.get('phase')=='PLANNING' and chat not in self.jobs:flow.fail(user_reason(exc))
-                self.send(chat,'Status: Waiting\nReason: '+user_reason(exc))
+                status='Failed' if flow.state.get('phase')=='FAILED' else 'Waiting'
+                self.send(chat,'Status: '+status+'\nReason: '+user_reason(exc))
             return
 
 
@@ -1910,7 +1976,7 @@ def main():
                 runtime=Runtime(wa,browser,config['chats'],config['course_ids'],
                                 CodexPlanner(env,ROOT/'reports/shared_chrome/planner'),
                                 ROOT/'reports/shared_chrome/state',pool,
-                                FileLibrary(config['file_library_root']),config['file_library_planner_access'],
+                                WhatsAppFiles(FileLibrary(config['file_library_root']),ROOT/'reports/shared_chrome/state/attachments'),config['file_library_planner_access'],
                                 config['mention_only_chats'],config['recent_result_limit'])
                 runtime.auto_block_recovery=bool(config.get('auto_block_recovery',{}).get('enabled',False))
                 runtime.defer_uncertain_items=config['defer_uncertain_items']

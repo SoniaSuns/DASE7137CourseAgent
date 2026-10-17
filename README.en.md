@@ -14,6 +14,8 @@ The agent already runs on the administrator's computer. Users connect to that se
 
 WhatsApp uses the administrator's configured courses and browser. To operate your own Moodle account, use the Chrome extension below.
 
+You can send attachments using WhatsApp's **Document** option, with a real @mention and your request in the caption. The agent downloads them into the current task's source space and can read HTML, PDF, Word, Excel and PowerPoint files. When it is waiting for your additional information, the same sender can attach a file without another @mention. Limits: 32 MiB per file, 12 files and 128 MiB per task. Historical group attachments are not collected automatically. Reading scanned text depends on the available analysis capabilities.
+
 ## Chrome extension and the existing agent
 
 1. Download and unzip the extension above. Open `chrome://extensions`, enable **Developer mode**, choose **Load unpacked**, and select the extracted folder.
