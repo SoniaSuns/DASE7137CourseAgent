@@ -738,6 +738,11 @@ def message_records(page) -> list[WhatsAppMessageRecord]:
               || doc.parentElement;
             addCandidate(message, 'document_fallback');
           });
+          Array.from(document.querySelectorAll('[data-testid="image-thumb"]')).forEach((image) => {
+            if (image.closest('[data-testid*="quoted"],blockquote')) return;
+            const message = image.closest('[data-pre-plain-text]') || image.closest('[data-id]');
+            addCandidate(message, 'image_fallback');
+          });
           const senderDisplayNames = new Map();
           for (const {el} of candidateNodes) {
             const root = el.closest('[data-id], .message-in, .message-out') || el;

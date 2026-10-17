@@ -52,14 +52,14 @@ MESSAGE_BODY_SCRIPT = r"""input => {
     const body = candidates.find(e => !candidates.some(other => other !== e && other.contains(e)));
     // Document captions in current WhatsApp have no data-pre-plain-text wrapper.
     const nodes = (body ? [...body.querySelectorAll('.selectable-text')] :
-      [...root.querySelectorAll('[data-testid~="document-caption"]')]).filter(e =>
+      [...root.querySelectorAll('[data-testid~="document-caption"],[data-testid~="image-caption"]')]).filter(e =>
       !e.parentElement.closest('.selectable-text') && !e.closest(quoted));
     const unquotedTail = direction => [...root.querySelectorAll('[data-testid="tail-'+direction+'"],[data-icon="tail-'+direction+'"]')]
       .some(e => !e.closest(quoted));
-    const documentDirection = root.querySelector('[data-testid="document-thumb"]') ?
+    const documentDirection = root.querySelector('[data-testid="document-thumb"],[data-testid="image-thumb"]') ?
       (unquotedTail('out') ? 'outgoing' : unquotedTail('in') ? 'incoming' : '') : '';
     let documentDateLabel = '', documentClock = '';
-    if (!body && root.querySelector('[data-testid="document-thumb"]')) {
+    if (!body && root.querySelector('[data-testid="document-thumb"],[data-testid="image-thumb"]')) {
       const clocks = [...root.querySelectorAll('[data-testid="msg-meta"]')].filter(e => !e.closest(quoted));
       documentClock = clocks.length === 1 ? normalize(clocks[0].textContent) : '';
       // Read a structural timeline separator, never date-like words in a message.

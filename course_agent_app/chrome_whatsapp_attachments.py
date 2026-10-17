@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import base64
 from pathlib import Path
 import re
 import secrets
@@ -114,6 +115,9 @@ DOCUMENTS_SCRIPT = r"""ids => {
      const name = quoted ? quoted[1] : leaf ? (leaf.getAttribute('title') || leaf.textContent).trim() : '';
      return {index, name};
    }).filter(e => e.name);
+   const images = [...root.querySelectorAll('[data-testid="image-thumb"]')].filter(e =>
+     !e.closest('[data-testid*="quoted"],blockquote') && e.getBoundingClientRect().width);
+   result[id].push(...images.map((e,index)=>({index,name:'Image-'+(index+1)+'.image',kind:'image'})));
  }
  return result;
 }"""
@@ -152,6 +156,39 @@ def descriptors(page, ids):
     return page.evaluate(DOCUMENTS_SCRIPT, ids)
 
 
+# Only the loaded media blob of the exact incoming message is a source. The
+# small data: preview is deliberately excluded, as are arbitrary remote URLs.
+IMAGE_BYTES_SCRIPT = r"""async ({id,index,limit}) => {
+ const roots=[...document.querySelectorAll('[data-id]')].filter(e=>e.getAttribute('data-id')===id);
+ if (roots.length!==1) throw Error('Image message is unavailable');
+ const root=roots[0], quote='[data-testid*="quoted"],blockquote';
+ const has=s=>[...root.querySelectorAll(s)].some(e=>!e.closest(quote));
+ if (root.closest('.message-out') || has('[data-testid="tail-out"],[data-icon="tail-out"]') ||
+     !(root.closest('.message-in') || has('.message-in,[data-testid="tail-in"],[data-icon="tail-in"]')))
+   throw Error('Image is not an incoming source');
+ const images=[...root.querySelectorAll('[data-testid="image-thumb"]')].filter(e=>!e.closest(quote) && e.getBoundingClientRect().width);
+ const thumb=images[index]; if (!thumb) throw Error('Image is unavailable');
+ const sources=[...thumb.querySelectorAll('img')].filter(e=>!e.closest(quote) && e.complete && e.naturalWidth &&
+   e.src.startsWith('blob:'+location.origin+'/'));
+ const urls=[...new Set(sources.map(e=>e.src))];
+ if (urls.length!==1) throw Error('Full image has not loaded; thumbnail is not a source');
+ const response=await fetch(urls[0],{signal:AbortSignal.timeout(10000)});
+ const blob=await response.blob();
+ if (!blob.size || blob.size>limit) throw Error('Image exceeds the attachment size limit');
+ const data=await new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(blob);});
+ if (!root.isConnected || !thumb.isConnected || !sources.some(e=>e.src===urls[0])) throw Error('Image changed while reading');
+ return data.split(',')[1];
+}"""
+
+
+def download_image(page, message_id, doc):
+    data=base64.b64decode(page.evaluate(IMAGE_BYTES_SCRIPT, {'id':message_id,'index':doc['index'],'limit':MAX_FILE}),validate=True)
+    if not data or len(data)>MAX_FILE:raise ValueError('WhatsApp image exceeds 32 MiB.')
+    from chrome_file_library import image_metadata
+    if not image_metadata(data):raise ValueError('WhatsApp media bytes are not a readable image.')
+    return data
+
+
 def fingerprint(record):
     """Exclude changing presentation labels (Download/View), include provenance."""
     return sha(json.dumps({
@@ -176,7 +213,7 @@ def safe_name(name):
 class WhatsAppFiles(FileLibrary):
     """Merge only the active run's downloads with the owner's normal library."""
     def __init__(self, base, storage):
-        super().__init__(base.root, base.index)
+        super().__init__(base.root, base.index, detect_content=True)
         self.base = base
         self.storage = FileLibrary(storage, Path(storage) / 'unused-index.json')
         self.storage.root.mkdir(parents=True, exist_ok=True)
@@ -232,7 +269,8 @@ class WhatsAppFiles(FileLibrary):
             observed = descriptors(page, [message_id]).get(message_id, [])
             if observed != documents:
                 raise ValueError('WhatsApp attachment changed before download; send the file again with your request.')
-            data = download_document(page, message_id, doc, self.storage.root)
+            data = (download_image(page,message_id,doc) if doc.get('kind')=='image' else
+                    download_document(page, message_id, doc, self.storage.root))
             if sum(e['bytes'] for e in self.files) + len(data) > MAX_TASK:
                 raise ValueError('WhatsApp attachments exceed this task\'s 128 MiB limit.')
             relative = key + Path(name).suffix.lower()
@@ -247,5 +285,6 @@ class WhatsAppFiles(FileLibrary):
                      'format': Path(name).suffix.lower(), 'bytes': len(data), 'sha256': sha(data),
                      'text_reader': Path(name).suffix.lower() in READABLE, 'storage_key': relative,
                      'owner': list(self.scope), 'message_id': message_id}
+            if doc.get('kind'):entry['media_kind']=doc['kind']
             save_entry(entry)
             self.files.append(entry)

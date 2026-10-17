@@ -906,7 +906,17 @@ class Runtime:
                              for e in self.file_snapshot['files']]}
         unavailable=getattr(self.browser,'unavailable_targets',{})
         if not isinstance(unavailable,dict):unavailable={}
+        visual_inputs=[];image_inputs=[]
+        if self.library_planner_access and self.library:
+            for fid in dict.fromkeys(e['file_id'] for e in self.file_evidence if e.get('status')=='image'):
+                entry,data=self.library.read_bytes(self.file_snapshot,fid)
+                visual_inputs.append({'file_id':fid,'relative_path':entry['relative_path']})
+                image_inputs.append({'file_id':fid,'sha256':entry['sha256'],'data':data})
         return {'request':flow.state['task'],'reply':reply,'feedback':feedback,
+                'request_attachments':[{'file_id':e['id'],'relative_path':e['relative_path']}
+                                       for e in flow.state.get('whatsapp_files',[])] if self.library_planner_access else [],
+                'visual_inputs':visual_inputs,'_image_inputs':image_inputs,
+                'task_kind':flow.state.get('task_kind',''),
                 'exploration':{'enabled':self.explorer is not None,
                     'remaining_calls':max(0,self.exploration_max_calls-flow.state.get('exploration_calls',0)),
                     'sources':self.exploration_broker.catalog() if self.exploration_broker and self.exploration_run==flow.state['run'] else [],
@@ -984,7 +994,11 @@ class Runtime:
             flow.save()
         self.capture_attachments(chat,record)
         self.file_snapshot=self.library.snapshot() if self.library else None
-        self.send(chat,'Status: Waiting\nTask: '+record['text']+'\nChange: Reading current courses and related settings before proposing changes.')
+        if self.library_planner_access:
+            for entry in flow.state.get('whatsapp_files',[]):
+                if entry.get('media_kind')=='image':
+                    self.file_evidence.append(self.library.inspect(self.file_snapshot,entry['id']))
+        self.send(chat,'Status: Waiting\nTask: '+record['text']+'\nChange: Reading your request and available sources.')
         self.browser.forms.clear()
         self.observer.step(chat,'reading_course_inventory')
         for cid in self.course_ids: self.browser.overview(cid)
@@ -1097,6 +1111,13 @@ class Runtime:
     def accept_decision(self,chat,result,job):
         flow=self.flows[chat]
         kind=result.get('decision')
+        if result.get('task_kind') in {'information','course_changes'}:
+            flow.state['task_kind']=result['task_kind'];flow.save()
+        # Semantic classification belongs to the planner. Existing write goals
+        # cannot be downgraded to an informational question by a later decision.
+        informational=(flow.state.get('task_kind')=='information' and not
+                       (flow.state.get('goal_scope') or flow.state.get('schedule_required') or
+                        result.get('operations') or result.get('alignment',{}).get('required')))
         self.observer.event(chat,'planner_decision',task_id=task_code(flow.state),run=flow.state['run'],decision=str(kind))
         if kind=='explore':
             from chrome_exploration import begin
@@ -1219,7 +1240,7 @@ class Runtime:
             flow.select(result.get('selected_ids',[]),allow_narrowing=True)
             self.render_pending(chat)
         elif kind=='question':
-            if getattr(self,'defer_uncertain_items',False) and flow.state['phase']=='PLANNING':
+            if getattr(self,'defer_uncertain_items',False) and flow.state['phase']=='PLANNING' and not informational:
                 if not flow.state.get('uncertainty_pass'):
                     flow.state['uncertainty_pass']=1;flow.save()
                     self.submit(chat,self.context(flow,feedback='Do not ask another clarification. Plan all independent grounded operations first, keeping uncertain items in unresolved_dependencies. If no confirmed operations remain, return defer with one named item and missing information per unresolved_dependencies entry. Unanswered question: '+result['message']),job['rounds'],job['repairs'])
@@ -1231,13 +1252,15 @@ class Runtime:
             flow.state['phase']='QUESTION'; flow.save()
             self.send(chat,'Status: Waiting\nTask: '+flow.state['task']+'\n'+result['message'])
         elif kind=='defer':
+            if informational:
+                raise ValueError('Information requests must return an answer or a specific question, not an operations report.')
             if not getattr(self,'defer_uncertain_items',False) or flow.state['phase']!='PLANNING' or result.get('operations'):
                 raise ValueError('Deferred closure requires planning with no remaining proposed operations.')
             self.close_deferred(chat,result.get('impact_review',{}).get('unresolved_dependencies',[]))
         elif kind in {'answer','stop'}:
             if kind=='stop' and job['repairs']==0:
                 raise ValueError(result['message'])
-            if kind=='answer' and getattr(self,'defer_uncertain_items',False) and result.get('impact_review',{}).get('unresolved_dependencies'):
+            if kind=='answer' and not informational and getattr(self,'defer_uncertain_items',False) and result.get('impact_review',{}).get('unresolved_dependencies'):
                 self.close_deferred(chat,result['impact_review']['unresolved_dependencies']);return
             if kind=='answer' and (flow.state.get('schedule_required') or result.get('alignment',{}).get('required')):
                 if not self.ensure_alignment_review(chat,result,job):return

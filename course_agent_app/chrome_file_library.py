@@ -31,9 +31,12 @@ class FileLibraryChanged(ValueError):
 
 
 class FileLibrary:
-    def __init__(self, root=DEFAULT_ROOT, index=DEFAULT_INDEX):
+    def __init__(self, root=DEFAULT_ROOT, index=DEFAULT_INDEX, *, detect_content=False):
         self.root = Path(root).absolute()
         self.index = Path(index).absolute()
+        # Legacy callers retain suffix-dispatched results. Live attachment intake
+        # opts into content detection for every source in its merged library.
+        self.detect_content = detect_content
 
     def safe_path(self, relative):
         rel = Path(relative)
@@ -124,9 +127,19 @@ class FileLibrary:
         result = {'file_id': file_id, 'relative_path': entry['relative_path'],
                   'sha256': entry['sha256'], 'offset': offset, 'text': '', 'next_offset': None}
         try:
+            suffix=entry['format']
+            if self.detect_content:
+                visual=image_metadata(data)
+                if visual:
+                    result.update(status='image',visual=visual,
+                                  text='Image supplied as visual input. Describe only visible content; do not infer unreadable text. '+
+                                       ('Only the first frame is supplied.' if visual['frames']>1 else ''))
+                    return result
+                suffix=content_format(data,suffix)
+                result['detected_format']=suffix
             # Only enough text to supply one bounded page; no OCR or formatting claims.
             text = ''
-            for chunk in text_chunks(data, entry['format']):
+            for chunk in text_chunks(data, suffix):
                 text += chunk + '\n'
                 if len(text) > offset + PAGE_SIZE:
                     break
@@ -134,7 +147,7 @@ class FileLibrary:
             if len(text) > offset + PAGE_SIZE:
                 result['next_offset'] = offset + PAGE_SIZE
             result['status'] = 'read' if result['text'].strip() else 'no_extractable_text'
-            if entry['format']=='.docx' and offset==0:
+            if suffix=='.docx' and offset==0:
                 from docx import Document
                 doc=Document(io.BytesIO(data));rows=[];size=0
                 for ti,table in enumerate(doc.tables):
@@ -148,6 +161,43 @@ class FileLibrary:
         except Exception as exc:
             result.update(status='reader_unavailable', reason=type(exc).__name__ + ': cannot extract this format; do not infer its contents.')
         return result
+
+
+def image_metadata(data):
+    from PIL import Image, UnidentifiedImageError
+    try:
+        with Image.open(io.BytesIO(data)) as im:
+            if im.width*im.height>25_000_000:raise ValueError('Image exceeds the 25 megapixel decoding limit.')
+            result={'format':im.format,'width':im.width,'height':im.height,'frames':getattr(im,'n_frames',1)}
+            im.verify()
+            return result
+    except UnidentifiedImageError:
+        return None
+
+
+def decode_text(data):
+    if data.startswith((b'\xff\xfe\x00\x00',b'\x00\x00\xfe\xff')):encoding='utf-32'
+    elif data.startswith((b'\xff\xfe',b'\xfe\xff')):encoding='utf-16'
+    else:encoding='utf-8-sig'
+    text=data.decode(encoding)
+    if any(ord(c)<32 and c not in '\n\r\t\f' for c in text):
+        raise ValueError('Binary source requires a specialized reader.')
+    return text
+
+
+def content_format(data, suffix):
+    if data.lstrip().startswith(b'%PDF-'):return '.pdf'
+    if zipfile.is_zipfile(io.BytesIO(data)):
+        with zipfile.ZipFile(io.BytesIO(data)) as package:
+            names=set(package.namelist())
+            for name,kind in [('word/document.xml','.docx'),('ppt/presentation.xml','.pptx'),('xl/workbook.xml','.xlsx')]:
+                if name in names:return kind
+        return '.zip'
+    if data.startswith(b'\xd0\xcf\x11\xe0\xa1\xb1\x1a\xe1'):return suffix
+    try:text=decode_text(data)
+    except (UnicodeError,ValueError):return suffix
+    if text.lstrip().lower().startswith(('<!doctype html','<html','<table')):return '.html'
+    return '.txt'
 
 
 def text_chunks(data, suffix):
@@ -228,8 +278,27 @@ def text_chunks(data, suffix):
             content = page.extract_text() or ''
             if content.strip():
                 yield f'[Page {i}]\n' + content
+    elif suffix == '.zip':
+        # Read members in memory, never extract paths or execute packaged code.
+        with zipfile.ZipFile(stream) as package:
+            entries=package.infolist()
+            if len(entries)>512 or sum(e.file_size for e in entries)>32*1024*1024:
+                raise ValueError('Archive exceeds bounded inspection limits.')
+            for entry in entries:
+                if entry.is_dir():continue
+                yield '[Archive member] '+entry.filename
+                if entry.flag_bits & 1:
+                    yield '[Encrypted member; password is required]';continue
+                member=package.read(entry)
+                kind=content_format(member,Path(entry.filename).suffix.lower())
+                if kind=='.zip':
+                    yield '[Nested archive; further inspection required]';continue
+                try:
+                    yield from text_chunks(member,kind)
+                except Exception:
+                    yield '[Member has no extracted text; further inspection required]'
     elif suffix in {'.txt', '.md', '.csv', '.json'} | SOURCE_TEXT:
-        yield data.decode('utf-8-sig')
+        yield decode_text(data)
     else:
         raise ValueError('No text reader for this format.')
 

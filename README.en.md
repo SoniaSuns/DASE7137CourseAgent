@@ -14,7 +14,9 @@ The agent already runs on the administrator's computer. Users connect to that se
 
 WhatsApp uses the administrator's configured courses and browser. To operate your own Moodle account, use the Chrome extension below.
 
-You can send attachments using WhatsApp's **Document** option, with a real @mention and your request in the caption. The agent downloads them into the current task's source space and can read HTML, PDF, Word, Excel and PowerPoint files. When it is waiting for your additional information, the same sender can attach a file without another @mention. Limits: 32 MiB per file, 12 files and 128 MiB per task. Historical group attachments are not collected automatically. Reading scanned text depends on the available analysis capabilities.
+Send an attachment using WhatsApp's **Document** or **Photo** option, with a real @mention and your request in the caption. Attachments are saved in the current task's source space. Photos are passed to the configured Codex model as images; documents are inspected by content, then read using text or specialized parsers, with analysis tools as a fallback. An unfamiliar extension alone does not prevent inspection. Common Office files, PDFs, HTML, Unicode text, code and ZIP contents are supported. Simple file questions receive an answer, or a specific question in the same task when information is missing, instead of a zero-operation Moodle report.
+
+When the agent is waiting for additional information, the same sender can attach a file without another @mention. Limits: 32 MiB per file, 12 files and 128 MiB per task; images up to 25 megapixels, with only the first animation frame inspected. Historical group attachments are not collected automatically. Complete interpretation of encrypted, damaged or proprietary binary files, audio/video and scanned PDFs is not guaranteed. Missing content must be reported explicitly; receiving a file is not proof that its contents were understood.
 
 ## Chrome extension and the existing agent
 
