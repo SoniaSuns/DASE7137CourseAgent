@@ -31,6 +31,10 @@ def download_document(page, message_id, doc, storage):
     staging = Path(tempfile.mkdtemp(prefix='transfer-', dir=storage))
     configured = False
     try:
+        # Moodle inspections activate another tab. A successful pointer click on
+        # a background WhatsApp tab does not prove its download was started.
+        # Acquire the source tab before the one authorized download gesture.
+        page.bring_to_front()
         info = page_session.send('Target.getTargetInfo')['targetInfo']
         # Target exposes an ID even for the persistent default profile, but
         # Browser download commands only accept IDs of non-default contexts.
@@ -70,7 +74,10 @@ def download_document(page, message_id, doc, storage):
                 if source.stat().st_size > MAX_FILE:
                     raise ValueError('WhatsApp attachment exceeds 32 MiB.')
                 return source.read_bytes()
-        raise ValueError('WhatsApp download timed out; no source was accepted. Send the file again.')
+        if not received:
+            raise ValueError('WhatsApp download timed out: the browser did not start the transfer. '
+                             'The attachment was identified, but its contents have not been read.')
+        raise ValueError('WhatsApp download timed out after the transfer started; no completed source was accepted.')
     finally:
         for event in received:
             if progress.get(event['guid'], {}).get('state') not in {'completed', 'canceled'}:
