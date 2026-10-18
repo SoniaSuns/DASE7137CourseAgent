@@ -913,9 +913,15 @@ class Runtime:
                     validate_batch_source(source,record,intake_records(self.wa,self.account_name))
                 self.library.download(self.wa,source['attachment_message_id'],source['attachments'],save)
         if record.get('attachment_batch_id')==record['attachment_message_id']:
-            from chrome_whatsapp_batch import batch_sources
-            if batch_sources(record,intake_records(self.wa,self.account_name))!=sources:
-                raise ValueError('The attachment group grew during download; the complete request has not been read.')
+            from chrome_whatsapp_batch import verify_downloaded_batch
+            try:
+                flow.state['attachment_postcheck']=verify_downloaded_batch(
+                    self.wa,record,sources,lambda:intake_records(self.wa,self.account_name))
+            except ValueError as exc:
+                flow.state['attachment_postcheck']={'status':'failed','error_type':type(exc).__name__,
+                    'message_id':getattr(exc,'message_id',''),'detail':getattr(exc,'detail',str(exc))}
+                flow.save();raise
+            flow.save()
         self.file_snapshot=None
 
     def context(self,flow,reply='',feedback=''):
