@@ -34,11 +34,19 @@ def trigger_document_download(page,message_id,doc,marker):
     """Use Save/Download, not the file card's potentially unsafe Open action."""
     reject_open_warning(page)
     if page.locator('[role="menu"]:visible').count():
-        raise ValueError('An existing WhatsApp menu is open; attachment download cannot be uniquely selected.')
+        if page.locator('[role="menu"]:visible [role="menuitem"]:visible').count():
+            raise ValueError('An existing WhatsApp menu is open; attachment download cannot be uniquely selected.')
+        # The previous file's reaction toolbar can outlive its action menu.
+        # Let it leave before selecting another file; never dismiss it with Esc.
+        from playwright.sync_api import TimeoutError as BrowserTimeout
+        try:
+            page.wait_for_function("() => ![...document.querySelectorAll('[role=menu]')].some(e=>e.getBoundingClientRect().width && e.getBoundingClientRect().height && getComputedStyle(e).visibility!=='hidden' && getComputedStyle(e).display!=='none')",timeout=2000)
+        except BrowserTimeout:
+            raise ValueError('An existing WhatsApp toolbar has not closed; no attachment action was selected.') from None
     source=page.locator('[data-course-agent-download="'+marker+'"]')
     source.click(button='right',timeout=5000)
     deadline=time.monotonic()+MENU_SECONDS
-    opened=False
+    opened=False;selected=False
     try:
         while time.monotonic()<deadline:
             reject_open_warning(page)
@@ -55,18 +63,24 @@ def trigger_document_download(page,message_id,doc,marker):
                 if controls.count()==1:
                     if doc not in descriptors(page,[message_id]).get(message_id,[]):
                         raise ValueError('WhatsApp attachment changed while its download menu was open.')
+                    # A click can be delivered even if Playwright then raises.
+                    # From this point, cleanup must never send Escape.
+                    selected=True
                     controls.click(timeout=3000)
                     return
             page.wait_for_timeout(50)
         raise ValueError('The exact attachment menu has no unique Download action; no file was opened.')
     finally:
-        if opened and page.locator('[role="menu"]:visible').count():
-            for _ in range(3):
-                if not page.locator('[role="menu"]:visible').count():break
-                page.keyboard.press('Escape')
-                page.wait_for_timeout(100)
-            # A menu's closing animation must finish before the next file.
-            page.wait_for_function("() => ![...document.querySelectorAll('[role=menu]')].some(e=>e.getBoundingClientRect().width && e.getBoundingClientRect().height && getComputedStyle(e).visibility!=='hidden' && getComputedStyle(e).display!=='none')",timeout=2000)
+        if selected:
+            # Download already dismissed the menu logically. Its exit animation
+            # (including the reaction toolbar) can remain in the DOM; Escape now
+            # closes the conversation, making post-download provenance vanish.
+            # Wait for actionable controls to disappear without any key gesture.
+            page.wait_for_function("() => ![...document.querySelectorAll('[role=menu] [role=menuitem]')].some(e=>e.getBoundingClientRect().width && e.getBoundingClientRect().height && getComputedStyle(e).visibility!=='hidden' && getComputedStyle(e).display!=='none')",timeout=2000)
+        elif opened and page.locator('[role="menu"]:visible [role="menuitem"]:visible').count():
+            # A rejected, still-open action menu may be dismissed once. Never
+            # repeat Escape based on an exit animation or reaction-only toolbar.
+            page.keyboard.press('Escape')
 
 
 def download_document(page, message_id, doc, storage):
