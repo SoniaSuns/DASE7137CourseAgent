@@ -60,7 +60,13 @@ def trigger_document_download(page,message_id,doc,marker):
             page.wait_for_timeout(50)
         raise ValueError('The exact attachment menu has no unique Download action; no file was opened.')
     finally:
-        if opened and page.locator('[role="menu"]:visible').count():page.keyboard.press('Escape')
+        if opened and page.locator('[role="menu"]:visible').count():
+            for _ in range(3):
+                if not page.locator('[role="menu"]:visible').count():break
+                page.keyboard.press('Escape')
+                page.wait_for_timeout(100)
+            # A menu's closing animation must finish before the next file.
+            page.wait_for_function("() => ![...document.querySelectorAll('[role=menu]')].some(e=>e.getBoundingClientRect().width && e.getBoundingClientRect().height && getComputedStyle(e).visibility!=='hidden' && getComputedStyle(e).display!=='none')",timeout=2000)
 
 
 def download_document(page, message_id, doc, storage):
@@ -163,16 +169,83 @@ def _download_document(page, message_id, doc, storage, *, menu_only):
             from whatsapp_web import close_whatsapp_document_viewer
             close_whatsapp_document_viewer(page)
 
+# Current WhatsApp omits tail-in on consecutive documents in one sender group.
+# Resolve that group from exact DOM neighbours, never from filename similarity.
+ATTACHMENT_PROVENANCE_JS = r"""
+ const quote='[data-testid*="quoted"],blockquote';
+ const ownNodes=(root,selector)=>[...root.querySelectorAll(selector)].filter(e=>!e.closest(quote));
+ const outgoing=root=>root.closest('.message-out') || ownNodes(root,
+   '[data-testid="tail-out"],[data-icon="tail-out"],[data-icon="msg-check"],[data-icon="msg-dblcheck"],[data-testid="msg-check"],[data-testid="msg-dblcheck"]').length;
+ const incoming=root=>!outgoing(root) && (root.closest('.message-in') || ownNodes(root,
+   '.message-in,[data-testid="tail-in"],[data-icon="tail-in"]').length);
+ const sourceRoots=[...document.querySelectorAll('[data-id]')].filter(e=>!e.closest(quote));
+ const unique=root=>sourceRoots.filter(e=>e.getAttribute('data-id')===root.getAttribute('data-id')).length===1;
+ const identity=root=>{
+   const authors=ownNodes(root,'[data-testid="author"]');
+   // A phone/JID is identity evidence; a shared display name is insufficient.
+   const ids=authors.map(e=>(e.textContent||'').trim()).filter(s=>/^\+?[\d\s().-]{7,}$/.test(s));
+   return ids.length===1 ? ids[0].replace(/[^\d+]/g,'') : '';
+ };
+ const clock=root=>{const c=ownNodes(root,'[data-testid="msg-meta"]');return c.length===1?c[0].textContent.trim():'';};
+ const day=root=>{
+   const timeline=root.closest('[data-tab="8"]');
+   for(let b=root;timeline && b && b!==timeline;b=b.parentElement){
+     for(let s=b.previousElementSibling;s;s=s.previousElementSibling){
+       if(s.getAttribute('tabindex')==='-1' && !s.matches('[data-id],[role="row"]') &&
+          !s.querySelector('[data-id],[data-pre-plain-text],[data-testid="document-thumb"]') &&
+          /^(今天|昨天|昨日|Today|Yesterday|\d{4}年\d{1,2}月\d{1,2}日|\d+[/-]\d+[/-]\d+)$/i.test(s.textContent.trim()))return s.textContent.trim();
+     }
+   }return '';
+ };
+ const documentSource=root=>ownNodes(root,'[data-testid="document-thumb"]').length>0;
+ const hasCaption=root=>ownNodes(root,'[data-testid~="document-caption"],[data-pre-plain-text]').some(e=>e.textContent.trim());
+ const anchors=new Map();
+ for(let i=0;i<sourceRoots.length;i++){
+   const root=sourceRoots[i];if(!unique(root) || outgoing(root) || !documentSource(root))continue;
+   if(incoming(root)){if(identity(root) && clock(root))anchors.set(root,root);continue;}
+   const prev=sourceRoots[i-1];
+   if(prev && anchors.has(prev) && !hasCaption(root) && identity(root) &&
+      identity(root)===identity(prev) && clock(root) && clock(root)===clock(prev) && day(root)===day(prev))
+     anchors.set(root,anchors.get(prev));
+ }
+ const accepted=root=>unique(root) && !outgoing(root) && (incoming(root) || anchors.has(root));
+"""
+
+ATTACHMENT_BATCHES_SCRIPT = 'ids => {' + ATTACHMENT_PROVENANCE_JS + r"""
+ return Object.fromEntries(sourceRoots.filter(r=>ids.includes(r.getAttribute('data-id')) && anchors.has(r))
+   .map(r=>[r.getAttribute('data-id'),anchors.get(r).getAttribute('data-id')]));
+}"""
+
+
+def attachment_batches(page, ids):
+    return page.evaluate(ATTACHMENT_BATCHES_SCRIPT, ids)
+
+
+ATTACHMENT_RECORDS_SCRIPT = '() => {' + ATTACHMENT_PROVENANCE_JS + r"""
+ return sourceRoots.filter(r=>anchors.has(r) && r.getBoundingClientRect().width).map(r=>{
+   const authors=ownNodes(r,'[data-testid="author"]');
+   return {message_id:r.getAttribute('data-id'),direction:'incoming',
+     sender_id:authors.map(e=>e.textContent.trim()).find(s=>/^\+?[\d\s().-]{7,}$/.test(s)),
+     sender_display_name:authors[0].textContent.trim(),attachment_batch_id:anchors.get(r).getAttribute('data-id'),
+     attachment_batch_position:sourceRoots.indexOf(r)};
+ });
+}"""
+
+
+def attachment_records(page):
+    """Include mounted group documents even when below the current viewport."""
+    return page.evaluate(ATTACHMENT_RECORDS_SCRIPT)
+
+
 # Use exact message IDs, never global document indexes or quoted thumbnails.
-DOCUMENTS_SCRIPT = r"""ids => {
+DOCUMENTS_SCRIPT = 'ids => {' + ATTACHMENT_PROVENANCE_JS + r"""
  const result = {};
  for (const id of ids) {
    const roots = [...document.querySelectorAll('[data-id]')].filter(e => e.getAttribute('data-id') === id);
    if (roots.length !== 1) continue;
    const root = roots[0];
    const unquoted = selector => [...root.querySelectorAll(selector)].some(e=>!e.closest('[data-testid*="quoted"],blockquote'));
-   if (root.matches('.message-out') || root.closest('.message-out') || unquoted('[data-testid="tail-out"],[data-icon="tail-out"]')) continue;
-   if (!root.matches('.message-in') && !root.closest('.message-in') && !unquoted('.message-in,[data-testid="tail-in"],[data-icon="tail-in"]')) continue;
+   if (!accepted(root)) continue;
    const docs = [...root.querySelectorAll('[data-testid="document-thumb"]')].filter(e =>
      !e.closest('[data-testid*="quoted"],blockquote') && e.getBoundingClientRect().width);
    result[id] = docs.map((e, index) => {
@@ -190,13 +263,12 @@ DOCUMENTS_SCRIPT = r"""ids => {
  return result;
 }"""
 
-CLICK_DOCUMENT_SCRIPT = r"""({id,index,name,marker}) => {
+CLICK_DOCUMENT_SCRIPT = '({id,index,name,marker}) => {' + ATTACHMENT_PROVENANCE_JS + r"""
  const roots = [...document.querySelectorAll('[data-id]')].filter(e => e.getAttribute('data-id') === id);
  if (roots.length !== 1) return false;
  const root=roots[0];
  const unquoted = selector => [...root.querySelectorAll(selector)].some(e=>!e.closest('[data-testid*="quoted"],blockquote'));
- if (root.matches('.message-out') || root.closest('.message-out') || unquoted('[data-testid="tail-out"],[data-icon="tail-out"]')) return false;
- if (!root.matches('.message-in') && !root.closest('.message-in') && !unquoted('.message-in,[data-testid="tail-in"],[data-icon="tail-in"]')) return false;
+ if (!accepted(root)) return false;
  const docs=[...root.querySelectorAll('[data-testid="document-thumb"]')].filter(e =>
    !e.closest('[data-testid*="quoted"],blockquote') && e.getBoundingClientRect().width);
  const e=docs[index]; if (!e) return false;

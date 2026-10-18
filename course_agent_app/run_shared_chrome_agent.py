@@ -38,7 +38,7 @@ from chrome_form_dates import validate as validate_dates, MoodleDateConflict, in
 from chrome_planner import CodexPlanner
 from chrome_course_scope import MoodleLoginRequired
 from chrome_file_library import FileLibrary, FileLibraryChanged, DEFAULT_ROOT
-from chrome_whatsapp_attachments import WhatsAppFiles, descriptors, fingerprint, download_document_via_menu
+from chrome_whatsapp_attachments import WhatsAppFiles, descriptors, fingerprint, download_document_via_menu, attachment_batches, attachment_records
 from chrome_mentions import MESSAGE_BODY_SCRIPT, discover_account_name, observed_chat_type
 from shared_chrome import SharedChrome
 from listener_health import ListenerHealth, HealthHeartbeat
@@ -154,13 +154,23 @@ def request_record(record, started_at=None):
                       attachment_fingerprint=record.get('attachment_fingerprint') or fingerprint({**record,'dom_id':mid}),
                       attachment_only=not bool(text))
         result['text']=text or 'Attached task source: '+', '.join(d['name'] for d in attachments)
+        if record.get('attachment_batch_id'):
+            result['attachment_batch_id']=record['attachment_batch_id']
     return result
 
 
 def intake_records(page, account_name=''):
     records=message_records(page)
+    known={record_message_id(r) for r in records}
+    mounted=attachment_records(page)
+    positions={record_message_id(r):r['attachment_batch_position'] for r in mounted}
+    records.extend(r for r in mounted if record_message_id(r) not in known)
+    for record in records:
+        if record_message_id(record) in positions:
+            record['attachment_batch_position']=positions[record_message_id(record)]
     bodies=page.evaluate(MESSAGE_BODY_SCRIPT,{'ids':[record_message_id(r) for r in records],'account_name':account_name})
     documents=descriptors(page,[record_message_id(r) for r in records])
+    batches=attachment_batches(page,[record_message_id(r) for r in records])
     for record in records:
         body=bodies.get(record_message_id(record))
         if body:
@@ -175,6 +185,8 @@ def intake_records(page, account_name=''):
             sender=re.search(r'\]\s*(.*?):\s*$',record.get('meta',''))
             if sender and not record.get('sender_id'):record['sender_id']=sender.group(1).strip()
         record['attachments']=documents.get(record_message_id(record),[])
+        if batches.get(record_message_id(record)):
+            record['attachment_batch_id']=batches[record_message_id(record)]
         if record['attachments']:
             record['attachment_fingerprint']=fingerprint({**record,'dom_id':record_message_id(record)})
     return records
@@ -879,15 +891,31 @@ class Runtime:
         if record['sender']!=flow.state['sender']:
             raise ValueError('WhatsApp attachment requester does not match this task.')
         self.open(chat)
-        current=[r for r in intake_records(self.wa,self.account_name)
+        records=intake_records(self.wa,self.account_name)
+        current=[r for r in records
                  if record_message_id(r)==record['attachment_message_id']]
         if not current or any(r.get('attachment_fingerprint')!=record['attachment_fingerprint'] for r in current):
             raise ValueError('WhatsApp attachment message changed or is unavailable; send it again with your request.')
+        sources=[record]
+        if record.get('attachment_batch_id')==record['attachment_message_id']:
+            from chrome_whatsapp_batch import collect_batch
+            sources=collect_batch(self.wa,record,records,lambda:intake_records(self.wa,self.account_name))
+        flow.state['attachment_source_manifest']=[{'message_id':r['attachment_message_id'],
+            'attachments':r['attachments'],'fingerprint':r['attachment_fingerprint']} for r in sources]
+        flow.save()
         def save(entry):
             flow.state.setdefault('whatsapp_files',[]).append(entry)
             flow.save()
         with self.health.work('downloading_whatsapp_attachments'):
-            self.library.download(self.wa,record['attachment_message_id'],record['attachments'],save)
+            for source in sources:
+                if len(sources)>1:
+                    from chrome_whatsapp_batch import validate_batch_source
+                    validate_batch_source(source,record,intake_records(self.wa,self.account_name))
+                self.library.download(self.wa,source['attachment_message_id'],source['attachments'],save)
+        if record.get('attachment_batch_id')==record['attachment_message_id']:
+            from chrome_whatsapp_batch import batch_sources
+            if batch_sources(record,intake_records(self.wa,self.account_name))!=sources:
+                raise ValueError('The attachment group grew during download; the complete request has not been read.')
         self.file_snapshot=None
 
     def context(self,flow,reply='',feedback=''):
