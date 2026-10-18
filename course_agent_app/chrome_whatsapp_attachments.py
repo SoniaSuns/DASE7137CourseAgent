@@ -183,7 +183,7 @@ def _download_document(page, message_id, doc, storage, *, menu_only):
             from whatsapp_web import close_whatsapp_document_viewer
             close_whatsapp_document_viewer(page)
 
-# Current WhatsApp omits tail-in on consecutive documents in one sender group.
+# Current WhatsApp omits tail-in on consecutive attachments in one sender group.
 # Resolve that group from exact DOM neighbours, never from filename similarity.
 ATTACHMENT_PROVENANCE_JS = r"""
  const quote='[data-testid*="quoted"],blockquote';
@@ -211,11 +211,11 @@ ATTACHMENT_PROVENANCE_JS = r"""
      }
    }return '';
  };
- const documentSource=root=>ownNodes(root,'[data-testid="document-thumb"]').length>0;
- const hasCaption=root=>ownNodes(root,'[data-testid~="document-caption"],[data-pre-plain-text]').some(e=>e.textContent.trim());
+ const attachmentSource=root=>ownNodes(root,'[data-testid="document-thumb"],[data-testid="image-thumb"]').length>0;
+ const hasCaption=root=>ownNodes(root,'[data-testid~="document-caption"],[data-testid~="image-caption"],[data-pre-plain-text]').some(e=>e.textContent.trim());
  const anchors=new Map();
  for(let i=0;i<sourceRoots.length;i++){
-   const root=sourceRoots[i];if(!unique(root) || outgoing(root) || !documentSource(root))continue;
+   const root=sourceRoots[i];if(!unique(root) || outgoing(root) || !attachmentSource(root))continue;
    if(incoming(root)){if(identity(root) && clock(root))anchors.set(root,root);continue;}
    const prev=sourceRoots[i-1];
    if(prev && anchors.has(prev) && !hasCaption(root) && identity(root) &&
@@ -247,7 +247,7 @@ ATTACHMENT_RECORDS_SCRIPT = '() => {' + ATTACHMENT_PROVENANCE_JS + r"""
 
 
 def attachment_records(page):
-    """Include mounted group documents even when below the current viewport."""
+    """Include mounted group attachments even when below the current viewport."""
     return page.evaluate(ATTACHMENT_RECORDS_SCRIPT)
 
 
@@ -312,14 +312,11 @@ def descriptors(page, ids):
 
 # Only the loaded media blob of the exact incoming message is a source. The
 # small data: preview is deliberately excluded, as are arbitrary remote URLs.
-IMAGE_BYTES_SCRIPT = r"""async ({id,index,limit}) => {
+IMAGE_BYTES_SCRIPT = 'async ({id,index,limit}) => {' + ATTACHMENT_PROVENANCE_JS + r"""
  const roots=[...document.querySelectorAll('[data-id]')].filter(e=>e.getAttribute('data-id')===id);
  if (roots.length!==1) throw Error('Image message is unavailable');
- const root=roots[0], quote='[data-testid*="quoted"],blockquote';
- const has=s=>[...root.querySelectorAll(s)].some(e=>!e.closest(quote));
- if (root.closest('.message-out') || has('[data-testid="tail-out"],[data-icon="tail-out"]') ||
-     !(root.closest('.message-in') || has('.message-in,[data-testid="tail-in"],[data-icon="tail-in"]')))
-   throw Error('Image is not an incoming source');
+ const root=roots[0];
+ if (!accepted(root)) throw Error('Image is not an incoming source');
  const images=[...root.querySelectorAll('[data-testid="image-thumb"]')].filter(e=>!e.closest(quote) && e.getBoundingClientRect().width);
  const thumb=images[index]; if (!thumb) throw Error('Image is unavailable');
  const sources=[...thumb.querySelectorAll('img')].filter(e=>!e.closest(quote) && e.complete && e.naturalWidth &&
