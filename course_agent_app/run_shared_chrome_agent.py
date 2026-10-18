@@ -928,8 +928,18 @@ class Runtime:
         # Restarted questions enter planning without start(). Restore current
         # source inventory here as well; historical citations grant no evidence.
         self.bind_attachments(flow)
+        archive_members=[]
+        if self.library_planner_access and isinstance(self.library,WhatsAppFiles):
+            from chrome_archive_sources import expand_archives,inspect_members
+            archive_members=expand_archives(self.library)
+            if self.library.files != flow.state.get('whatsapp_files',[]):
+                flow.state['whatsapp_files']=[dict(e) for e in self.library.files]
+                flow.save()
+                self.file_snapshot=None
         if self.library and self.file_snapshot is None:
             self.file_snapshot=self.library.snapshot()
+        if archive_members:
+            inspect_members(self.library,self.file_snapshot,archive_members,self.file_evidence)
         library_context=None
         if self.file_snapshot:
             library_context={'status':'planner_access_not_authorized','file_count':len(self.file_snapshot['files'])}
@@ -947,8 +957,9 @@ class Runtime:
                 visual_inputs.append({'file_id':fid,'relative_path':entry['relative_path']})
                 image_inputs.append({'file_id':fid,'sha256':entry['sha256'],'data':data})
         return {'request':flow.state['task'],'reply':reply,'feedback':feedback,
+                'archive_members':archive_members,
                 'request_attachments':[{'file_id':e['id'],'relative_path':e['relative_path']}
-                                       for e in flow.state.get('whatsapp_files',[])] if self.library_planner_access else [],
+                                       for e in flow.state.get('whatsapp_files',[]) if not e.get('archive_parent_id')] if self.library_planner_access else [],
                 'visual_inputs':visual_inputs,'_image_inputs':image_inputs,
                 'task_kind':flow.state.get('task_kind',''),
                 'exploration':{'enabled':self.explorer is not None,

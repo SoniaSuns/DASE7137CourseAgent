@@ -389,6 +389,9 @@ class WhatsAppFiles(FileLibrary):
         entry = self.entry(snapshot, file_id)
         if not file_id.startswith('wa:'):
             return self.base.read_bytes(snapshot, file_id)
+        if entry.get('archive_parent_id'):
+            from chrome_archive_sources import read_member
+            return entry, read_member(self, snapshot, entry)
         path = self.storage.safe_path(entry['storage_key'])
         if path.stat().st_size > MAX_FILE:
             raise ValueError('WhatsApp attachment exceeds 32 MiB.')
@@ -407,14 +410,14 @@ class WhatsAppFiles(FileLibrary):
             if any(e['id'] == file_id for e in self.files):
                 self.read_bytes(self.snapshot(), file_id)
                 continue
-            if len(self.files) >= MAX_FILES:
+            if sum(not e.get('archive_parent_id') for e in self.files) >= MAX_FILES:
                 raise ValueError('This task already has 12 WhatsApp attachments.')
             observed = descriptors(page, [message_id]).get(message_id, [])
             if observed != documents:
                 raise ValueError('WhatsApp attachment changed before download; send the file again with your request.')
             data = (download_image(page,message_id,doc) if doc.get('kind')=='image' else
                     self.document_download(page, message_id, doc, self.storage.root))
-            if sum(e['bytes'] for e in self.files) + len(data) > MAX_TASK:
+            if sum(e['bytes'] for e in self.files if not e.get('archive_parent_id')) + len(data) > MAX_TASK:
                 raise ValueError('WhatsApp attachments exceed this task\'s 128 MiB limit.')
             relative = key + Path(name).suffix.lower()
             target = self.storage.root / relative
